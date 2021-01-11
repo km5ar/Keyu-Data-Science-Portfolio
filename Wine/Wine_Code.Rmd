@@ -1,0 +1,862 @@
+---
+title: "Project 2"
+author: "Taylor Rohrich (trr2as), Keyu Chen (km5ar), Pavan Bondalapati (pb7ak), Kaleb M Shikur (kms7cu)"
+geometry: margin=1in
+output:
+  pdf_document: default
+fontsize: 12pt
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, highlight=FALSE)
+```
+
+```{r}
+library(datasets)
+library(MASS)
+library(faraway)
+library(ROCR)
+library(nnet)
+library(tidyverse)
+library(lawstat)
+library(ggplot2)
+library(corrplot)
+library(dplyr)
+library(psych)
+library(psychTools)
+library(PerformanceAnalytics)
+library(RColorBrewer)
+```
+
+```{r}
+# Combine data 
+reds<- read.csv("wineQualityReds.csv")
+whites <- read.csv("wineQualityWhites.csv")
+reds$type <- "red"
+whites$type <- "white"
+total <- rbind(reds,whites)
+write.csv(total,file="wineQuality.csv",row.names=FALSE)
+```
+
+
+```{r}
+# Test train split for total wine quality
+data <-read.csv("wineQuality.csv")
+set.seed(199)
+sample<-sample.int(nrow(data), floor(.70*nrow(data)), replace = F)
+train<-data[sample, ]
+test<-data[-sample, ]
+write.csv(test,file="wineQuality_test.csv",row.names=FALSE)
+write.csv(train,file="wineQuality_train.csv",row.names=FALSE)
+```
+
+
+```{r}
+# Exploratory Data Analysis
+par(mfrow=c(1,4))
+total<- read.csv("wineQuality.csv")
+total$type <- factor(total$type,levels=c('white','red'))
+boxplot(total$fixed.acidity ~total$type, levels=c("Red", "White"),  col=c("honeydew", "violetred4"),main="fixed.acidity by type")
+boxplot(total$volatile.acidity~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="volatile.acidity by type")
+boxplot(total$citric.acid~total$type, levels=c("Red", "White"), col=c("honeydew", "violetred4"),main="citric.acid by type")
+boxplot(total$residual.sugar~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="residual.sugar by type")
+
+boxplot(total$chlorides ~total$type, levels=c("Red", "White"), col=c("honeydew", "violetred4"),main=" chlorides by type")
+boxplot(total$free.sulfur.dioxide~total$type, levels=c("Red", "White"), col=c("honeydew", "violetred4"),main="free.sulfur.dioxide by type")
+boxplot(total$total.sulfur.dioxide~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="data.sulfur.dioxide by type")
+boxplot(total$density~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="density by type")
+
+boxplot(total$pH ~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="pH by type")
+boxplot(total$sulphates~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="sulphates by type")
+boxplot(total$alcohol~total$type,levels=c("Red", "White"), col=c("honeydew", "violetred4"), main="alcohol by type")
+boxplot(total$quality~total$type, levels=c("Red", "White"), col=c("honeydew", "violetred4"),main="quality by type")
+
+summary(total)
+
+```
+
+```{r}
+
+par(mfrow=c(1,3))
+coul <- brewer.pal(7, "Set1") 
+barplot((table(reds$quality)), col=coul,xlab="Number of Red Wines in quality levels")
+barplot((table(whites$quality)), col=coul,xlab="Number of White Wines in quality levels")
+barplot((table(total$quality)), col=coul,xlab="Number of Wines(combined) in quality levels")
+
+summary(whites$quality)  # whites
+summary(reds$quality)    # reds
+summary(total$quality)   # total
+```
+
+```{r}
+par(mfrow=c(1,4))
+
+#ggplot(data = total ,aes(x = quality, y = alcohol, fill = quality)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun = mean, geom = 'point', shape = 4, show.legend = FALSE) + 
+#  facet_wrap(~type, ncol = 2) 
+total$qualityGroup2 <-  cut(total$quality,c(1, 5,10),labels = c("Low", "High"))
+ggplot(data = total ,aes(x = qualityGroup2, y = fixed.acidity, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "fixed acidity BY Quality",x = "Quality",y = "fixed acidity")
+ggplot(data = total ,aes(x = qualityGroup2, y = volatile.acidity, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "volatile acidity BY Quality",x = "Quality",y = "volatile acidity")
+ggplot(data = total ,aes(x = qualityGroup2, y = citric.acid, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "citric acid BY Quality",x = "Quality",y = "citric acid")
+ggplot(data = total ,aes(x = qualityGroup2, y = residual.sugar, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "residual sugar BY Quality",x = "Quality",y = "residual sugar")
+ggplot(data = total ,aes(x = qualityGroup2, y = chlorides, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "chlorides BY QUALITY",x = "Quality",y = "chlorides")
+ggplot(data = total ,aes(x = qualityGroup2, y = free.sulfur.dioxide, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "free sulfur dioxideL BY QUALITY",x = "Quality",y = "free sulfur dioxide")
+ggplot(data = total ,aes(x = qualityGroup2, y = total.sulfur.dioxide, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "total sulfur dioxide BY QUALITY",x = "Quality",y = "total sulfur dioxide")
+ggplot(data = total ,aes(x = qualityGroup2, y = density, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "density BY QUALITY",x = "Quality",y = "density")
+ggplot(data = total ,aes(x = qualityGroup2, y = pH, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "pH BY QUALITY",x = "Quality",y = "pH")
+ggplot(data = total ,aes(x = qualityGroup2, y = sulphates, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "sulphates BY QUALITY",x = "Quality",y = "sulphates")
+ggplot(data = total ,aes(x = qualityGroup2, y = alcohol, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "alcohol BY QUALITY",x = "Quality",y = "alcohol")
+#ggplot(data = total ,aes(x = qualityGroup2, y = quality, fill = qualityGroup2)) + geom_boxplot(show.legend = FALSE) + stat_summary(fun=mean, geom="point", shape=20, size=10, color="red", fill="red")  + labs(title = "quality BY QUALITY",x = "Quality",y = "quality")
+```
+
+
+
+```{r}
+
+chart.Correlation(reds[2:13], histogram=TRUE, pch=19, main = 'reds')
+chart.Correlation(whites[2:13], histogram=TRUE, pch=19, main = 'whites')
+chart.Correlation(total[2:13], histogram=TRUE, pch=19, main = 'total')
+```
+
+```{r}
+ggplot(data = total,aes(x = fixed.acidity)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = volatile.acidity)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = citric.acid)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = residual.sugar)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = chlorides)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = free.sulfur.dioxide)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = total.sulfur.dioxide)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = density)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = pH)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = sulphates)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = alcohol)) + geom_bar() + facet_wrap(~type, ncol = 1)
+ggplot(data = total,aes(x = quality)) + geom_bar() + facet_wrap(~type, ncol = 1)
+```
+
+
+```{r}
+# Data Analysis
+data <- read.csv("wineQuality_train.csv")
+data$type <- factor(data$type,levels=c('white','red'))
+data$quality<-cut(data$quality,breaks = c(1, 5, 10),labels = c("Low", "High"))
+test <- read.csv("wineQuality_test.csv")
+test$type <- factor(test$type,levels=c('white','red'))
+test$quality<-cut(test$quality,breaks = c(1, 5, 10),labels = c("Low", "High"))
+```
+
+```{r}
+# Analysis: Fitting a logistic model to predict wine type
+
+result<-glm(type ~ alcohol + sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity + quality, family=binomial, data=data)
+summary(result)
+reduced<-glm(type ~ alcohol + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar + volatile.acidity + fixed.acidity, family=binomial, data=data)
+1-pchisq(reduced$deviance-result$deviance,4)
+summary(reduced)
+# Print the Equation
+cc <- reduced$coefficients
+(eqn <- paste("Y =", paste(round(cc[1],2), paste(round(cc[-1],2), names(cc[-1]), sep=" * ", collapse=" + "), sep=" + "), "+ e"))
+# printing of the equation
+# p > .05 we can drop them, we will go with reduced model
+```
+
+```{r}
+
+# Get Confusion Matrix
+preds<-predict(reduced,newdata=test, type="response")
+##produce the numbers associated with classification table
+rates<-prediction(preds, test$type,label.ordering = c('white','red'))
+##store the true positive and false postive rates
+roc_result<-performance(rates,measure="tpr", x.measure="fpr")
+##plot ROC curve and overlay the diagonal line for random guessing
+plot(roc_result, main="ROC for Wine Type")
+
+lines(x = c(0,1), y = c(0,1), col="red")
+##compute the AUC
+auc<-performance(rates, measure = "auc")
+auc@y.values
+##confusion matrix. Actual values in the rows, predicted classification in cols
+table(test$type, preds>0.5)
+```
+```{r}
+
+
+```
+
+
+
+```{r}
+
+## Test train splits for quality for reds
+data <-read.csv("wineQualityReds.csv")
+set.seed(199)
+sample<-sample.int(nrow(data), floor(.70*nrow(data)), replace = F)
+train<-data[sample, ]
+test<-data[-sample, ]
+write.csv(test,file="wineQualityReds_test.csv",row.names=FALSE)
+write.csv(train,file="wineQualityReds_train.csv",row.names=FALSE)
+```
+
+```{r}
+## Analysis: Predicting quality for red wines
+reds<- read.csv("wineQualityReds_train.csv")
+reds$quality <- factor(reds$quality)
+
+```
+
+```{r}
+##fit multinomial logistic regression model
+reds_res<-multinom(quality ~ alcohol + sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity,data=reds)
+summary(reds_res)
+?fitted
+##compute test statistics and p-values for each coefficient
+z<-summary(reds_res)$coefficients/summary(reds_res)$standard.errors
+z
+p<-(1 - pnorm(abs(z)))*2
+p
+
+## Based on results above we can get rid of sulfur dioxide, residual sugar, fixed acidity
+reds_res<-multinom(quality ~ alcohol + sulphates + pH + density + free.sulfur.dioxide + chlorides  +citric.acid + volatile.acidity,data=reds)
+
+```
+
+
+
+```{r}
+
+# Test Red wine predicted qualities on new data
+reds_test<- read.csv("wineQualityReds_test.csv")
+reds_test$quality <- factor(reds_test$quality)
+# Test Predictions
+?predict.glm
+predictions <-predict(reds_res, newdata = reds_test, "probs")
+columnNames <- as.numeric(colnames(predictions))
+predictedQualities <- c()
+for (r in c(1:nrow(predictions))){
+  row <- predictions[r]
+  predictedQuality <- columnNames[which.max(predictions[r,])]
+  predictedQualities <- c(predictedQualities,predictedQuality)
+}
+length(reds_test$quality)
+length(predictedQualities)
+sum(reds_test$quality == predictedQualities) / length(reds_test$quality)
+```
+
+```{r}
+## Analysis: Test train splits for quality for whites
+data <-read.csv("wineQualityWhites.csv")
+set.seed(199)
+sample<-sample.int(nrow(data), floor(.70*nrow(data)), replace = F)
+train<-data[sample, ]
+test<-data[-sample, ]
+write.csv(test,file="wineQualityWhites_test.csv",row.names=FALSE)
+write.csv(train,file="wineQualityWhites_train.csv",row.names=FALSE)
+```
+
+```{r}
+## Predicting quality for white wines
+whites<- read.csv("wineQualityWhites_train.csv")
+whites$quality <- factor(whites$quality)
+
+```
+
+```{r}
+##fit multinomial logistic regression model
+whites_res<-multinom(quality ~ alcohol + sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity,data=whites)
+summary(whites_res)
+?fitted
+##compute test statistics and p-values for each coefficient
+z<-summary(whites_res)$coefficients/summary(whites_res)$standard.errors
+z
+p<-(1 - pnorm(abs(z)))*2
+p
+
+## Based on results above we can get rid of sulfur dioxide,
+whites_res<-multinom(quality ~ alcohol + sulphates + pH + density + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity,data=whites)
+
+```
+
+
+
+```{r}
+
+# Test White wine predicted qualites on new data
+whites_test<- read.csv("wineQualityWhites_test.csv")
+whites_test$quality <- factor(whites_test$quality)
+# Test Predictions
+predictions <-predict(whites_res, newdata = whites_test, "probs")
+columnNames <- as.numeric(colnames(predictions))
+predictedQualities <- c()
+for (r in c(1:nrow(predictions))){
+  row <- predictions[r]
+  predictedQuality <- columnNames[which.max(predictions[r,])]
+  predictedQualities <- c(predictedQualities,predictedQuality)
+}
+length(whites_test$quality)
+length(predictedQualities)
+sum(whites_test$quality == predictedQualities) / length(whites_test$quality)
+
+```
+
+
+
+```{r}
+
+# Analysis: Test linear regression model predicting alcohol
+
+data <- read.csv("wineQuality.csv")
+data <-data[sample.int(nrow(data)),]
+summary(data$alcohol)
+data$type <- factor(data$type,levels=c('white','red'))
+result<-lm(alcohol ~sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity + quality + type,  data=data)
+data <- data[sample(nrow(data)), ]
+par(mfrow=c(2,2))
+plot(result$fitted.values,result$residuals, main="Plot of Residuals against Fitted Values", xlab="Fitted Values", ylab='Residuals')
+abline(h=0,col="red")
+boxcox(result,lambda = seq(-1,1))
+acf(result$residuals, main="ACF of Residuals")
+qqnorm(result$residuals)
+qqline(result$residuals, col="red")
+
+## Need to transform lambda now we are good
+alcohol.lambda <- data$alcohol** -.5
+result.lambda<-lm(alcohol.lambda ~sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity + quality + type,  data=data)
+par(mfrow=c(2,2))
+plot(result.lambda$fitted.values,result.lambda$residuals, main="Plot of Residuals against Fitted Values", xlab="Fitted Values", ylab='Residuals')
+abline(h=0,col="red")
+boxcox(result.lambda)
+acf(result.lambda$residuals, main="ACF of Residuals")
+qqnorm(result.lambda$residuals)
+qqline(result.lambda$residuals, col="red")
+
+# Total sulfur dioxide not necessary
+summary(result.lambda)
+reduced<-lm(alcohol.lambda ~sulphates + pH + density  + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity + quality + type,  data=data)
+anova(reduced, result.lambda)
+summary(reduced)
+summary(data[data$type=="red",]$alcohol)
+summary(data[data$type=="white",]$alcohol)
+
+# Print the Equation
+cc <- reduced$coefficients
+(eqn <- paste("Y =", paste(round(cc[1],5), paste(round(cc[-1],6), names(cc[-1]), sep=" * ", collapse=" + "), sep=" + "), "+ e"))
+
+# check for multicollinearity
+vif(reduced)
+
+
+# Check for outliers
+n<-length(data$alcohol)
+p<- 12
+qt(1-0.05/(2*n), n-p-1)
+
+ext.student.res<-rstudent(reduced) 
+sort(ext.student.res)
+par(mfrow=c(1,1))
+plot(ext.student.res,main="Externally Studentized Residuals", ylim=c(-8,8))
+abline(h=qt(1-0.05/(2*n), n-p-1), col="red")
+abline(h=-qt(1-0.05/(2*n), n-p-1), col="red")
+# leverages
+lev<-lm.influence(reduced)$hat 
+
+sort(lev)
+2*p/n
+
+plot(lev, main="Leverages", ylim=c(0,.5))
+abline(h=2*p/n, col="red")
+lev[lev>2*p/n]
+
+# 1e
+
+DFFITS<-dffits(reduced)
+length(DFFITS[abs(DFFITS)>2*sqrt(p/n)])
+
+# 1f
+
+COOKS<-cooks.distance(reduced)
+length(COOKS[COOKS>qf(0.5,p,n-p)])
+```
+$$
+  \begin{aligned}
+y^{-0.5} & = -8.703 + (-0.01434) * sulphates + (-0.03823) * pH + 9.280 * density + \\
+& 0.00005214* free.sulfur.dioxide + 0.01525 * chlorides + -0.003146 * residual.sugar + \\
+& -0.006261 * citric.acid + -0.00947 * volatile.acidity + -0.007612 * fixed.acidity + \\
+&  -0.001359 * quality + -0.01612 * typered 
+\end{aligned}
+$$
+
+```{r}
+
+# Analysis: Predict High Low Wine Quality Logistic Regression
+
+data <- read.csv("wineQuality_train.csv")
+data$type <- factor(data$type,levels=c('white','red'))
+data$quality<-  cut(data$quality,breaks = c(1, 5, 10),labels = c("Low", "High"))
+result<-glm(quality ~ alcohol + sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + chlorides + residual.sugar +citric.acid + volatile.acidity + fixed.acidity + type, family=binomial, data=data)
+summary(result)
+# Can remove chlorides
+reduced <-glm(quality ~ alcohol + sulphates + pH + density + total.sulfur.dioxide + free.sulfur.dioxide + residual.sugar +citric.acid + volatile.acidity + fixed.acidity + type, family=binomial, data=data)
+summary(reduced)
+cc <- reduced$coefficients
+(eqn <- paste("Y =", paste(round(cc[1],2), paste(round(cc[-1],2), names(cc[-1]), sep=" * ", collapse=" + "), sep=" + "), "+ e"))
+
+
+```
+
+
+```{r}
+
+# Create Confusion Matrix
+
+test <- read.csv("wineQuality_test.csv")
+test$type <- factor(test$type,levels=c('white','red'))
+test$quality<-  cut(test$quality,breaks = c(1, 5, 10),labels = c("Low", "High"))
+?cut
+##predicted survival rate for testing data based on training data
+preds<-predict(reduced,newdata=test, type="response",)
+##produce the numbers associated with classification table
+rates<-prediction(preds, test$quality, label.ordering = c("Low",'High'))
+##store the true positive and false postive rates
+roc_result<-performance(rates,measure="tpr", x.measure="fpr")
+##plot ROC curve and overlay the diagonal line for random guessing
+plot(roc_result, main="ROC for Wine Quality")
+lines(x = c(0,1), y = c(0,1), col="red")
+##compute the AUC
+auc<-performance(rates, measure = "auc")
+auc@y.values
+##confusion matrix. Actual values in the rows, predicted classification in cols
+table(test$quality, preds>0.5)
+
+
+```
+
+
+```{r}
+##### PAVAN ###### Analysis: Predicting Wine Quality via Linear Model
+data <- read.csv("wineQuality.csv")
+data <- subset(data, select=-c(X))
+data$type <- factor(data$type,levels=c('white','red'))
+str(data)
+```
+```{r}
+for(i in 1:(ncol(data)-1)) {
+  boxplot(unlist(data[, i]) ~ unlist(data$type), levels=c("Red", "White"), col=c("violetred4", "honeydew"), xlab="Wine Type", ylab=colnames(data[i]))
+}
+```
+```{r}
+result<-glm(type ~ ., family="binomial", data=data)
+summary(result)
+```
+```{r}
+reduced <- glm(type ~ . - pH - fixed.acidity - quality, family="binomial", data=data)
+summary(reduced)
+1-pchisq(reduced$deviance-result$deviance,3)
+# should drop ph, fixed.acidity, quality
+```
+```{r}
+simple <- lm(quality ~ ., data=data)
+summary(simple)
+```
+```{r}
+plot(simple$fitted.values, simple$residuals)
+cor(simple$fitted.values, simple$residuals)
+```
+```{r}
+# Stepwise Regression
+step(simple, direction="backward")
+# drop citric acid
+```
+```{r}
+quality_reduced <- lm(formula = quality ~ fixed.acidity + volatile.acidity + residual.sugar + 
+    chlorides + free.sulfur.dioxide + total.sulfur.dioxide + 
+    density + pH + sulphates + alcohol + type, data = data)
+summary(quality_reduced)
+```
+```{r}
+cor(data[1:12]) # (density & alcohol), (free.sulfur.dioxide & total.sulfur.dioxide)
+```
+```{r}
+# Scatter plots to check possible multi-colinearity
+plot(free.sulfur.dioxide ~ total.sulfur.dioxide, data=data)
+abline(lm(free.sulfur.dioxide ~ total.sulfur.dioxide, data=data), lty=2, col="red")
+plot(density ~ alcohol, data=data)
+abline(lm(density ~ alcohol, data=data), lty=2, col="red")
+```
+```{r}
+# Low multiple r-squared
+complete <- lm(quality ~ .*., data=data)
+summary(complete)
+```
+```{r}
+# Low multiple r-squared
+step(lm(quality ~ 1, data=data), direction="forward", scope=formula(complete))
+```
+```{r}
+quality_step <- lm(formula = quality ~ alcohol + volatile.acidity + sulphates + 
+    residual.sugar + type + density + free.sulfur.dioxide + chlorides + 
+    pH + fixed.acidity + total.sulfur.dioxide + volatile.acidity:type + 
+    type:density + alcohol:volatile.acidity + density:free.sulfur.dioxide + 
+    alcohol:density + sulphates:residual.sugar + type:pH + sulphates:pH + 
+    residual.sugar:pH + pH:fixed.acidity + density:pH + free.sulfur.dioxide:fixed.acidity + 
+    free.sulfur.dioxide:total.sulfur.dioxide + type:total.sulfur.dioxide + 
+    sulphates:total.sulfur.dioxide + volatile.acidity:total.sulfur.dioxide + 
+    type:free.sulfur.dioxide + sulphates:free.sulfur.dioxide + 
+    sulphates:chlorides + alcohol:chlorides + residual.sugar:density + 
+    residual.sugar:chlorides + free.sulfur.dioxide:pH + chlorides:pH + 
+    chlorides:fixed.acidity + density:chlorides + sulphates:fixed.acidity + 
+    alcohol:residual.sugar + alcohol:type + residual.sugar:total.sulfur.dioxide + 
+    volatile.acidity:pH, data = data)
+summary(quality_step)
+```
+```{r}
+# Root-Mean Squared Error
+RMSE = function(m, o){
+  round(sqrt(mean((m - o)^2)), 4)
+}
+# Cross Validation
+cross_validation <- function(df, n) {
+  shuff_df <- df[sample(nrow(df)), ]
+  RMSE_simp <- c()
+  RMSE_full <- c()
+  RMSE_step <- c()
+  RMSE_full_log <- c()
+  RMSE_red_log <- c()
+  for(i in 1:n) {
+    # print(paste0("Iteration: ", i))
+    block <- floor(nrow(df))/n
+    range <- ((i-1)*block+1):(i*block)
+    test_data <- shuff_df[range, ]
+    train_data <- shuff_df[-range, ]
+    
+    # Simple Linear Regression Model
+    simp_mod <- lm(quality ~ ., data=train_data)
+    
+    # Complete Linear Regression Model
+    full_mod <- lm(quality ~ .*., data=train_data)
+    
+    # Stepwise Linear Regression Model
+    step_mod <- lm(formula = quality ~ alcohol + volatile.acidity + sulphates + 
+                    residual.sugar + type + density + free.sulfur.dioxide + chlorides + 
+                    pH + fixed.acidity + total.sulfur.dioxide + volatile.acidity:type + 
+                    type:density + alcohol:volatile.acidity + density:free.sulfur.dioxide + 
+                    alcohol:density + sulphates:residual.sugar + type:pH + sulphates:pH + 
+                    residual.sugar:pH + pH:fixed.acidity + density:pH + free.sulfur.dioxide:fixed.acidity + 
+                    free.sulfur.dioxide:total.sulfur.dioxide + type:total.sulfur.dioxide + 
+                    sulphates:total.sulfur.dioxide + volatile.acidity:total.sulfur.dioxide + 
+                    type:free.sulfur.dioxide + sulphates:free.sulfur.dioxide + 
+                    sulphates:chlorides + alcohol:chlorides + residual.sugar:density + 
+                    residual.sugar:chlorides + free.sulfur.dioxide:pH + chlorides:pH + 
+                    chlorides:fixed.acidity + density:chlorides + sulphates:fixed.acidity + 
+                    alcohol:residual.sugar + alcohol:type + residual.sugar:total.sulfur.dioxide + 
+                    volatile.acidity:pH, data=train_data)
+    
+    # # Complete Logistic Regression Model
+    # full_log <- glm(type ~ ., family="binomial", data=train_data)
+    # 
+    # # Reduced Logisitic Regression Model
+    # red_log <-  glm(type ~ . - pH - fixed.acidity - quality, family="binomial", data=train_data)
+    
+    RMSE_simp <- c(RMSE_simp, RMSE(predict(simp_mod, newdata=test_data), test_data$quality))
+    RMSE_full <- c(RMSE_full, RMSE(predict(full_mod, newdata=test_data), test_data$quality))
+    RMSE_step <- c(RMSE_step, RMSE(predict(step_mod, newdata=test_data), test_data$quality))
+    # RMSE_full_log <- c(RMSE_simp_sqrt_mod.wt, RMSE(predict(full_log, newdata=test_data), test_data$type))
+    # RMSE_red_log <- c(RMSE_full_sqrt_mod.wt, RMSE(predict(red_log, newdata=test_data), test_data$type))
+  }
+  print(paste0("Average RMSE per Model for ", n, "-Fold Cross Validation"))
+  print(paste0("Simple Linear Regression Model:   ", mean(RMSE_simp)))
+  print(paste0("Complete Linear Regression Model: ", mean(RMSE_full)))
+  print(paste0("Stepwise Linear Regression Model: ", mean(RMSE_step)))
+}
+cross_validation(data, nrow(data)-1)
+```
+
+```{r}
+
+# Cross Validation
+library(ROCR)
+```
+```{r}
+data <- read.csv("wineQuality.csv")
+data <- subset(data, select=-c(X))
+data$type <- factor(data$type,levels=c('white','red'))
+str(data)
+```
+```{r}
+for(i in 1:(ncol(data)-1)) {
+  boxplot(unlist(data[, i]) ~ unlist(data$type), levels=c("Red", "White"), col=c("violetred4", "honeydew"), xlab="Wine Type", ylab=colnames(data[i]))
+}
+```
+```{r}
+result<-glm(type ~ ., family="binomial", data=data)
+summary(result)
+```
+```{r}
+reduced <- glm(type ~ . - pH - fixed.acidity - quality, family="binomial", data=data)
+summary(reduced)
+1-pchisq(reduced$deviance-result$deviance,3)
+# should drop ph, fixed.acidity, quality
+```
+```{r}
+simple <- lm(quality ~ ., data=data)
+summary(simple)
+```
+```{r}
+```
+```{r}
+plot(simple$fitted.values, simple$residuals)
+cor(simple$fitted.values, simple$residuals)
+```
+```{r}
+# Stepwise Regression
+step(simple, direction="backward")
+# drop citric acid
+```
+```{r}
+quality_reduced <- lm(formula = quality ~ fixed.acidity + volatile.acidity + residual.sugar + 
+    chlorides + free.sulfur.dioxide + total.sulfur.dioxide + 
+    density + pH + sulphates + alcohol + type, data = data)
+summary(quality_reduced)
+```
+```{r}
+cor(data[1:12]) # (density & alcohol), (free.sulfur.dioxide & total.sulfur.dioxide)
+```
+```{r}
+# Scatter plots to check possible multi-colinearity
+plot(free.sulfur.dioxide ~ total.sulfur.dioxide, data=data)
+abline(lm(free.sulfur.dioxide ~ total.sulfur.dioxide, data=data), lty=2, col="red")
+plot(density ~ alcohol, data=data)
+abline(lm(density ~ alcohol, data=data), lty=2, col="red")
+```
+```{r}
+# Low multiple r-squared
+complete <- lm(quality ~ .*., data=data)
+summary(complete)
+```
+```{r}
+# Low multiple r-squared
+# step(lm(quality ~ 1, data=data), direction="forward", scope=formula(complete))
+```
+```{r}
+quality_step <- lm(formula = quality ~ alcohol + volatile.acidity + sulphates + 
+    residual.sugar + type + density + free.sulfur.dioxide + chlorides + 
+    pH + fixed.acidity + total.sulfur.dioxide + volatile.acidity:type + 
+    type:density + alcohol:volatile.acidity + density:free.sulfur.dioxide + 
+    alcohol:density + sulphates:residual.sugar + type:pH + sulphates:pH + 
+    residual.sugar:pH + pH:fixed.acidity + density:pH + free.sulfur.dioxide:fixed.acidity + 
+    free.sulfur.dioxide:total.sulfur.dioxide + type:total.sulfur.dioxide + 
+    sulphates:total.sulfur.dioxide + volatile.acidity:total.sulfur.dioxide + 
+    type:free.sulfur.dioxide + sulphates:free.sulfur.dioxide + 
+    sulphates:chlorides + alcohol:chlorides + residual.sugar:density + 
+    residual.sugar:chlorides + free.sulfur.dioxide:pH + chlorides:pH + 
+    chlorides:fixed.acidity + density:chlorides + sulphates:fixed.acidity + 
+    alcohol:residual.sugar + alcohol:type + residual.sugar:total.sulfur.dioxide + 
+    volatile.acidity:pH, data = data)
+summary(quality_step)
+```
+
+```{r}
+# Root-Mean Squared Error
+RMSE = function(m, o){
+  round(sqrt(mean((m - o)^2)), 4)
+}
+
+# Cross Validation
+cross_validation <- function(df, n) {
+  output_df <- setNames(data.frame(matrix(ncol=18, nrow=0)), c("quality_first_order_linear", 
+                                                               "quality_reduced_linear",
+                                                               "quality_reduced_transformed_linear",
+                                                               "quality_complete_interaction_linear",
+                                                               "quality_transformed_interaction_linear",
+                                                               "quality_reduced_transformed_interaction_linear",
+                                                               "alcohol_first_order_linear",
+                                                               "alcohol_reduced_transformed_linear",
+                                                               "alcohol_complete_interaction_linear",
+                                                               "alcohol_reduced_transformed_interaction_linear",
+                                                               "type_full_logistic_acc",
+                                                               "type_full_logistic_auc",
+                                                               "type_reduced_logistic_acc",
+                                                               "type_reduced_logistic_auc",
+                                                               "quality_full_logistic_acc",
+                                                               "quality_full_logistic_auc",
+                                                               "quality_red_logistic_acc",
+                                                               "quality_red_logistic_auc"))
+  
+  # Shuffle entire data set
+  set.seed(8072020)
+  shuff_df <- df[sample(nrow(df)), ]
+  
+  for(i in 1:n) {
+    # print(paste0("Iteration: ", i))
+    block <- floor(nrow(df))/n
+    range <- ((i-1)*block+1):(i*block)
+    test_data <- shuff_df[range, ]
+    train_data <- shuff_df[-range, ]
+    reduced_train_data <- subset(train_data, select=-c(pH, total.sulfur.dioxide, citric.acid, density))
+    
+    # First Order Linear Regression Model (Quality)
+    first_mod <- lm(quality ~ ., data=train_data)
+    
+    # Reduced Linear Regression Model (Quality)
+    red_mod <- lm(quality ~ ., data=reduced_train_data)
+    
+    # Reduced Transformed Linear Regression Model (Quality)
+    trans_mod <- lm(quality^(3/4) ~ ., data=reduced_train_data)
+    
+    # Complete Interaction Linear Regression Model (Quality)
+    full_mod <- lm(quality ~ .*., data=reduced_train_data)
+    
+    # Transformed Interaction Linear Regression Model (Quality)
+    full_trans_mod <- lm(quality^(3/4) ~ .*., data=reduced_train_data)
+    
+    # Reduced Transformed Interaction Linear Regression Model (Quality)
+    step_mod <- lm(quality^(3/4) ~ fixed.acidity + volatile.acidity + residual.sugar + 
+                    chlorides + free.sulfur.dioxide + sulphates + alcohol + type + 
+                    fixed.acidity:residual.sugar + fixed.acidity:chlorides + 
+                    fixed.acidity:free.sulfur.dioxide + fixed.acidity:type + 
+                    volatile.acidity:free.sulfur.dioxide + volatile.acidity:alcohol + 
+                    volatile.acidity:type + residual.sugar:chlorides + residual.sugar:free.sulfur.dioxide + 
+                    residual.sugar:sulphates + residual.sugar:alcohol + chlorides:sulphates + 
+                    chlorides:alcohol + chlorides:type + free.sulfur.dioxide:alcohol + 
+                    free.sulfur.dioxide:type + sulphates:type, data=reduced_train_data)
+    
+    # RMSE for Linear Regression Models (Quality)
+    quality_first_RMSE <- RMSE(predict(first_mod, newdata=test_data), test_data$quality)
+    quality_reduced_RMSE <- RMSE(predict(red_mod, newdata=test_data), test_data$quality)
+    quality_transformed_RMSE <- RMSE(predict(trans_mod, newdata=test_data)^(4/3), test_data$quality)
+    quality_full_RMSE <- RMSE(predict(full_mod, newdata=test_data), test_data$quality)
+    quality_full_transformed_RMSE <- RMSE(predict(full_trans_mod, newdata=test_data)^(4/3), test_data$quality)
+    quality_step_RMSE <- RMSE(predict(step_mod, newdata=test_data)^(4/3), test_data$quality)
+    
+    reduced_train_data <- subset(train_data, select=-c(total.sulfur.dioxide))
+    
+    # First Order Linear Regression Model (Alcohol)
+    first_mod <- lm(alcohol ~ ., data=train_data)
+    
+    # Reduced Transformed Linear Regression Model (Alcohol)
+    trans_mod <- lm(alcohol^(-0.5) ~ ., data=reduced_train_data)
+    
+    # Complete Interaction Linear Regression Model (Alcohol)
+    full_mod <- lm(alcohol ~ .*., data=reduced_train_data)
+    
+    # Reduced Transformed Interaction Linear Regression Model (Alcohol)
+    step_mod <- lm(alcohol^(-0.5) ~ fixed.acidity + volatile.acidity + 
+                    citric.acid + residual.sugar + chlorides + free.sulfur.dioxide + 
+                    density + pH + sulphates + quality + type + fixed.acidity:volatile.acidity + 
+                    fixed.acidity:residual.sugar + fixed.acidity:chlorides + 
+                    fixed.acidity:density + fixed.acidity:sulphates + fixed.acidity:type + 
+                    volatile.acidity:citric.acid + volatile.acidity:chlorides + 
+                    volatile.acidity:free.sulfur.dioxide + volatile.acidity:density + 
+                    volatile.acidity:pH + volatile.acidity:sulphates + volatile.acidity:quality + 
+                    volatile.acidity:type + citric.acid:residual.sugar + citric.acid:chlorides + 
+                    citric.acid:free.sulfur.dioxide + citric.acid:density + citric.acid:sulphates + 
+                    citric.acid:quality + citric.acid:type + residual.sugar:free.sulfur.dioxide + 
+                    residual.sugar:density + residual.sugar:pH + residual.sugar:sulphates + 
+                    residual.sugar:quality + residual.sugar:type + chlorides:sulphates + 
+                    chlorides:quality + free.sulfur.dioxide:density + free.sulfur.dioxide:pH + 
+                    free.sulfur.dioxide:quality + free.sulfur.dioxide:type + 
+                    density:pH + density:sulphates + density:type + pH:type + 
+                    sulphates:quality + quality:type, data=reduced_train_data)
+    
+    # RMSE for Linear Regression Models (Alcohol)
+    alcohol_first_RMSE <- RMSE(predict(first_mod, newdata=test_data), test_data$alcohol)
+    alcohol_trans_RMSE <- RMSE(predict(trans_mod, newdata=test_data)^(-2), test_data$alcohol)
+    alcohol_full_RMSE <- RMSE(predict(full_mod, newdata=test_data), test_data$alcohol)
+    alcohol_step_RMSE <- RMSE(predict(step_mod, newdata=test_data)^(-2), test_data$alcohol)
+    
+    # Complete Logistic Regression Model (Type)
+    full_log <- glm(type ~ ., family="binomial", data=train_data)
+
+    # Reduced Logistic Regression Model (Type)
+    red_log <-  glm(type ~ . - pH - fixed.acidity - quality, family="binomial", data=train_data)
+    
+    # Accuracy and AUC for Full Logistic Regression Models (Type)
+    preds <- predict(full_log, newdata=test_data, type="response")
+    tbl <- table(test_data$type, preds>0.5)
+    type_full_log_acc <- round(1-(data.frame(tbl)$Freq[2]+data.frame(tbl)$Freq[3])/sum(data.frame(tbl)$Freq), 4)
+    type_full_log_auc <- round(performance(prediction(preds, test_data$type, label.ordering = c('white','red')), 
+                                           measure="auc")@y.values[[1]], 4)
+    
+    # Accuracy and AUC for Reduced Logistic Regression Models (Type)
+    preds <- predict(red_log, newdata=test_data, type="response")
+    tbl <- table(test_data$type, predict(red_log, newdata=test_data, type="response")>0.5)
+    type_red_log_acc <- round(1-(data.frame(tbl)$Freq[2]+data.frame(tbl)$Freq[3])/sum(data.frame(tbl)$Freq), 4)
+    type_red_log_auc <- round(performance(prediction(preds, test_data$type, label.ordering = c('white','red')), 
+                                          measure="auc")@y.values[[1]], 4)
+    
+    # Complete Logistic Regression Model (Quality)
+    train_data$quality <- cut(train_data$quality, breaks = c(1, 5, 10), labels = c("Low", "High"))
+    test_data$quality <- cut(test_data$quality, breaks = c(1, 5, 10), labels = c("Low", "High"))
+    full_log <- glm(quality ~ ., family="binomial", data=train_data)
+
+    # Reduced Logistic Regression Model (Quality)
+    red_log <-  glm(quality ~ . - chlorides, family="binomial", data=train_data)
+    
+    # Accuracy and AUC for Full Logistic Regression Models (Quality)
+    preds <- predict(full_log, newdata=test_data, type="response")
+    tbl <- table(test_data$quality, preds>0.5)
+    quality_full_log_acc <- round(1-(data.frame(tbl)$Freq[2]+data.frame(tbl)$Freq[3])/sum(data.frame(tbl)$Freq), 4)
+    quality_full_log_auc <- round(performance(prediction(preds, test_data$quality, label.ordering = c('Low','High')),
+                                              measure="auc")@y.values[[1]], 4)
+    
+    # Accuracy and AUC for Reduced Logistic Regression Models (Quality)
+    preds <- predict(red_log, newdata=test_data, type="response")
+    tbl <- table(test_data$quality, predict(red_log, newdata=test_data, type="response")>0.5)
+    quality_red_log_acc <- round(1-(data.frame(tbl)$Freq[2]+data.frame(tbl)$Freq[3])/sum(data.frame(tbl)$Freq), 4)
+    quality_red_log_auc <- round(performance(prediction(preds, test_data$quality, label.ordering = c("Low", "High")),
+                                             measure="auc")@y.values[[1]], 4)
+    
+    output_df[nrow(output_df)+1,] <- c(quality_first_RMSE,
+                                       quality_reduced_RMSE,
+                                       quality_transformed_RMSE,
+                                       quality_full_RMSE,
+                                       quality_full_transformed_RMSE,
+                                       quality_step_RMSE,
+                                       alcohol_first_RMSE,
+                                       alcohol_trans_RMSE,
+                                       alcohol_full_RMSE,
+                                       alcohol_step_RMSE,
+                                       type_full_log_acc,
+                                       type_full_log_auc,
+                                       type_red_log_acc,
+                                       type_red_log_auc,
+                                       quality_full_log_acc,
+                                       quality_full_log_auc,
+                                       quality_red_log_acc,
+                                       quality_red_log_auc)
+  }
+  return(output_df)
+}
+n <- 10
+output_df <- cross_validation(data, n)
+print(paste0("=========== Average RMSE per Linear Model (Quality) for ", n, "-Fold Cross Validation ==================="))
+print(paste0("                     First Order Linear Regression Model: ", mean(output_df$quality_first_order_linear)))
+print(paste0("                         Reduced Linear Regression Model: ", mean(output_df$quality_reduced_linear)))
+print(paste0("             Reduced Transformed Linear Regression Model: ", mean(output_df$quality_reduced_transformed_linear)))
+print(paste0("            Complete Interaction Linear Regression Model: ", mean(output_df$quality_complete_interaction_linear)))
+print(paste0("         Transformed Interaction Linear Regression Model: ", mean(output_df$quality_transformed_interaction_linear)))
+print(paste0(" Reduced Transformed Interaction Linear Regression Model: ", mean(output_df$quality_reduced_transformed_interaction_linear)))
+print("----------------------------------------------------------------------------------------------------")
+print(paste0("=========== Average RMSE per Linear Model (Alcohol) for ", n, "-Fold Cross Validation ==================="))
+print(paste0("                     First Order Linear Regression Model: ", mean(output_df$alcohol_first_order_linear)))
+print(paste0("             Reduced Transformed Linear Regression Model: ", mean(output_df$alcohol_reduced_transformed_linear)))
+print(paste0("            Complete Interaction Linear Regression Model: ", mean(output_df$alcohol_complete_interaction_linear)))
+print(paste0(" Reduced Transformed Interaction Linear Regression Model: ", mean(output_df$alcohol_reduced_transformed_interaction_linear)))
+print("----------------------------------------------------------------------------------------------------")
+print(paste0("=========== Average Accuracy per Logistic Model (Wine Type) for ", n, "-Fold Cross Validation ==========="))
+print(paste0("                      Complete Logistic Regression Model: ", mean(output_df$type_full_logistic_acc)))
+print(paste0("                       Reduced Logistic Regression Model: ", mean(output_df$type_reduced_logistic_acc)))
+print("----------------------------------------------------------------------------------------------------")
+print(paste0("=========== Average AUC per Logistic Model (Wine Type) for ", n, "-Fold Cross Validation ================"))
+print(paste0("                      Complete Logistic Regression Model: ", mean(output_df$type_full_logistic_auc)))
+print(paste0("                       Reduced Logistic Regression Model: ", mean(output_df$type_reduced_logistic_auc)))
+print("----------------------------------------------------------------------------------------------------")
+print(paste0("=========== Average Accuracy per Logistic Model (Quality) for ", n, "-Fold Cross Validation ============="))
+print(paste0("                      Complete Logistic Regression Model: ", mean(output_df$quality_full_logistic_acc)))
+print(paste0("                       Reduced Logistic Regression Model: ", mean(output_df$quality_red_logistic_acc)))
+print("----------------------------------------------------------------------------------------------------")
+print(paste0("=========== Average AUC per Logistic Model (Quality) for ", n, "-Fold Cross Validation =================="))
+print(paste0("                      Complete Logistic Regression Model: ", mean(output_df$quality_full_logistic_auc)))
+print(paste0("                       Reduced Logistic Regression Model: ", mean(output_df$quality_red_logistic_auc)))
+```
+
+
+
+
+
