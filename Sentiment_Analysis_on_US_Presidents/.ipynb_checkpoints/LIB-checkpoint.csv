@@ -1,0 +1,1045 @@
+speech_id,president,speech_title,src_file
+Trump_2016_07_22,trump,"Donald Trump, Republican presidential candidate, delivers remarks to volunteers at the Republican National Convention",./Total_Corpus of Presidential Speeches/Trump_2016-07-22.txt
+Trump_2016_07_25,trump,"Donald Trump, Republican presidential candidate, and Gov. Mike Pence, Republican vice presidential candidate, hold a townhall meeting",./Total_Corpus of Presidential Speeches/Trump_2016-07-25.txt
+Trump_2016_07_26,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at the VFW Convention",./Total_Corpus of Presidential Speeches/Trump_2016-07-26.txt
+Trump_2016_07_27_A,trump,"Donald Trump, Republican presidential candidate, holds a news conference",./Total_Corpus of Presidential Speeches/Trump_2016-07-27-A.txt
+Trump_2016_07_27_B,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event",./Total_Corpus of Presidential Speeches/Trump_2016-07-27-B.txt
+Trump_2016_08_01,trump,"Donald Trump, Republican presidential candidate, deliver remarks at a campaign event",./Total_Corpus of Presidential Speeches/Trump_2016-08-01.txt
+Trump_2016_08_02,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Ashburn, Virginia",./Total_Corpus of Presidential Speeches/Trump_2016-08-02.txt
+Trump_2016_08_04,trump,"Donald Trump, Republican Presidential Candidate, holds a campaign rally in Maine",./Total_Corpus of Presidential Speeches/Trump_2016-08-04.txt
+Trump_2016_08_05,trump,"Donald Trump holds a campaign rally in Green Bay, WI (24)",./Total_Corpus of Presidential Speeches/Trump_2016-08-05.txt
+Trump_2016_08_08,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at the Detroit Economic Club",./Total_Corpus of Presidential Speeches/Trump_2016-08-08.txt
+Trump_2016_08_10,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks in Abingdon, Virginia",./Total_Corpus of Presidential Speeches/Trump_2016-08-10.txt
+Trump_2016_08_12_A,trump,"Donald Trump, Republican Presidential Candidate, holds a campaign rally in Altoona, PA (24)",./Total_Corpus of Presidential Speeches/Trump_2016-08-12-A.txt
+Trump_2016_08_12_B,trump,"Donald Trump, Republican Presidential Candidate, holds a campaign rally in Erie, PA (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-08-12-B.txt
+Trump_2016_08_15,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks in Youngstown, OH (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-08-15.txt
+Trump_2016_08_16,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in West Bend, WI (24)",./Total_Corpus of Presidential Speeches/Trump_2016-08-16.txt
+Trump_2016_08_17,trump,"Donald Trump, Republican Presidential Candidate, participates in a Fox News townhall event",./Total_Corpus of Presidential Speeches/Trump_2016-08-17.txt
+Trump_2016_08_18,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Charlotte, North Carolina",./Total_Corpus of Presidential Speeches/Trump_2016-08-18.txt
+Trump_2016_08_19,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Dimondale, MI.",./Total_Corpus of Presidential Speeches/Trump_2016-08-19.txt
+Trump_2016_08_22,trump,"Donald Trump, Republican Presidential Candidate, Delivers Remarks At A Campaign Event",./Total_Corpus of Presidential Speeches/Trump_2016-08-22.txt
+Trump_2016_08_23,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Austin, Texas",./Total_Corpus of Presidential Speeches/Trump_2016-08-23.txt
+Trump_2016_08_24_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Tampa, Florida (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-08-24-A.txt
+Trump_2016_08_24_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Jackson, Mississippi (24)",./Total_Corpus of Presidential Speeches/Trump_2016-08-24-B.txt
+Trump_2016_08_25,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Manchester, New Hampshire (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-08-25.txt
+Trump_2016_08_30,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Everett, Washington (24)",./Total_Corpus of Presidential Speeches/Trump_2016-08-30.txt
+Trump_2016_08_31,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Phoenix, Arizona (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-08-31.txt
+Trump_2016_09_01_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Wilmington, Ohio (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-09-01-A.txt
+Trump_2016_09_01_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at the American Legion National Convention (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-09-01-B.txt
+Trump_2016_09_06_A,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event",./Total_Corpus of Presidential Speeches/Trump_2016-09-06-A.txt
+Trump_2016_09_06_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Greenville, North Carolina (24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-06-B.txt
+Trump_2016_09_07_A,trump,"Donald Trump, Republican Presidential Candidate, Delivers Remarks at the Union League of Philadelphia",./Total_Corpus of Presidential Speeches/Trump_2016-09-07-A.txt
+Trump_2016_09_07_B,trump,"Donald Trump, Republican presidential candidate, delivers remarks at the New York state Conservative Party presidential convention",./Total_Corpus of Presidential Speeches/Trump_2016-09-07-B.txt
+Trump_2016_09_08,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Cleveland, Ohio",./Total_Corpus of Presidential Speeches/Trump_2016-09-08.txt
+Trump_2016_09_09_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at the Values Voters Summit (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-09-09-A.txt
+Trump_2016_09_09_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Pensacola, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-09-B.txt
+Trump_2016_09_09,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at the Values Voters Summit (SD)",./Total_Corpus of Presidential Speeches/Trump_2016-09-09.txt
+Trump_2016_09_12_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Asheville, North Carolina (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-12-A.txt
+Trump_2016_09_12_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Baltimore, Maryland (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-12-B.txt
+Trump_2016_09_13_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Des Moines, Iowa (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-13-A.txt
+Trump_2016_09_13_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Asheville, North Carolina (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-13-B.txt
+Trump_2016_09_13,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Des Moines, Iowa (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-13.txt
+Trump_2016_09_16,trump,"Donald Trump, GOP Presidential Candidate, Remarks at Campaign Event in Miami, Florida",./Total_Corpus of Presidential Speeches/Trump_2016-09-16.txt
+Trump_2016_09_17,trump,"Remarks at Campaign Event in Houston, TX",./Total_Corpus of Presidential Speeches/Trump_2016-09-17.txt
+Trump_2016_09_29,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Bedford, New Hampshire",./Total_Corpus of Presidential Speeches/Trump_2016-09-29.txt
+Trump_2016_09_30,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Novi, Michigan (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-09-30.txt
+Trump_2016_10_03_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at Retired American Warriors PAC",./Total_Corpus of Presidential Speeches/Trump_2016-10-03-A.txt
+Trump_2016_10_03_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event, Pueblo, Colorado",./Total_Corpus of Presidential Speeches/Trump_2016-10-03-B.txt
+Trump_2016_10_05,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Henderson, Nevada (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-05.txt
+Trump_2016_10_06,trump,"Donald Trump, Republican presidential candidate, holds a townhall meeting, Sandown, New Hampshire",./Total_Corpus of Presidential Speeches/Trump_2016-10-06.txt
+Trump_2016_10_10_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Ambridge, Pennsylvania (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-10-A.txt
+Trump_2016_10_10_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Wilkes - Barre, Pennsylvania (24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-10-B.txt
+Trump_2016_10_11,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Panama City, Florida (24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-11.txt
+Trump_2016_10_12,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Lakeland, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-12.txt
+Trump_2016_10_13,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in West Palm Beach, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-13.txt
+Trump_2016_10_14_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Greensboro, North Carolina (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-14-A.txt
+Trump_2016_10_14_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Charlotte, North Carolina (24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-14-B.txt
+Trump_2016_10_17,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Green Bay, Wisconsin (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-17.txt
+Trump_2016_10_18,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Grand Junction, Colorado (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-18.txt
+Trump_2016_10_21_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Newtown, Pennsylvania (24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-21-A.txt
+Trump_2016_10_21_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Fletcher, North Carolina (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-21-B.txt
+Trump_2016_10_21_C,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Johnstown, Pennsylvania (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-21-C.txt
+Trump_2016_10_27,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Springfield, Ohio (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-27.txt
+Trump_2016_10_28,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Manchester, New Hampshire (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-10-28.txt
+Trump_2016_10_31,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Grand Rapids, Michigan",./Total_Corpus of Presidential Speeches/Trump_2016-10-31.txt
+Trump_2016_11_01_A,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event, Eau Claire, Wisconsin",./Total_Corpus of Presidential Speeches/Trump_2016-11-01-A.txt
+Trump_2016_11_01_B,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event, Valley Forge, Pennsylvania",./Total_Corpus of Presidential Speeches/Trump_2016-11-01-B.txt
+Trump_2016_11_02_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Miami, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-02-A.txt
+Trump_2016_11_02_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Pensacola, Florida (24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-02-B.txt
+Trump_2016_11_02_C,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Orlando, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-02-C.txt
+Trump_2016_11_03_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Jacksonville, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-03-A.txt
+Trump_2016_11_03_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Concord, North Carolina (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-03-B.txt
+Trump_2016_11_04_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Atkinson, New Hampshire (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-04-A.txt
+Trump_2016_11_04_B,trump,"Donald Trump, Republican Presidential Candidate, deliver remarks at a campaign event in Hershey, Pennsylvania (24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-04-B.txt
+Trump_2016_11_04_C,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Wilmington, Ohio (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-04-C.txt
+Trump_2016_11_05_A,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Tampa, Florida (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-05-A.txt
+Trump_2016_11_05_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Reno, Nevada (24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-05-B.txt
+Trump_2016_11_06,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Sioux City, Iowa (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-06.txt
+Trump_2016_11_07_A,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event, Sarasota, Florida",./Total_Corpus of Presidential Speeches/Trump_2016-11-07-A.txt
+Trump_2016_11_07_B,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Raleigh, North Carolina (SD/24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-07-B.txt
+Trump_2016_11_07_C,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event, Scranton, Pennsylvania",./Total_Corpus of Presidential Speeches/Trump_2016-11-07-C.txt
+Trump_2016_11_07_D,trump,"Donald Trump, Republican Presidential Candidate, delivers remarks at a campaign event in Manchester, New Hampshire (24)",./Total_Corpus of Presidential Speeches/Trump_2016-11-07-D.txt
+Trump_2016_11_08,trump,"Donald Trump, Republican presidential candidate, delivers remarks at a campaign event, Grand Rapids, Michigan",./Total_Corpus of Presidential Speeches/Trump_2016-11-08.txt
+Trump_2016_11_09,trump,"Donald Trump, Republican presidential candidate, delivers remarks following election results, New York City",./Total_Corpus of Presidential Speeches/Trump_2016-11-09.txt
+adams_speeches_000,adams,Special Session Message to Congress,./Total_Corpus of Presidential Speeches/adams_speeches_000.txt
+adams_speeches_001,adams,Inaugural Address,./Total_Corpus of Presidential Speeches/adams_speeches_001.txt
+adams_speeches_002,adams,Second Annual Message,./Total_Corpus of Presidential Speeches/adams_speeches_002.txt
+adams_speeches_003,adams,"Proclamation of Day of Fasting, Humiliation and Prayer",./Total_Corpus of Presidential Speeches/adams_speeches_003.txt
+adams_speeches_004,adams,Third Annual Message,./Total_Corpus of Presidential Speeches/adams_speeches_004.txt
+adams_speeches_005,adams,First Annual Message,./Total_Corpus of Presidential Speeches/adams_speeches_005.txt
+adams_speeches_006,adams,Death of George Washington ,./Total_Corpus of Presidential Speeches/adams_speeches_006.txt
+adams_speeches_007,adams,Proclamation of Pardons to Those Engaged in Fries Rebellion ,./Total_Corpus of Presidential Speeches/adams_speeches_007.txt
+adams_speeches_008,adams,Fourth Annual Message ,./Total_Corpus of Presidential Speeches/adams_speeches_008.txt
+arthur_speeches_000,arthur,Veto of the Chinese Exclusion Act,./Total_Corpus of Presidential Speeches/arthur_speeches_000.txt
+arthur_speeches_001,arthur,Address Upon Assuming the Office of the President,./Total_Corpus of Presidential Speeches/arthur_speeches_001.txt
+arthur_speeches_002,arthur,First Annual Message,./Total_Corpus of Presidential Speeches/arthur_speeches_002.txt
+arthur_speeches_003,arthur,Veto of Safety Regulations Bill,./Total_Corpus of Presidential Speeches/arthur_speeches_003.txt
+arthur_speeches_004,arthur,Veto of River and Harbors Act,./Total_Corpus of Presidential Speeches/arthur_speeches_004.txt
+arthur_speeches_005,arthur,Message Regarding Congress of American Countries,./Total_Corpus of Presidential Speeches/arthur_speeches_005.txt
+arthur_speeches_006,arthur,Second Annual Message,./Total_Corpus of Presidential Speeches/arthur_speeches_006.txt
+arthur_speeches_007,arthur,Fourth Annual Message,./Total_Corpus of Presidential Speeches/arthur_speeches_007.txt
+arthur_speeches_008,arthur,Third Annual Message,./Total_Corpus of Presidential Speeches/arthur_speeches_008.txt
+arthur_speeches_009,arthur,Message Regarding Settlement on Indian Territory,./Total_Corpus of Presidential Speeches/arthur_speeches_009.txt
+arthur_speeches_010,arthur,Message Regarding Central American Canal,./Total_Corpus of Presidential Speeches/arthur_speeches_010.txt
+bharrison_speeches_000,bharrison,First Annual Message,./Total_Corpus of Presidential Speeches/bharrison_speeches_000.txt
+bharrison_speeches_001,bharrison,Statement on the Johnstown Flood,./Total_Corpus of Presidential Speeches/bharrison_speeches_001.txt
+bharrison_speeches_002,bharrison,Commemoration of the Centennial of Washington’s Inauguration,./Total_Corpus of Presidential Speeches/bharrison_speeches_002.txt
+bharrison_speeches_003,bharrison,Inaugural Address,./Total_Corpus of Presidential Speeches/bharrison_speeches_003.txt
+bharrison_speeches_004,bharrison,Address Honoring President Garfield,./Total_Corpus of Presidential Speeches/bharrison_speeches_004.txt
+bharrison_speeches_005,bharrison,Statement at the International American Conference,./Total_Corpus of Presidential Speeches/bharrison_speeches_005.txt
+bharrison_speeches_006,bharrison,Message Regarding the International American Conference,./Total_Corpus of Presidential Speeches/bharrison_speeches_006.txt
+bharrison_speeches_007,bharrison,Proclamation Regarding Indian Title to Land,./Total_Corpus of Presidential Speeches/bharrison_speeches_007.txt
+bharrison_speeches_008,bharrison,Message Regarding Death of Treasury Secretary,./Total_Corpus of Presidential Speeches/bharrison_speeches_008.txt
+bharrison_speeches_009,bharrison,Second Annual Message,./Total_Corpus of Presidential Speeches/bharrison_speeches_009.txt
+bharrison_speeches_010,bharrison,Third Annual Message,./Total_Corpus of Presidential Speeches/bharrison_speeches_010.txt
+bharrison_speeches_011,bharrison,Message Regarding Valparaiso Incident,./Total_Corpus of Presidential Speeches/bharrison_speeches_011.txt
+bharrison_speeches_012,bharrison,Message Regarding US - Chilean Affairs,./Total_Corpus of Presidential Speeches/bharrison_speeches_012.txt
+bharrison_speeches_013,bharrison,Speech Accepting the Republican Nomination,./Total_Corpus of Presidential Speeches/bharrison_speeches_013.txt
+bharrison_speeches_014,bharrison,Fourth Annual Message,./Total_Corpus of Presidential Speeches/bharrison_speeches_014.txt
+bharrison_speeches_015,bharrison,Message Regarding Hawaiian Annexation,./Total_Corpus of Presidential Speeches/bharrison_speeches_015.txt
+buchanan_speeches_000,buchanan,Second Annual Message,./Total_Corpus of Presidential Speeches/buchanan_speeches_000.txt
+buchanan_speeches_001,buchanan,Inaugural Address,./Total_Corpus of Presidential Speeches/buchanan_speeches_001.txt
+buchanan_speeches_002,buchanan,First Annual Message,./Total_Corpus of Presidential Speeches/buchanan_speeches_002.txt
+buchanan_speeches_003,buchanan,Message to Congress Transmitting the Constitution of Kansas,./Total_Corpus of Presidential Speeches/buchanan_speeches_003.txt
+buchanan_speeches_004,buchanan,Protest of Congressional Investigations,./Total_Corpus of Presidential Speeches/buchanan_speeches_004.txt
+buchanan_speeches_005,buchanan,Special Message Regarding Transit Across Central America,./Total_Corpus of Presidential Speeches/buchanan_speeches_005.txt
+buchanan_speeches_006,buchanan,Veto Message Regarding Land - Grant Colleges,./Total_Corpus of Presidential Speeches/buchanan_speeches_006.txt
+buchanan_speeches_007,buchanan,Third Annual Message,./Total_Corpus of Presidential Speeches/buchanan_speeches_007.txt
+buchanan_speeches_008,buchanan,Message on the Capture of the Wildfire,./Total_Corpus of Presidential Speeches/buchanan_speeches_008.txt
+buchanan_speeches_009,buchanan,Addendum to March 28 Message to Congress,./Total_Corpus of Presidential Speeches/buchanan_speeches_009.txt
+buchanan_speeches_010,buchanan,Message on Threats to the Peace and Existence of the Union,./Total_Corpus of Presidential Speeches/buchanan_speeches_010.txt
+buchanan_speeches_011,buchanan,Fourth Annual Message,./Total_Corpus of Presidential Speeches/buchanan_speeches_011.txt
+buchanan_speeches_012,buchanan,"Message Regarding the Presence of Troops in Washington, DC",./Total_Corpus of Presidential Speeches/buchanan_speeches_012.txt
+buchanan_speeches_013,buchanan,Message on Resolutions of Virginia,./Total_Corpus of Presidential Speeches/buchanan_speeches_013.txt
+bush_speeches_000,bush,Debate with Michael Dukakis,./Total_Corpus of Presidential Speeches/bush_speeches_000.txt
+bush_speeches_001,bush,Inaugural Address,./Total_Corpus of Presidential Speeches/bush_speeches_001.txt
+bush_speeches_002,bush,Acceptance Speech at the Republican National Convention,./Total_Corpus of Presidential Speeches/bush_speeches_002.txt
+bush_speeches_003,bush,Address to the Nation on Panama,./Total_Corpus of Presidential Speeches/bush_speeches_003.txt
+bush_speeches_004,bush,Commencement Address at Texas A and M University,./Total_Corpus of Presidential Speeches/bush_speeches_004.txt
+bush_speeches_005,bush,Address Before a Joint Session of Congress,./Total_Corpus of Presidential Speeches/bush_speeches_005.txt
+bush_speeches_006,bush,State of the Union Address,./Total_Corpus of Presidential Speeches/bush_speeches_006.txt
+bush_speeches_007,bush,Remarks on the Signing of the Americans with Disabilities Act,./Total_Corpus of Presidential Speeches/bush_speeches_007.txt
+bush_speeches_008,bush,Address on Iraq's Invasion of Kuwait,./Total_Corpus of Presidential Speeches/bush_speeches_008.txt
+bush_speeches_009,bush,Address Before a Joint Session of Congress,./Total_Corpus of Presidential Speeches/bush_speeches_009.txt
+bush_speeches_010,bush,Address to the United Nations,./Total_Corpus of Presidential Speeches/bush_speeches_010.txt
+bush_speeches_011,bush,Address to the Nation on the Budget,./Total_Corpus of Presidential Speeches/bush_speeches_011.txt
+bush_speeches_012,bush,Address to the Nation on the Invasion of Iraq,./Total_Corpus of Presidential Speeches/bush_speeches_012.txt
+bush_speeches_013,bush,State of the Union Address,./Total_Corpus of Presidential Speeches/bush_speeches_013.txt
+bush_speeches_014,bush,Address on the End of the Gulf War,./Total_Corpus of Presidential Speeches/bush_speeches_014.txt
+bush_speeches_015,bush,Address Before a Joint Session of Congress on the End of the Gulf War,./Total_Corpus of Presidential Speeches/bush_speeches_015.txt
+bush_speeches_016,bush,Press Conference with Mikhail Gorbachev,./Total_Corpus of Presidential Speeches/bush_speeches_016.txt
+bush_speeches_017,bush,Republican National Convention,./Total_Corpus of Presidential Speeches/bush_speeches_017.txt
+bush_speeches_018,bush,State of the Union Address,./Total_Corpus of Presidential Speeches/bush_speeches_018.txt
+bush_speeches_019,bush,Debate with Bill Clinton and Ross Perot,./Total_Corpus of Presidential Speeches/bush_speeches_019.txt
+bush_speeches_020,bush,Address on Somalia,./Total_Corpus of Presidential Speeches/bush_speeches_020.txt
+bush_speeches_021,bush,Remarks at Texas A and M University,./Total_Corpus of Presidential Speeches/bush_speeches_021.txt
+bush_speeches_022,bush,Address at West Point,./Total_Corpus of Presidential Speeches/bush_speeches_022.txt
+carter_speeches_000,carter,Farewell Speech,./Total_Corpus of Presidential Speeches/carter_speeches_000.txt
+carter_speeches_001,carter,Debate with President Gerald Ford,./Total_Corpus of Presidential Speeches/carter_speeches_001.txt
+carter_speeches_002,carter,Debate with President Gerald Ford,./Total_Corpus of Presidential Speeches/carter_speeches_002.txt
+carter_speeches_003,carter,Debate with President Gerald Ford,./Total_Corpus of Presidential Speeches/carter_speeches_003.txt
+carter_speeches_004,carter,Inaugural Address,./Total_Corpus of Presidential Speeches/carter_speeches_004.txt
+carter_speeches_005,carter,Report to the American People on Energy,./Total_Corpus of Presidential Speeches/carter_speeches_005.txt
+carter_speeches_006,carter,Remarks at President Carter's Press Conference,./Total_Corpus of Presidential Speeches/carter_speeches_006.txt
+carter_speeches_007,carter,Address to the Nation on Energy,./Total_Corpus of Presidential Speeches/carter_speeches_007.txt
+carter_speeches_008,carter,University of Notre Dame Commencement,./Total_Corpus of Presidential Speeches/carter_speeches_008.txt
+carter_speeches_009,carter,Address to the Nation on Energy,./Total_Corpus of Presidential Speeches/carter_speeches_009.txt
+carter_speeches_010,carter,Statement on the Panama Canal Treaty Signing,./Total_Corpus of Presidential Speeches/carter_speeches_010.txt
+carter_speeches_011,carter,President Carter's Remarks on Joint Statement at Camp David Summit,./Total_Corpus of Presidential Speeches/carter_speeches_011.txt
+carter_speeches_012,carter,State of the Union Address,./Total_Corpus of Presidential Speeches/carter_speeches_012.txt
+carter_speeches_013,carter,Anti - Inflation Program Speech,./Total_Corpus of Presidential Speeches/carter_speeches_013.txt
+carter_speeches_014,carter,Speech on Establishing Diplomatic Relations with China,./Total_Corpus of Presidential Speeches/carter_speeches_014.txt
+carter_speeches_015,carter,State of the Union Address,./Total_Corpus of Presidential Speeches/carter_speeches_015.txt
+carter_speeches_016,carter,Crisis of Confidence Speech,./Total_Corpus of Presidential Speeches/carter_speeches_016.txt
+carter_speeches_017,carter,State of the Union Address,./Total_Corpus of Presidential Speeches/carter_speeches_017.txt
+carter_speeches_018,carter,Speech on Afghanistan,./Total_Corpus of Presidential Speeches/carter_speeches_018.txt
+carter_speeches_019,carter,Statement on the Iran Rescue Mission,./Total_Corpus of Presidential Speeches/carter_speeches_019.txt
+carter_speeches_020,carter,Acceptance Speech at the Democratic National Convention,./Total_Corpus of Presidential Speeches/carter_speeches_020.txt
+carter_speeches_021,carter,Debate with Ronald Reagan,./Total_Corpus of Presidential Speeches/carter_speeches_021.txt
+cleveland_speeches_000,cleveland,First Inaugural Address,./Total_Corpus of Presidential Speeches/cleveland_speeches_000.txt
+cleveland_speeches_001,cleveland,Message Regarding Chinese Immigrant Workers,./Total_Corpus of Presidential Speeches/cleveland_speeches_001.txt
+cleveland_speeches_002,cleveland,First Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_002.txt
+cleveland_speeches_003,cleveland,Veto of Military Pension Legislation,./Total_Corpus of Presidential Speeches/cleveland_speeches_003.txt
+cleveland_speeches_004,cleveland,Message on the Statue of Liberty,./Total_Corpus of Presidential Speeches/cleveland_speeches_004.txt
+cleveland_speeches_005,cleveland,Message on Federal Employee Political Involvement,./Total_Corpus of Presidential Speeches/cleveland_speeches_005.txt
+cleveland_speeches_006,cleveland,Message Regarding U. S. Labor Force,./Total_Corpus of Presidential Speeches/cleveland_speeches_006.txt
+cleveland_speeches_007,cleveland,Veto of Texas Seed Bill,./Total_Corpus of Presidential Speeches/cleveland_speeches_007.txt
+cleveland_speeches_008,cleveland,Veto of Military Pension Legislation,./Total_Corpus of Presidential Speeches/cleveland_speeches_008.txt
+cleveland_speeches_009,cleveland,Third Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_009.txt
+cleveland_speeches_010,cleveland,Second Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_010.txt
+cleveland_speeches_011,cleveland,Message Regarding Chinese Exclusion Act,./Total_Corpus of Presidential Speeches/cleveland_speeches_011.txt
+cleveland_speeches_012,cleveland,Fourth Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_012.txt
+cleveland_speeches_013,cleveland,Second Inaugural Address,./Total_Corpus of Presidential Speeches/cleveland_speeches_013.txt
+cleveland_speeches_014,cleveland,Message Regarding Civil Service Reform,./Total_Corpus of Presidential Speeches/cleveland_speeches_014.txt
+cleveland_speeches_015,cleveland,Message Regarding Economic Crisis,./Total_Corpus of Presidential Speeches/cleveland_speeches_015.txt
+cleveland_speeches_016,cleveland,First Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_016.txt
+cleveland_speeches_017,cleveland,Veto Message of Monetary Legislation,./Total_Corpus of Presidential Speeches/cleveland_speeches_017.txt
+cleveland_speeches_018,cleveland,Message Regarding Hawaiian Annexation,./Total_Corpus of Presidential Speeches/cleveland_speeches_018.txt
+cleveland_speeches_019,cleveland,Message Regarding the Financial Crisis,./Total_Corpus of Presidential Speeches/cleveland_speeches_019.txt
+cleveland_speeches_020,cleveland,Announcement of Treasury Bond Sale,./Total_Corpus of Presidential Speeches/cleveland_speeches_020.txt
+cleveland_speeches_021,cleveland,Second Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_021.txt
+cleveland_speeches_022,cleveland,Proclamation Regarding Railroad Strike,./Total_Corpus of Presidential Speeches/cleveland_speeches_022.txt
+cleveland_speeches_023,cleveland,Message Regarding Venezuelan - British Dispute,./Total_Corpus of Presidential Speeches/cleveland_speeches_023.txt
+cleveland_speeches_024,cleveland,Declaration of US Neutrality,./Total_Corpus of Presidential Speeches/cleveland_speeches_024.txt
+cleveland_speeches_025,cleveland,Third Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_025.txt
+cleveland_speeches_026,cleveland,Message Regarding the Financial Crisis,./Total_Corpus of Presidential Speeches/cleveland_speeches_026.txt
+cleveland_speeches_027,cleveland,Message Regarding Treaty with Britain,./Total_Corpus of Presidential Speeches/cleveland_speeches_027.txt
+cleveland_speeches_028,cleveland,Announcing the Continuation of US Neutrality,./Total_Corpus of Presidential Speeches/cleveland_speeches_028.txt
+cleveland_speeches_029,cleveland,Veto Message Regarding Immigration Legislation,./Total_Corpus of Presidential Speeches/cleveland_speeches_029.txt
+cleveland_speeches_030,cleveland,Fourth Annual Message,./Total_Corpus of Presidential Speeches/cleveland_speeches_030.txt
+clinton_speeches_000,clinton,Press Conference on Gays in the Military',./Total_Corpus of Presidential Speeches/clinton_speeches_000.txt
+clinton_speeches_001,clinton,First Inaugural,./Total_Corpus of Presidential Speeches/clinton_speeches_001.txt
+clinton_speeches_002,clinton,Remarks at the Signing of the Family Medical Leave Act,./Total_Corpus of Presidential Speeches/clinton_speeches_002.txt
+clinton_speeches_003,clinton,Remarks on Operation Restore Hope,./Total_Corpus of Presidential Speeches/clinton_speeches_003.txt
+clinton_speeches_004,clinton,National Service Address,./Total_Corpus of Presidential Speeches/clinton_speeches_004.txt
+clinton_speeches_005,clinton,Address Before a Joint Session of Congress,./Total_Corpus of Presidential Speeches/clinton_speeches_005.txt
+clinton_speeches_006,clinton,Speech at the 25th Anniversary Memorial Mass for Robert F. Kennedy,./Total_Corpus of Presidential Speeches/clinton_speeches_006.txt
+clinton_speeches_007,clinton,Remarks at the Signing of the Israeli - Palestinian Agreement,./Total_Corpus of Presidential Speeches/clinton_speeches_007.txt
+clinton_speeches_008,clinton,Address on Health Care Reform,./Total_Corpus of Presidential Speeches/clinton_speeches_008.txt
+clinton_speeches_009,clinton,Address on Somalia,./Total_Corpus of Presidential Speeches/clinton_speeches_009.txt
+clinton_speeches_010,clinton,Remarks to the Convocation of the Church of God in Christ in Memphis,./Total_Corpus of Presidential Speeches/clinton_speeches_010.txt
+clinton_speeches_011,clinton,Remarks on the Signing of NAFTA,./Total_Corpus of Presidential Speeches/clinton_speeches_011.txt
+clinton_speeches_012,clinton,Remarks at the U. S. National Cemetery,./Total_Corpus of Presidential Speeches/clinton_speeches_012.txt
+clinton_speeches_013,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_013.txt
+clinton_speeches_014,clinton,Remarks at the Brandenburg Gate,./Total_Corpus of Presidential Speeches/clinton_speeches_014.txt
+clinton_speeches_015,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_015.txt
+clinton_speeches_016,clinton,Time for Healing Ceremony,./Total_Corpus of Presidential Speeches/clinton_speeches_016.txt
+clinton_speeches_017,clinton,Address on Affirmative Action,./Total_Corpus of Presidential Speeches/clinton_speeches_017.txt
+clinton_speeches_018,clinton,Address on Race Relations,./Total_Corpus of Presidential Speeches/clinton_speeches_018.txt
+clinton_speeches_019,clinton,Address on Bosnia,./Total_Corpus of Presidential Speeches/clinton_speeches_019.txt
+clinton_speeches_020,clinton,Address to the Employees of the Mackie Metal Plant,./Total_Corpus of Presidential Speeches/clinton_speeches_020.txt
+clinton_speeches_021,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_021.txt
+clinton_speeches_022,clinton,Victims Rights Announcement,./Total_Corpus of Presidential Speeches/clinton_speeches_022.txt
+clinton_speeches_023,clinton,Remarks at the Democratic National Convention,./Total_Corpus of Presidential Speeches/clinton_speeches_023.txt
+clinton_speeches_024,clinton,Remarks to the Congregation of St. Paul's AME Church,./Total_Corpus of Presidential Speeches/clinton_speeches_024.txt
+clinton_speeches_025,clinton,Presidential Debate with Senator Bob Dole,./Total_Corpus of Presidential Speeches/clinton_speeches_025.txt
+clinton_speeches_026,clinton,Second Inaugural,./Total_Corpus of Presidential Speeches/clinton_speeches_026.txt
+clinton_speeches_027,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_027.txt
+clinton_speeches_028,clinton,"Address to the People and Relief Workers of Grand Forks, ND",./Total_Corpus of Presidential Speeches/clinton_speeches_028.txt
+clinton_speeches_029,clinton,Response to the Lewinsky Allegations,./Total_Corpus of Presidential Speeches/clinton_speeches_029.txt
+clinton_speeches_030,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_030.txt
+clinton_speeches_031,clinton,Remarks to the People of Ghana,./Total_Corpus of Presidential Speeches/clinton_speeches_031.txt
+clinton_speeches_032,clinton,Remarks to the People of Rwanda,./Total_Corpus of Presidential Speeches/clinton_speeches_032.txt
+clinton_speeches_033,clinton,Statement on His Testimony Before the Grand Jury,./Total_Corpus of Presidential Speeches/clinton_speeches_033.txt
+clinton_speeches_034,clinton,Statement on Kosovo,./Total_Corpus of Presidential Speeches/clinton_speeches_034.txt
+clinton_speeches_035,clinton,Address on the Kosovo Agreement,./Total_Corpus of Presidential Speeches/clinton_speeches_035.txt
+clinton_speeches_036,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_036.txt
+clinton_speeches_037,clinton,State of the Union Address,./Total_Corpus of Presidential Speeches/clinton_speeches_037.txt
+clinton_speeches_038,clinton,Farewell Address,./Total_Corpus of Presidential Speeches/clinton_speeches_038.txt
+coolidge_speeches_000,coolidge,First Annual Message,./Total_Corpus of Presidential Speeches/coolidge_speeches_000.txt
+coolidge_speeches_001,coolidge,Message Regarding Relationship of Church and State,./Total_Corpus of Presidential Speeches/coolidge_speeches_001.txt
+coolidge_speeches_002,coolidge,Centennial of Washington’s Command of the Continental Army,./Total_Corpus of Presidential Speeches/coolidge_speeches_002.txt
+coolidge_speeches_003,coolidge,Inaugural Address,./Total_Corpus of Presidential Speeches/coolidge_speeches_003.txt
+coolidge_speeches_004,coolidge,Second Annual Message,./Total_Corpus of Presidential Speeches/coolidge_speeches_004.txt
+coolidge_speeches_005,coolidge,Declaration of Independence Anniversary Commemoration,./Total_Corpus of Presidential Speeches/coolidge_speeches_005.txt
+coolidge_speeches_006,coolidge,Address Regarding Washington’s Birthday,./Total_Corpus of Presidential Speeches/coolidge_speeches_006.txt
+coolidge_speeches_007,coolidge,Fourth Annual Message,./Total_Corpus of Presidential Speeches/coolidge_speeches_007.txt
+coolidge_speeches_008,coolidge,Third Annual Message,./Total_Corpus of Presidential Speeches/coolidge_speeches_008.txt
+coolidge_speeches_009,coolidge,"Address at the Opening of Work on Mount Rushmore in Black Hills, SD",./Total_Corpus of Presidential Speeches/coolidge_speeches_009.txt
+coolidge_speeches_010,coolidge,Fifth Annual Message,./Total_Corpus of Presidential Speeches/coolidge_speeches_010.txt
+coolidge_speeches_011,coolidge,Sixth Annual Message,./Total_Corpus of Presidential Speeches/coolidge_speeches_011.txt
+eisenhower_speeches_000,eisenhower,Farewell Address,./Total_Corpus of Presidential Speeches/eisenhower_speeches_000.txt
+eisenhower_speeches_001,eisenhower,First Inaugural Address,./Total_Corpus of Presidential Speeches/eisenhower_speeches_001.txt
+eisenhower_speeches_002,eisenhower,Chance for Peace,./Total_Corpus of Presidential Speeches/eisenhower_speeches_002.txt
+eisenhower_speeches_003,eisenhower,Atoms for Peace,./Total_Corpus of Presidential Speeches/eisenhower_speeches_003.txt
+eisenhower_speeches_004,eisenhower,Republican National Convention,./Total_Corpus of Presidential Speeches/eisenhower_speeches_004.txt
+eisenhower_speeches_005,eisenhower,Eisenhower Doctrine,./Total_Corpus of Presidential Speeches/eisenhower_speeches_005.txt
+fdroosevelt_speeches_000,fdroosevelt,Address to Congress on Yalta,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_000.txt
+fdroosevelt_speeches_001,fdroosevelt,Fireside Chat 1: On the Banking Crisis,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_001.txt
+fdroosevelt_speeches_002,fdroosevelt,First Inaugural Address,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_002.txt
+fdroosevelt_speeches_003,fdroosevelt,Fireside Chat 2: On Progress During the First Two Months,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_003.txt
+fdroosevelt_speeches_004,fdroosevelt,Fireside Chat 3: On the National Recovery Administration,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_004.txt
+fdroosevelt_speeches_005,fdroosevelt,Fireside Chat 4: On Economic Progress,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_005.txt
+fdroosevelt_speeches_006,fdroosevelt,Fireside Chat 5: On Addressing the Critics,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_006.txt
+fdroosevelt_speeches_007,fdroosevelt,Fireside Chat 6: On Government and Capitalism,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_007.txt
+fdroosevelt_speeches_008,fdroosevelt,Fireside Chat 7: On the Works Relief Program and Social Security Act,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_008.txt
+fdroosevelt_speeches_009,fdroosevelt,Democratic National Convention,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_009.txt
+fdroosevelt_speeches_010,fdroosevelt,Fireside Chat 8: On Farmers and Laborers,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_010.txt
+fdroosevelt_speeches_011,fdroosevelt,Speech at Madison Square Garden,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_011.txt
+fdroosevelt_speeches_012,fdroosevelt,Second Inaugural Address,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_012.txt
+fdroosevelt_speeches_013,fdroosevelt,Fireside Chat 9: On Court - Packing,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_013.txt
+fdroosevelt_speeches_014,fdroosevelt,Quarantine Speech,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_014.txt
+fdroosevelt_speeches_015,fdroosevelt,Fireside Chat 10: On New Legislation,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_015.txt
+fdroosevelt_speeches_016,fdroosevelt,Fireside Chat 11: On the Unemployment Census,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_016.txt
+fdroosevelt_speeches_017,fdroosevelt,Fireside Chat 12: On the Recession,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_017.txt
+fdroosevelt_speeches_018,fdroosevelt,Dedication of a Memorial to the Northwest Territory,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_018.txt
+fdroosevelt_speeches_019,fdroosevelt,Fireside Chat 13: On Purging the Democratic Party,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_019.txt
+fdroosevelt_speeches_020,fdroosevelt,Fireside Chat 14: On the European War,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_020.txt
+fdroosevelt_speeches_021,fdroosevelt,Fireside Chat 15: On National Defense,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_021.txt
+fdroosevelt_speeches_022,fdroosevelt,Stab in the Back Speech,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_022.txt
+fdroosevelt_speeches_023,fdroosevelt,Democratic National Convention,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_023.txt
+fdroosevelt_speeches_024,fdroosevelt,Fireside Chat 16: On the Arsenal of Democracy,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_024.txt
+fdroosevelt_speeches_025,fdroosevelt,State of the Union,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_025.txt
+fdroosevelt_speeches_026,fdroosevelt,Third Inaugural Address,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_026.txt
+fdroosevelt_speeches_027,fdroosevelt,On Lend Lease,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_027.txt
+fdroosevelt_speeches_028,fdroosevelt,Fireside Chat 17: On An Unlimited National Emergency,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_028.txt
+fdroosevelt_speeches_029,fdroosevelt,Fireside Chat 18: On The Greer Incident,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_029.txt
+fdroosevelt_speeches_030,fdroosevelt,Address to Congress Requesting a Declaration of War,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_030.txt
+fdroosevelt_speeches_031,fdroosevelt,Fireside Chat 19: On the War with Japan,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_031.txt
+fdroosevelt_speeches_032,fdroosevelt,Message to Congress Requesting War Declarations with Germany and Italy,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_032.txt
+fdroosevelt_speeches_033,fdroosevelt,Fireside Chat 20: On the Progress of the War,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_033.txt
+fdroosevelt_speeches_034,fdroosevelt,Fireside Chat 21: On Sacrifice,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_034.txt
+fdroosevelt_speeches_035,fdroosevelt,Fireside Chat 22: On Inflation and Food Prices,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_035.txt
+fdroosevelt_speeches_036,fdroosevelt,Fireside Chat 23: On the Home Front,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_036.txt
+fdroosevelt_speeches_037,fdroosevelt,State of the Union Address,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_037.txt
+fdroosevelt_speeches_038,fdroosevelt,Fireside Chat 24: On the Coal Crisis,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_038.txt
+fdroosevelt_speeches_039,fdroosevelt,Fireside Chat 25: On the Fall of Mussolini,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_039.txt
+fdroosevelt_speeches_040,fdroosevelt,Fireside Chat 26: On the Armistice in Italy,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_040.txt
+fdroosevelt_speeches_041,fdroosevelt,The Tehran Declaration,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_041.txt
+fdroosevelt_speeches_042,fdroosevelt,Fireside Chat 27: On the Tehran and Cairo Conferences,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_042.txt
+fdroosevelt_speeches_043,fdroosevelt,Fireside Chat 28: On the State of the Union,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_043.txt
+fdroosevelt_speeches_044,fdroosevelt,Fireside Chat 29: On the Fall of Rome,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_044.txt
+fdroosevelt_speeches_045,fdroosevelt,Fireside Chat 30: Opening Fifth War Loan Drive,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_045.txt
+fdroosevelt_speeches_046,fdroosevelt,Democratic National Convention,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_046.txt
+fdroosevelt_speeches_047,fdroosevelt,Fourth Inaugural Address,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_047.txt
+fdroosevelt_speeches_048,fdroosevelt,Joint Statement with Churchill and Stalin on the Yalta Conference,./Total_Corpus of Presidential Speeches/fdroosevelt_speeches_048.txt
+fillmore_speeches_000,fillmore,Message Regarding Compromise with Texas,./Total_Corpus of Presidential Speeches/fillmore_speeches_000.txt
+fillmore_speeches_001,fillmore,First Annual Message,./Total_Corpus of Presidential Speeches/fillmore_speeches_001.txt
+fillmore_speeches_002,fillmore,Announcement of Texas’ Acceptance of Compromise Propositions,./Total_Corpus of Presidential Speeches/fillmore_speeches_002.txt
+fillmore_speeches_003,fillmore,Message Regarding Agreement with Texas,./Total_Corpus of Presidential Speeches/fillmore_speeches_003.txt
+fillmore_speeches_004,fillmore,Message Regarding Disturbance in Boston,./Total_Corpus of Presidential Speeches/fillmore_speeches_004.txt
+fillmore_speeches_005,fillmore,Second Annual Message,./Total_Corpus of Presidential Speeches/fillmore_speeches_005.txt
+fillmore_speeches_006,fillmore,Third Annual Message,./Total_Corpus of Presidential Speeches/fillmore_speeches_006.txt
+ford_speeches_000,ford,Remarks on Pardoning Richard Nixon,./Total_Corpus of Presidential Speeches/ford_speeches_000.txt
+ford_speeches_001,ford,Remarks on Taking the Oath of Office,./Total_Corpus of Presidential Speeches/ford_speeches_001.txt
+ford_speeches_002,ford,Remarks on Clemency for Vietnam Era Draft Evaders,./Total_Corpus of Presidential Speeches/ford_speeches_002.txt
+ford_speeches_003,ford,Whip Inflation Now Speech,./Total_Corpus of Presidential Speeches/ford_speeches_003.txt
+ford_speeches_004,ford,Address to the General Assembly of the United Nations,./Total_Corpus of Presidential Speeches/ford_speeches_004.txt
+ford_speeches_005,ford,State of the Union Address,./Total_Corpus of Presidential Speeches/ford_speeches_005.txt
+ford_speeches_006,ford,Address on U. S. Foreign Policy,./Total_Corpus of Presidential Speeches/ford_speeches_006.txt
+ford_speeches_007,ford,Remarks at Tulane University,./Total_Corpus of Presidential Speeches/ford_speeches_007.txt
+ford_speeches_008,ford,Address on Energy Policy,./Total_Corpus of Presidential Speeches/ford_speeches_008.txt
+ford_speeches_009,ford,Remarks in Helsinki,./Total_Corpus of Presidential Speeches/ford_speeches_009.txt
+ford_speeches_010,ford,Address at the University of Hawaii,./Total_Corpus of Presidential Speeches/ford_speeches_010.txt
+ford_speeches_011,ford,State of the Union Address,./Total_Corpus of Presidential Speeches/ford_speeches_011.txt
+ford_speeches_012,ford,Republican National Convention,./Total_Corpus of Presidential Speeches/ford_speeches_012.txt
+ford_speeches_013,ford,State of the Union Address,./Total_Corpus of Presidential Speeches/ford_speeches_013.txt
+garfield_speeches_000,garfield,Inaugural Address,./Total_Corpus of Presidential Speeches/garfield_speeches_000.txt
+grant_speeches_000,grant,First Inaugural Address,./Total_Corpus of Presidential Speeches/grant_speeches_000.txt
+grant_speeches_001,grant,Message Regarding Virginia Constitution,./Total_Corpus of Presidential Speeches/grant_speeches_001.txt
+grant_speeches_002,grant,Message Submitting State Constitutions to a Vote,./Total_Corpus of Presidential Speeches/grant_speeches_002.txt
+grant_speeches_003,grant,First Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_003.txt
+grant_speeches_004,grant,Proclamation Regarding Fenian Brotherhood,./Total_Corpus of Presidential Speeches/grant_speeches_004.txt
+grant_speeches_005,grant,Announcement of Fifteenth Amendment Ratification,./Total_Corpus of Presidential Speeches/grant_speeches_005.txt
+grant_speeches_006,grant,Proclamation Establishing Eight Hour Workday,./Total_Corpus of Presidential Speeches/grant_speeches_006.txt
+grant_speeches_007,grant,Message Regarding Dominican Republic Annexation,./Total_Corpus of Presidential Speeches/grant_speeches_007.txt
+grant_speeches_008,grant,Proclamation Establishing US Neutrality,./Total_Corpus of Presidential Speeches/grant_speeches_008.txt
+grant_speeches_009,grant,Message Regarding Insurrection in Cuba,./Total_Corpus of Presidential Speeches/grant_speeches_009.txt
+grant_speeches_010,grant,Message Regarding US International Relations,./Total_Corpus of Presidential Speeches/grant_speeches_010.txt
+grant_speeches_011,grant,Message Regarding Unification of Germany,./Total_Corpus of Presidential Speeches/grant_speeches_011.txt
+grant_speeches_012,grant,Veto Message Regarding Restrictions on Rebellion Participants,./Total_Corpus of Presidential Speeches/grant_speeches_012.txt
+grant_speeches_013,grant,Message Regarding Fourteenth Amendment,./Total_Corpus of Presidential Speeches/grant_speeches_013.txt
+grant_speeches_014,grant,Second Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_014.txt
+grant_speeches_015,grant,Proclamation Suspending Habeas Corpus,./Total_Corpus of Presidential Speeches/grant_speeches_015.txt
+grant_speeches_016,grant,Third Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_016.txt
+grant_speeches_017,grant,Message on Civil Service Reform,./Total_Corpus of Presidential Speeches/grant_speeches_017.txt
+grant_speeches_018,grant,Fourth Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_018.txt
+grant_speeches_019,grant,Second Inaugural Address,./Total_Corpus of Presidential Speeches/grant_speeches_019.txt
+grant_speeches_020,grant,Proclamation Regarding Disturbances in Louisiana,./Total_Corpus of Presidential Speeches/grant_speeches_020.txt
+grant_speeches_021,grant,Veto Message on Monetary Legislation,./Total_Corpus of Presidential Speeches/grant_speeches_021.txt
+grant_speeches_022,grant,Fifth Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_022.txt
+grant_speeches_023,grant,Message Approving Specie Resumption Act,./Total_Corpus of Presidential Speeches/grant_speeches_023.txt
+grant_speeches_024,grant,Veto of Legislation Fixing the Presidential Salary,./Total_Corpus of Presidential Speeches/grant_speeches_024.txt
+grant_speeches_025,grant,Message Regarding Intervention in Louisiana,./Total_Corpus of Presidential Speeches/grant_speeches_025.txt
+grant_speeches_026,grant,Sixth Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_026.txt
+grant_speeches_027,grant,Message on Presidential Powers and Obligations,./Total_Corpus of Presidential Speeches/grant_speeches_027.txt
+grant_speeches_028,grant,Proclamation Celebrating the Hundredth Anniversary of Independence,./Total_Corpus of Presidential Speeches/grant_speeches_028.txt
+grant_speeches_029,grant,Seventh Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_029.txt
+grant_speeches_030,grant,Message Regarding Presidential Election,./Total_Corpus of Presidential Speeches/grant_speeches_030.txt
+grant_speeches_031,grant,Eighth Annual Message,./Total_Corpus of Presidential Speeches/grant_speeches_031.txt
+gwbush_speeches_000,gwbush,Address to the Nation on Stem Cell Research,./Total_Corpus of Presidential Speeches/gwbush_speeches_000.txt
+gwbush_speeches_001,gwbush,First Inaugural Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_001.txt
+gwbush_speeches_002,gwbush,Remarks on Faith - Based and Community Initiatives,./Total_Corpus of Presidential Speeches/gwbush_speeches_002.txt
+gwbush_speeches_003,gwbush,"Proposal for Global Fund to Fight HIV/AIDS, Malaria, and Tuberculosis",./Total_Corpus of Presidential Speeches/gwbush_speeches_003.txt
+gwbush_speeches_004,gwbush,Remarks on Signing the Economic Growth and Tax Relief Reconciliation Act,./Total_Corpus of Presidential Speeches/gwbush_speeches_004.txt
+gwbush_speeches_005,gwbush,Address to the Nation on the Terrorist Attacks,./Total_Corpus of Presidential Speeches/gwbush_speeches_005.txt
+gwbush_speeches_006,gwbush,Address on the U. S. Response to the Attacks of September 11,./Total_Corpus of Presidential Speeches/gwbush_speeches_006.txt
+gwbush_speeches_007,gwbush,Remarks on No Child Left Behind Bill,./Total_Corpus of Presidential Speeches/gwbush_speeches_007.txt
+gwbush_speeches_008,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_008.txt
+gwbush_speeches_009,gwbush,Graduation Speech at West Point,./Total_Corpus of Presidential Speeches/gwbush_speeches_009.txt
+gwbush_speeches_010,gwbush,Address to the Nation on the Department of Homeland Security,./Total_Corpus of Presidential Speeches/gwbush_speeches_010.txt
+gwbush_speeches_011,gwbush,Remarks at the UN General Assembly,./Total_Corpus of Presidential Speeches/gwbush_speeches_011.txt
+gwbush_speeches_012,gwbush,Speech on New Mother and Child HIV Prevention Initiative,./Total_Corpus of Presidential Speeches/gwbush_speeches_012.txt
+gwbush_speeches_013,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_013.txt
+gwbush_speeches_014,gwbush,Address to the Nation on Iraq,./Total_Corpus of Presidential Speeches/gwbush_speeches_014.txt
+gwbush_speeches_015,gwbush,Address on the Start of the Iraq War,./Total_Corpus of Presidential Speeches/gwbush_speeches_015.txt
+gwbush_speeches_016,gwbush,Remarks on Freedom in Iraq and Middle East,./Total_Corpus of Presidential Speeches/gwbush_speeches_016.txt
+gwbush_speeches_017,gwbush,Address on Signing Medicare Legislation,./Total_Corpus of Presidential Speeches/gwbush_speeches_017.txt
+gwbush_speeches_018,gwbush,Temporary Worker Program Proposal,./Total_Corpus of Presidential Speeches/gwbush_speeches_018.txt
+gwbush_speeches_019,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_019.txt
+gwbush_speeches_020,gwbush,Remarks on National Security and the War Effort,./Total_Corpus of Presidential Speeches/gwbush_speeches_020.txt
+gwbush_speeches_021,gwbush,Second Inaugural Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_021.txt
+gwbush_speeches_022,gwbush,Remarks at the Republican National Convention,./Total_Corpus of Presidential Speeches/gwbush_speeches_022.txt
+gwbush_speeches_023,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_023.txt
+gwbush_speeches_024,gwbush,Remarks on Hurricane Katrina Relief Efforts,./Total_Corpus of Presidential Speeches/gwbush_speeches_024.txt
+gwbush_speeches_025,gwbush,Hurricane Relief Address from New Orleans,./Total_Corpus of Presidential Speeches/gwbush_speeches_025.txt
+gwbush_speeches_026,gwbush,Address on Renewal in Iraq,./Total_Corpus of Presidential Speeches/gwbush_speeches_026.txt
+gwbush_speeches_027,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_027.txt
+gwbush_speeches_028,gwbush,Remarks on Stem Cell Research Policy,./Total_Corpus of Presidential Speeches/gwbush_speeches_028.txt
+gwbush_speeches_029,gwbush,Address on Military Operations in Iraq,./Total_Corpus of Presidential Speeches/gwbush_speeches_029.txt
+gwbush_speeches_030,gwbush,Speech on Comprehensive Immigration Reform,./Total_Corpus of Presidential Speeches/gwbush_speeches_030.txt
+gwbush_speeches_031,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_031.txt
+gwbush_speeches_032,gwbush,State of the Union Address,./Total_Corpus of Presidential Speeches/gwbush_speeches_032.txt
+gwbush_speeches_033,gwbush,Remarks on Emergency Economic Stabilization Act of 2008,./Total_Corpus of Presidential Speeches/gwbush_speeches_033.txt
+gwbush_speeches_034,gwbush,Remarks on the War on Terror,./Total_Corpus of Presidential Speeches/gwbush_speeches_034.txt
+gwbush_speeches_035,gwbush,Speech on Financial Markets and the World Economy,./Total_Corpus of Presidential Speeches/gwbush_speeches_035.txt
+gwbush_speeches_036,gwbush,Remarks on Plan to Assist Automakers,./Total_Corpus of Presidential Speeches/gwbush_speeches_036.txt
+gwbush_speeches_037,gwbush,Final Press Conference,./Total_Corpus of Presidential Speeches/gwbush_speeches_037.txt
+gwbush_speeches_038,gwbush,Farewell Address to the Nation,./Total_Corpus of Presidential Speeches/gwbush_speeches_038.txt
+harding_speeches_000,harding,Inaugural Address,./Total_Corpus of Presidential Speeches/harding_speeches_000.txt
+harding_speeches_001,harding,First Annual Message,./Total_Corpus of Presidential Speeches/harding_speeches_001.txt
+harding_speeches_002,harding,Second Annual Message,./Total_Corpus of Presidential Speeches/harding_speeches_002.txt
+harding_speeches_003,harding,The Republic Must Awaken,./Total_Corpus of Presidential Speeches/harding_speeches_003.txt
+harding_speeches_004,harding,Safeguarding America,./Total_Corpus of Presidential Speeches/harding_speeches_004.txt
+harding_speeches_005,harding,Americanism,./Total_Corpus of Presidential Speeches/harding_speeches_005.txt
+harding_speeches_006,harding,Readjustment,./Total_Corpus of Presidential Speeches/harding_speeches_006.txt
+harding_speeches_007,harding,Speech Accepting the Republican Nomination,./Total_Corpus of Presidential Speeches/harding_speeches_007.txt
+harding_speeches_008,harding,Enduring Popular Government,./Total_Corpus of Presidential Speeches/harding_speeches_008.txt
+harding_speeches_009,harding,High Wages for High Production,./Total_Corpus of Presidential Speeches/harding_speeches_009.txt
+harding_speeches_010,harding,An Association of Nations,./Total_Corpus of Presidential Speeches/harding_speeches_010.txt
+harding_speeches_011,harding,Liberty Under the Law,./Total_Corpus of Presidential Speeches/harding_speeches_011.txt
+harding_speeches_012,harding,The American Soldier,./Total_Corpus of Presidential Speeches/harding_speeches_012.txt
+harding_speeches_013,harding,The Republican Party,./Total_Corpus of Presidential Speeches/harding_speeches_013.txt
+harding_speeches_014,harding,America,./Total_Corpus of Presidential Speeches/harding_speeches_014.txt
+harding_speeches_015,harding,Nationalism and Americanism,./Total_Corpus of Presidential Speeches/harding_speeches_015.txt
+harding_speeches_016,harding,Speech Upon Arrival of World War One Dead for Burial,./Total_Corpus of Presidential Speeches/harding_speeches_016.txt
+harding_speeches_017,harding,Opening Speech of the Conference on Limitation of Armament,./Total_Corpus of Presidential Speeches/harding_speeches_017.txt
+harrison_speeches_000,harrison,Inaugural Address,./Total_Corpus of Presidential Speeches/harrison_speeches_000.txt
+hayes_speeches_000,hayes,Message Regarding Railroad Strike,./Total_Corpus of Presidential Speeches/hayes_speeches_000.txt
+hayes_speeches_001,hayes,Prohibition of Federal Employees’ Political Involvement,./Total_Corpus of Presidential Speeches/hayes_speeches_001.txt
+hayes_speeches_002,hayes,Inaugural Address,./Total_Corpus of Presidential Speeches/hayes_speeches_002.txt
+hayes_speeches_003,hayes,Veto of Bland - Allison Act,./Total_Corpus of Presidential Speeches/hayes_speeches_003.txt
+hayes_speeches_004,hayes,Veto Message Regarding Immigration Legislation,./Total_Corpus of Presidential Speeches/hayes_speeches_004.txt
+hayes_speeches_005,hayes,Second Annual Message,./Total_Corpus of Presidential Speeches/hayes_speeches_005.txt
+hayes_speeches_006,hayes,First Annual Message,./Total_Corpus of Presidential Speeches/hayes_speeches_006.txt
+hayes_speeches_007,hayes,Proclamation Regarding Indian Territory,./Total_Corpus of Presidential Speeches/hayes_speeches_007.txt
+hayes_speeches_008,hayes,Message Regarding Election Regulations,./Total_Corpus of Presidential Speeches/hayes_speeches_008.txt
+hayes_speeches_009,hayes,Veto of Army Appropriations Bill,./Total_Corpus of Presidential Speeches/hayes_speeches_009.txt
+hayes_speeches_010,hayes,Veto Messages Regarding Appropriations Legislation,./Total_Corpus of Presidential Speeches/hayes_speeches_010.txt
+hayes_speeches_011,hayes,Message Regarding Central American Canal,./Total_Corpus of Presidential Speeches/hayes_speeches_011.txt
+hayes_speeches_012,hayes,Third Annual Message,./Total_Corpus of Presidential Speeches/hayes_speeches_012.txt
+hayes_speeches_013,hayes,Veto Message Regarding Military Legislation,./Total_Corpus of Presidential Speeches/hayes_speeches_013.txt
+hayes_speeches_014,hayes,Fourth Annual Message,./Total_Corpus of Presidential Speeches/hayes_speeches_014.txt
+hayes_speeches_015,hayes,Veto Message Regarding Economic Legislation,./Total_Corpus of Presidential Speeches/hayes_speeches_015.txt
+hoover_speeches_000,hoover,Inaugural Address,./Total_Corpus of Presidential Speeches/hoover_speeches_000.txt
+hoover_speeches_001,hoover,Principles and Ideals of the United States Government,./Total_Corpus of Presidential Speeches/hoover_speeches_001.txt
+hoover_speeches_002,hoover,Message Regarding the Farm Bill,./Total_Corpus of Presidential Speeches/hoover_speeches_002.txt
+hoover_speeches_003,hoover,Message Regarding International Peace,./Total_Corpus of Presidential Speeches/hoover_speeches_003.txt
+hoover_speeches_004,hoover,Remarks Upon Proclaiming the Treaty for the Renunciation of War,./Total_Corpus of Presidential Speeches/hoover_speeches_004.txt
+hoover_speeches_005,hoover,Message Regarding “Black Thursday”,./Total_Corpus of Presidential Speeches/hoover_speeches_005.txt
+hoover_speeches_006,hoover,Message on the Economy,./Total_Corpus of Presidential Speeches/hoover_speeches_006.txt
+hoover_speeches_007,hoover,Statement on the Economy,./Total_Corpus of Presidential Speeches/hoover_speeches_007.txt
+hoover_speeches_008,hoover,First State of the Union Address,./Total_Corpus of Presidential Speeches/hoover_speeches_008.txt
+hoover_speeches_009,hoover,Statement Regarding Business and Unemployment,./Total_Corpus of Presidential Speeches/hoover_speeches_009.txt
+hoover_speeches_010,hoover,Message Regarding Law Enforcement,./Total_Corpus of Presidential Speeches/hoover_speeches_010.txt
+hoover_speeches_011,hoover,Message regarding the Smoot - Hawley Tariff Act,./Total_Corpus of Presidential Speeches/hoover_speeches_011.txt
+hoover_speeches_012,hoover,Message Regarding London Naval Treaty,./Total_Corpus of Presidential Speeches/hoover_speeches_012.txt
+hoover_speeches_013,hoover,Address to the American Bankers’ Association.,./Total_Corpus of Presidential Speeches/hoover_speeches_013.txt
+hoover_speeches_014,hoover,Second State of the Union address.,./Total_Corpus of Presidential Speeches/hoover_speeches_014.txt
+hoover_speeches_015,hoover,Message Regarding Unemployment Relief,./Total_Corpus of Presidential Speeches/hoover_speeches_015.txt
+hoover_speeches_016,hoover,Statement on Unemployment Relief,./Total_Corpus of Presidential Speeches/hoover_speeches_016.txt
+hoover_speeches_017,hoover,Veto Messages Regarding Emergency Adjusted Compensation Act,./Total_Corpus of Presidential Speeches/hoover_speeches_017.txt
+hoover_speeches_018,hoover,Message Regarding Unemployment Relief,./Total_Corpus of Presidential Speeches/hoover_speeches_018.txt
+hoover_speeches_019,hoover,Statement on Foreign Debts,./Total_Corpus of Presidential Speeches/hoover_speeches_019.txt
+hoover_speeches_020,hoover,Message on the Gold Standard,./Total_Corpus of Presidential Speeches/hoover_speeches_020.txt
+hoover_speeches_021,hoover,Third State of the Union Address,./Total_Corpus of Presidential Speeches/hoover_speeches_021.txt
+hoover_speeches_022,hoover,Statement Regarding Economic Recovery,./Total_Corpus of Presidential Speeches/hoover_speeches_022.txt
+hoover_speeches_023,hoover,Speech Accepting the Republican Nomination,./Total_Corpus of Presidential Speeches/hoover_speeches_023.txt
+hoover_speeches_024,hoover,Statement on the National Economy,./Total_Corpus of Presidential Speeches/hoover_speeches_024.txt
+hoover_speeches_025,hoover,Campaign Speech in Madison Square Garden,./Total_Corpus of Presidential Speeches/hoover_speeches_025.txt
+hoover_speeches_026,hoover,Fourth State of the Union Address,./Total_Corpus of Presidential Speeches/hoover_speeches_026.txt
+hoover_speeches_027,hoover,"Campaign speech in Indianapolis, Indiana.",./Total_Corpus of Presidential Speeches/hoover_speeches_027.txt
+hoover_speeches_028,hoover,Campaign speech in St Paul Minnesota,./Total_Corpus of Presidential Speeches/hoover_speeches_028.txt
+jackson_speeches_000,jackson,First Inaugural Address,./Total_Corpus of Presidential Speeches/jackson_speeches_000.txt
+jackson_speeches_001,jackson,Message Regarding Treaties with the Choctaw Nation of Indians,./Total_Corpus of Presidential Speeches/jackson_speeches_001.txt
+jackson_speeches_002,jackson,Proclamation Regarding Duties on Austrian Vessels,./Total_Corpus of Presidential Speeches/jackson_speeches_002.txt
+jackson_speeches_003,jackson,Veto Message Regarding Funding of Infrastructure Development,./Total_Corpus of Presidential Speeches/jackson_speeches_003.txt
+jackson_speeches_004,jackson,First Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_004.txt
+jackson_speeches_005,jackson,Proclamation Regarding the Opening of United States Ports to British Vessels,./Total_Corpus of Presidential Speeches/jackson_speeches_005.txt
+jackson_speeches_006,jackson,Second Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_006.txt
+jackson_speeches_007,jackson,Third Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_007.txt
+jackson_speeches_008,jackson,Message Regarding Indian Removal,./Total_Corpus of Presidential Speeches/jackson_speeches_008.txt
+jackson_speeches_009,jackson,Bank Veto,./Total_Corpus of Presidential Speeches/jackson_speeches_009.txt
+jackson_speeches_010,jackson,Message Regarding Indian Relations,./Total_Corpus of Presidential Speeches/jackson_speeches_010.txt
+jackson_speeches_011,jackson,Fourth Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_011.txt
+jackson_speeches_012,jackson,Veto Message of Internal Improvement Legislation,./Total_Corpus of Presidential Speeches/jackson_speeches_012.txt
+jackson_speeches_013,jackson,Nullification Proclamation,./Total_Corpus of Presidential Speeches/jackson_speeches_013.txt
+jackson_speeches_014,jackson,Second Inaugural Address,./Total_Corpus of Presidential Speeches/jackson_speeches_014.txt
+jackson_speeches_015,jackson,Message Regarding South Carolina Nullification of Federal Legislation,./Total_Corpus of Presidential Speeches/jackson_speeches_015.txt
+jackson_speeches_016,jackson,Message on the Constitutional Rights and Responsibilities of the President,./Total_Corpus of Presidential Speeches/jackson_speeches_016.txt
+jackson_speeches_017,jackson,Protest of Senate Censure,./Total_Corpus of Presidential Speeches/jackson_speeches_017.txt
+jackson_speeches_018,jackson,Message Regarding the Bank of the United States,./Total_Corpus of Presidential Speeches/jackson_speeches_018.txt
+jackson_speeches_019,jackson,Fifth Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_019.txt
+jackson_speeches_020,jackson,Addendum to the Protest of Senate Censure,./Total_Corpus of Presidential Speeches/jackson_speeches_020.txt
+jackson_speeches_021,jackson,Eighth Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_021.txt
+jackson_speeches_022,jackson,Sixth Annual Message to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_022.txt
+jackson_speeches_023,jackson,Seventh Annual Address to Congress,./Total_Corpus of Presidential Speeches/jackson_speeches_023.txt
+jackson_speeches_024,jackson,Statement on the Independence of Texas,./Total_Corpus of Presidential Speeches/jackson_speeches_024.txt
+jackson_speeches_025,jackson,Farewell Address,./Total_Corpus of Presidential Speeches/jackson_speeches_025.txt
+jefferson_speeches_000,jefferson,First Inaugural Address,./Total_Corpus of Presidential Speeches/jefferson_speeches_000.txt
+jefferson_speeches_001,jefferson,The Reply to New Haven Remonstrance,./Total_Corpus of Presidential Speeches/jefferson_speeches_001.txt
+jefferson_speeches_002,jefferson,Response to Danbury Baptist Association,./Total_Corpus of Presidential Speeches/jefferson_speeches_002.txt
+jefferson_speeches_003,jefferson,First Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_003.txt
+jefferson_speeches_004,jefferson,Address to Brother Handsome Lake,./Total_Corpus of Presidential Speeches/jefferson_speeches_004.txt
+jefferson_speeches_005,jefferson,Second Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_005.txt
+jefferson_speeches_006,jefferson,Instructions to Captain Lewis,./Total_Corpus of Presidential Speeches/jefferson_speeches_006.txt
+jefferson_speeches_007,jefferson,Address to the Brothers of Choctaw Nation,./Total_Corpus of Presidential Speeches/jefferson_speeches_007.txt
+jefferson_speeches_008,jefferson,Third Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_008.txt
+jefferson_speeches_009,jefferson,Special Message to Congress on Indian Policy,./Total_Corpus of Presidential Speeches/jefferson_speeches_009.txt
+jefferson_speeches_010,jefferson,Special Message to Congress on Foreign Policy,./Total_Corpus of Presidential Speeches/jefferson_speeches_010.txt
+jefferson_speeches_011,jefferson,Second Inaugural Address,./Total_Corpus of Presidential Speeches/jefferson_speeches_011.txt
+jefferson_speeches_012,jefferson,Fourth Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_012.txt
+jefferson_speeches_013,jefferson,Fifth Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_013.txt
+jefferson_speeches_014,jefferson,Proclamation on Spanish Territory,./Total_Corpus of Presidential Speeches/jefferson_speeches_014.txt
+jefferson_speeches_015,jefferson,Address to the Wolf and the People of the Mandan Nation,./Total_Corpus of Presidential Speeches/jefferson_speeches_015.txt
+jefferson_speeches_016,jefferson,Address to the Chiefs of the Cherokee Nation,./Total_Corpus of Presidential Speeches/jefferson_speeches_016.txt
+jefferson_speeches_017,jefferson,Sixth Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_017.txt
+jefferson_speeches_018,jefferson,Special Message to Congress on the Gun Boats,./Total_Corpus of Presidential Speeches/jefferson_speeches_018.txt
+jefferson_speeches_019,jefferson,Special Message to Congress on the Burr Conspiracy,./Total_Corpus of Presidential Speeches/jefferson_speeches_019.txt
+jefferson_speeches_020,jefferson,Seventh Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_020.txt
+jefferson_speeches_021,jefferson,Proclamation in Response to the Chesapeake Affair,./Total_Corpus of Presidential Speeches/jefferson_speeches_021.txt
+jefferson_speeches_022,jefferson,Message to the Inhabitants of Albemarle County,./Total_Corpus of Presidential Speeches/jefferson_speeches_022.txt
+jefferson_speeches_023,jefferson,Eighth Annual Message,./Total_Corpus of Presidential Speeches/jefferson_speeches_023.txt
+johnson_speeches_000,johnson,Message Following the Death of Abraham Lincoln,./Total_Corpus of Presidential Speeches/johnson_speeches_000.txt
+johnson_speeches_001,johnson,Order Ending Commercial Restrictions on Confederate States,./Total_Corpus of Presidential Speeches/johnson_speeches_001.txt
+johnson_speeches_002,johnson,Establishing Rewards for the Arrest of Certain Confederate Officers,./Total_Corpus of Presidential Speeches/johnson_speeches_002.txt
+johnson_speeches_003,johnson,Message Regarding Control of Abandoned Lands and Property,./Total_Corpus of Presidential Speeches/johnson_speeches_003.txt
+johnson_speeches_004,johnson,Message Reestablishing Governments in Former Confederate States,./Total_Corpus of Presidential Speeches/johnson_speeches_004.txt
+johnson_speeches_005,johnson,Proclamation Pardoning Persons who Participated in the Rebellion,./Total_Corpus of Presidential Speeches/johnson_speeches_005.txt
+johnson_speeches_006,johnson,Executive Order Regarding Discharged Prisoners of War,./Total_Corpus of Presidential Speeches/johnson_speeches_006.txt
+johnson_speeches_007,johnson,First Annual Message,./Total_Corpus of Presidential Speeches/johnson_speeches_007.txt
+johnson_speeches_008,johnson,Announcement of the Successful Suppression of the Rebellion,./Total_Corpus of Presidential Speeches/johnson_speeches_008.txt
+johnson_speeches_009,johnson,Veto Message on Freedmen and Refugee Relief Bureau Legislation,./Total_Corpus of Presidential Speeches/johnson_speeches_009.txt
+johnson_speeches_010,johnson,Veto Message on Civil Rights Legislation,./Total_Corpus of Presidential Speeches/johnson_speeches_010.txt
+johnson_speeches_011,johnson,Proclamation on the End of the Confederate Insurrection,./Total_Corpus of Presidential Speeches/johnson_speeches_011.txt
+johnson_speeches_012,johnson,Message Restoring Tennessee to Former Status,./Total_Corpus of Presidential Speeches/johnson_speeches_012.txt
+johnson_speeches_013,johnson,Message Proclaiming End to Insurrection in the United States,./Total_Corpus of Presidential Speeches/johnson_speeches_013.txt
+johnson_speeches_014,johnson,Veto Message Regarding Rebel State Governments,./Total_Corpus of Presidential Speeches/johnson_speeches_014.txt
+johnson_speeches_015,johnson,Veto Message on Admitting Colorado into the Union,./Total_Corpus of Presidential Speeches/johnson_speeches_015.txt
+johnson_speeches_016,johnson,Veto Message on Admitting Nebraska into the Union,./Total_Corpus of Presidential Speeches/johnson_speeches_016.txt
+johnson_speeches_017,johnson,Second Annual Message,./Total_Corpus of Presidential Speeches/johnson_speeches_017.txt
+johnson_speeches_018,johnson,Veto Message Regarding Rebel State Governments,./Total_Corpus of Presidential Speeches/johnson_speeches_018.txt
+johnson_speeches_019,johnson,Message Clarifying the Reconstruction Acts,./Total_Corpus of Presidential Speeches/johnson_speeches_019.txt
+johnson_speeches_020,johnson,Proclamation Restoring All Rights to Rebellion Participants,./Total_Corpus of Presidential Speeches/johnson_speeches_020.txt
+johnson_speeches_021,johnson,Message Regarding Reconstruction Legislation,./Total_Corpus of Presidential Speeches/johnson_speeches_021.txt
+johnson_speeches_022,johnson,Messages Regarding Correspondence with General U. S. Grant,./Total_Corpus of Presidential Speeches/johnson_speeches_022.txt
+johnson_speeches_023,johnson,Third Annual Message to Congress,./Total_Corpus of Presidential Speeches/johnson_speeches_023.txt
+johnson_speeches_024,johnson,Message Regarding the Suspension of Secretary Stanton,./Total_Corpus of Presidential Speeches/johnson_speeches_024.txt
+johnson_speeches_025,johnson,Message Regarding the Removal of Secretary Stanton,./Total_Corpus of Presidential Speeches/johnson_speeches_025.txt
+johnson_speeches_026,johnson,Veto Message on Legislation Amending the Judiciary,./Total_Corpus of Presidential Speeches/johnson_speeches_026.txt
+johnson_speeches_027,johnson,Veto Message Regarding Regulations on Confederate States,./Total_Corpus of Presidential Speeches/johnson_speeches_027.txt
+johnson_speeches_028,johnson,Message Proposing Constitutional Amendments,./Total_Corpus of Presidential Speeches/johnson_speeches_028.txt
+johnson_speeches_029,johnson,Veto Message Regarding Electoral College Participation,./Total_Corpus of Presidential Speeches/johnson_speeches_029.txt
+johnson_speeches_030,johnson,Fourth Annual Message to Congress,./Total_Corpus of Presidential Speeches/johnson_speeches_030.txt
+jqadams_speeches_000,jqadams,Inaugural Address,./Total_Corpus of Presidential Speeches/jqadams_speeches_000.txt
+jqadams_speeches_001,jqadams,Speech to the U. S. House of Representatives on Foreign Policy,./Total_Corpus of Presidential Speeches/jqadams_speeches_001.txt
+jqadams_speeches_002,jqadams,Message Regarding the Congress of American Nations,./Total_Corpus of Presidential Speeches/jqadams_speeches_002.txt
+jqadams_speeches_003,jqadams,Message Regarding the Creek Indians,./Total_Corpus of Presidential Speeches/jqadams_speeches_003.txt
+jqadams_speeches_004,jqadams,Second Annual Address,./Total_Corpus of Presidential Speeches/jqadams_speeches_004.txt
+jqadams_speeches_005,jqadams,First Annual Message,./Total_Corpus of Presidential Speeches/jqadams_speeches_005.txt
+jqadams_speeches_006,jqadams,Third Annual Message,./Total_Corpus of Presidential Speeches/jqadams_speeches_006.txt
+jqadams_speeches_007,jqadams,Fourth Annual Message,./Total_Corpus of Presidential Speeches/jqadams_speeches_007.txt
+kennedy_speeches_000,kennedy,Debate with Richard Nixon in New York,./Total_Corpus of Presidential Speeches/kennedy_speeches_000.txt
+kennedy_speeches_001,kennedy,Acceptance of the Democratic Party Nomination,./Total_Corpus of Presidential Speeches/kennedy_speeches_001.txt
+kennedy_speeches_002,kennedy,Address to the Greater Houston Ministerial Association,./Total_Corpus of Presidential Speeches/kennedy_speeches_002.txt
+kennedy_speeches_003,kennedy,Debate with Richard Nixon in Chicago,./Total_Corpus of Presidential Speeches/kennedy_speeches_003.txt
+kennedy_speeches_004,kennedy,"Debate with Richard Nixon in Washington, D. C.",./Total_Corpus of Presidential Speeches/kennedy_speeches_004.txt
+kennedy_speeches_005,kennedy,Debate with Richard Nixon in New York and Los Angeles,./Total_Corpus of Presidential Speeches/kennedy_speeches_005.txt
+kennedy_speeches_006,kennedy,City Upon a Hill Speech,./Total_Corpus of Presidential Speeches/kennedy_speeches_006.txt
+kennedy_speeches_007,kennedy,Inaugural Address,./Total_Corpus of Presidential Speeches/kennedy_speeches_007.txt
+kennedy_speeches_008,kennedy,State of the Union,./Total_Corpus of Presidential Speeches/kennedy_speeches_008.txt
+kennedy_speeches_009,kennedy,Remarks on the Youth Fitness Program,./Total_Corpus of Presidential Speeches/kennedy_speeches_009.txt
+kennedy_speeches_010,kennedy,Establishment of the Peace Corps,./Total_Corpus of Presidential Speeches/kennedy_speeches_010.txt
+kennedy_speeches_011,kennedy,Address to the Diplomatic Corps of Latin America,./Total_Corpus of Presidential Speeches/kennedy_speeches_011.txt
+kennedy_speeches_012,kennedy,Address to the American Association of Newspaper Editors,./Total_Corpus of Presidential Speeches/kennedy_speeches_012.txt
+kennedy_speeches_013,kennedy,Special Message to the Congress on Taxation,./Total_Corpus of Presidential Speeches/kennedy_speeches_013.txt
+kennedy_speeches_014,kennedy,President and the Press Speech,./Total_Corpus of Presidential Speeches/kennedy_speeches_014.txt
+kennedy_speeches_015,kennedy,Remarks at George Washington,./Total_Corpus of Presidential Speeches/kennedy_speeches_015.txt
+kennedy_speeches_016,kennedy,Address before the Canadian Parliament,./Total_Corpus of Presidential Speeches/kennedy_speeches_016.txt
+kennedy_speeches_017,kennedy,The Goal of Sending a Man to the Moon,./Total_Corpus of Presidential Speeches/kennedy_speeches_017.txt
+kennedy_speeches_018,kennedy,Report to the American People on Returning from Europe,./Total_Corpus of Presidential Speeches/kennedy_speeches_018.txt
+kennedy_speeches_019,kennedy,Remarks to the Graduating Class of the US Naval Academy,./Total_Corpus of Presidential Speeches/kennedy_speeches_019.txt
+kennedy_speeches_020,kennedy,Report on the Berlin Crisis,./Total_Corpus of Presidential Speeches/kennedy_speeches_020.txt
+kennedy_speeches_021,kennedy,Address to the UN General Assembly,./Total_Corpus of Presidential Speeches/kennedy_speeches_021.txt
+kennedy_speeches_022,kennedy,Address at the University of North Carolina,./Total_Corpus of Presidential Speeches/kennedy_speeches_022.txt
+kennedy_speeches_023,kennedy,Remarks at the Veterans Day Ceremony,./Total_Corpus of Presidential Speeches/kennedy_speeches_023.txt
+kennedy_speeches_024,kennedy,University of Washington's 100th Anniversary,./Total_Corpus of Presidential Speeches/kennedy_speeches_024.txt
+kennedy_speeches_025,kennedy,Address to the National Association of Manufacturers,./Total_Corpus of Presidential Speeches/kennedy_speeches_025.txt
+kennedy_speeches_026,kennedy,Address in Miami at the Opening of the AFL - CIO Convention,./Total_Corpus of Presidential Speeches/kennedy_speeches_026.txt
+kennedy_speeches_027,kennedy,Remarks to a U. N. Delegation of Women,./Total_Corpus of Presidential Speeches/kennedy_speeches_027.txt
+kennedy_speeches_028,kennedy,State of the Union Address,./Total_Corpus of Presidential Speeches/kennedy_speeches_028.txt
+kennedy_speeches_029,kennedy,"Address at the University of California, Berkeley",./Total_Corpus of Presidential Speeches/kennedy_speeches_029.txt
+kennedy_speeches_030,kennedy,Remarks at West Point,./Total_Corpus of Presidential Speeches/kennedy_speeches_030.txt
+kennedy_speeches_031,kennedy,Yale University Commencement,./Total_Corpus of Presidential Speeches/kennedy_speeches_031.txt
+kennedy_speeches_032,kennedy,Address on the Space Effort,./Total_Corpus of Presidential Speeches/kennedy_speeches_032.txt
+kennedy_speeches_033,kennedy,Address on the Situation at the University of Mississippi,./Total_Corpus of Presidential Speeches/kennedy_speeches_033.txt
+kennedy_speeches_034,kennedy,Address on the Buildup of Arms in Cuba,./Total_Corpus of Presidential Speeches/kennedy_speeches_034.txt
+kennedy_speeches_035,kennedy,State of the Union Address,./Total_Corpus of Presidential Speeches/kennedy_speeches_035.txt
+kennedy_speeches_036,kennedy,90th Anniversary of Vanderbilt University,./Total_Corpus of Presidential Speeches/kennedy_speeches_036.txt
+kennedy_speeches_037,kennedy,Remarks at U. S. Air Force Academy,./Total_Corpus of Presidential Speeches/kennedy_speeches_037.txt
+kennedy_speeches_038,kennedy,American University Commencement,./Total_Corpus of Presidential Speeches/kennedy_speeches_038.txt
+kennedy_speeches_039,kennedy,Address on Civil Rights,./Total_Corpus of Presidential Speeches/kennedy_speeches_039.txt
+kennedy_speeches_040,kennedy,Ich bin ein Berliner Speech,./Total_Corpus of Presidential Speeches/kennedy_speeches_040.txt
+kennedy_speeches_041,kennedy,Address on the Nuclear Test Ban Treaty,./Total_Corpus of Presidential Speeches/kennedy_speeches_041.txt
+kennedy_speeches_042,kennedy,Address to the UN General Assembly,./Total_Corpus of Presidential Speeches/kennedy_speeches_042.txt
+kennedy_speeches_043,kennedy,Address at the Mormon Tabernacle,./Total_Corpus of Presidential Speeches/kennedy_speeches_043.txt
+kennedy_speeches_044,kennedy,Remarks at Amherst College,./Total_Corpus of Presidential Speeches/kennedy_speeches_044.txt
+lbjohnson_speeches_000,lbjohnson,Remarks at the Ninety Sixth Charter Day Observances,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_000.txt
+lbjohnson_speeches_001,lbjohnson,Remarks at Gettysburg on Civil Rights,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_001.txt
+lbjohnson_speeches_002,lbjohnson,Address to Joint Session of Congress,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_002.txt
+lbjohnson_speeches_003,lbjohnson,Thanksgiving Message,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_003.txt
+lbjohnson_speeches_004,lbjohnson,Address to the U. N. General Assembly,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_004.txt
+lbjohnson_speeches_005,lbjohnson,State of the Union,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_005.txt
+lbjohnson_speeches_006,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_006.txt
+lbjohnson_speeches_007,lbjohnson,Press Conference at the State Department,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_007.txt
+lbjohnson_speeches_008,lbjohnson,Press Conference at the White House,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_008.txt
+lbjohnson_speeches_009,lbjohnson,Press Conference at the State Department,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_009.txt
+lbjohnson_speeches_010,lbjohnson,Speech to the Associated Press Luncheon,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_010.txt
+lbjohnson_speeches_011,lbjohnson,Press Conference on the South Lawn,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_011.txt
+lbjohnson_speeches_012,lbjohnson,Remarks at the University of Michigan,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_012.txt
+lbjohnson_speeches_013,lbjohnson,Press Conference at the State Department,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_013.txt
+lbjohnson_speeches_014,lbjohnson,Report on the Gulf of Tonkin Incident,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_014.txt
+lbjohnson_speeches_015,lbjohnson,Remarks upon Signing the Civil Rights Bill,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_015.txt
+lbjohnson_speeches_016,lbjohnson,Remarks on Vietnam at Syracuse University,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_016.txt
+lbjohnson_speeches_017,lbjohnson,Acceptance Speech at the Democratic National Convention,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_017.txt
+lbjohnson_speeches_018,lbjohnson,"Speech at the Jung Hotel, New Orleans",./Total_Corpus of Presidential Speeches/lbjohnson_speeches_018.txt
+lbjohnson_speeches_019,lbjohnson,Report to the Nation on Events in China and the USSR,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_019.txt
+lbjohnson_speeches_020,lbjohnson,State of the Union,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_020.txt
+lbjohnson_speeches_021,lbjohnson,Inaugural Address,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_021.txt
+lbjohnson_speeches_022,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_022.txt
+lbjohnson_speeches_023,lbjohnson,Press Conference at the White House,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_023.txt
+lbjohnson_speeches_024,lbjohnson,Speech Before Congress on Voting Rights,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_024.txt
+lbjohnson_speeches_025,lbjohnson,Press Conference at the LBJ Ranch,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_025.txt
+lbjohnson_speeches_026,lbjohnson,Remarks at a Reception for Astronauts Grissom and Young,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_026.txt
+lbjohnson_speeches_027,lbjohnson,Statement on Arrests in Violo Liuzzo Murder,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_027.txt
+lbjohnson_speeches_028,lbjohnson,Address at Johns Hopkins University,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_028.txt
+lbjohnson_speeches_029,lbjohnson,Press Conference in the East Room,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_029.txt
+lbjohnson_speeches_030,lbjohnson,Statement on Sending Troops to the Dominican Republic,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_030.txt
+lbjohnson_speeches_031,lbjohnson,Report on the Situation in the Dominican Republic,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_031.txt
+lbjohnson_speeches_032,lbjohnson,Speech to the Association of American Editorial Cartoonists,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_032.txt
+lbjohnson_speeches_033,lbjohnson,Press Conference in the East Room,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_033.txt
+lbjohnson_speeches_034,lbjohnson,Remarks at the Howard University Commencement,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_034.txt
+lbjohnson_speeches_035,lbjohnson,Remarks at the Manned Space Flight Center,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_035.txt
+lbjohnson_speeches_036,lbjohnson,Remarks on the 20th Anniversary of the U. N. Charter,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_036.txt
+lbjohnson_speeches_037,lbjohnson,Press Conference in the East Room,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_037.txt
+lbjohnson_speeches_038,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_038.txt
+lbjohnson_speeches_039,lbjohnson,Remarks on the Signing of the Voting Rights Act,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_039.txt
+lbjohnson_speeches_040,lbjohnson,Press Conference at the White House,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_040.txt
+lbjohnson_speeches_041,lbjohnson,State of the Union,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_041.txt
+lbjohnson_speeches_042,lbjohnson,Statement on the Resumption of Bombing in North Vietnam,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_042.txt
+lbjohnson_speeches_043,lbjohnson,Speech Before the Foreign Institute,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_043.txt
+lbjohnson_speeches_044,lbjohnson,Remarks on Receiving the National Freedom Award,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_044.txt
+lbjohnson_speeches_045,lbjohnson,"Remarks in Omaha, Nebraska",./Total_Corpus of Presidential Speeches/lbjohnson_speeches_045.txt
+lbjohnson_speeches_046,lbjohnson,Press Conference at the LBJ Ranch,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_046.txt
+lbjohnson_speeches_047,lbjohnson,Speech on U. S. Foreign Policy in Asia,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_047.txt
+lbjohnson_speeches_048,lbjohnson,Press Conference in the East Room,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_048.txt
+lbjohnson_speeches_049,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_049.txt
+lbjohnson_speeches_050,lbjohnson,Remarks on the Creation of the Department of Transportation,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_050.txt
+lbjohnson_speeches_051,lbjohnson,Remarks on Departing for the Asia - Pacific Trip,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_051.txt
+lbjohnson_speeches_052,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_052.txt
+lbjohnson_speeches_053,lbjohnson,State of the Union Address,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_053.txt
+lbjohnson_speeches_054,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_054.txt
+lbjohnson_speeches_055,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_055.txt
+lbjohnson_speeches_056,lbjohnson,Address on Vietnam to the Tennessee General Assembly,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_056.txt
+lbjohnson_speeches_057,lbjohnson,"Address After Ordering Federal Troops to Detroit, Michigan",./Total_Corpus of Presidential Speeches/lbjohnson_speeches_057.txt
+lbjohnson_speeches_058,lbjohnson,Speech to the Nation on Civil Disorders,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_058.txt
+lbjohnson_speeches_059,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_059.txt
+lbjohnson_speeches_060,lbjohnson,Speech on Vietnam,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_060.txt
+lbjohnson_speeches_061,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_061.txt
+lbjohnson_speeches_062,lbjohnson,A Conversation with President Lyndon Johnson,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_062.txt
+lbjohnson_speeches_063,lbjohnson,State of the Union Address,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_063.txt
+lbjohnson_speeches_064,lbjohnson,Remarks on Decision not to Seek Re - Election,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_064.txt
+lbjohnson_speeches_065,lbjohnson,Address to the National Association of Broadcasters,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_065.txt
+lbjohnson_speeches_066,lbjohnson,Press Conference,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_066.txt
+lbjohnson_speeches_067,lbjohnson,Remarks on Signing the Civil Rights Act,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_067.txt
+lbjohnson_speeches_068,lbjohnson,Remarks on Signing the Nuclear Nonproliferation Treaty,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_068.txt
+lbjohnson_speeches_069,lbjohnson,Remarks on the Cessation of Bombing of North Vietnam,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_069.txt
+lbjohnson_speeches_070,lbjohnson,State of the Union Address,./Total_Corpus of Presidential Speeches/lbjohnson_speeches_070.txt
+lincoln_speeches_000,lincoln,"At Peoria, Illinois",./Total_Corpus of Presidential Speeches/lincoln_speeches_000.txt
+lincoln_speeches_001,lincoln,A House Divided Speech,./Total_Corpus of Presidential Speeches/lincoln_speeches_001.txt
+lincoln_speeches_002,lincoln,Eulogy on Henry Clay,./Total_Corpus of Presidential Speeches/lincoln_speeches_002.txt
+lincoln_speeches_003,lincoln,Farewell Address,./Total_Corpus of Presidential Speeches/lincoln_speeches_003.txt
+lincoln_speeches_004,lincoln,Cooper Union Address,./Total_Corpus of Presidential Speeches/lincoln_speeches_004.txt
+lincoln_speeches_005,lincoln,First Inaugural Address,./Total_Corpus of Presidential Speeches/lincoln_speeches_005.txt
+lincoln_speeches_006,lincoln,July 4th Message to Congress,./Total_Corpus of Presidential Speeches/lincoln_speeches_006.txt
+lincoln_speeches_007,lincoln,First Annual Message,./Total_Corpus of Presidential Speeches/lincoln_speeches_007.txt
+lincoln_speeches_008,lincoln,Emancipation Proclamation,./Total_Corpus of Presidential Speeches/lincoln_speeches_008.txt
+lincoln_speeches_009,lincoln,Public Letter to James Conkling,./Total_Corpus of Presidential Speeches/lincoln_speeches_009.txt
+lincoln_speeches_010,lincoln,Second Annual Message,./Total_Corpus of Presidential Speeches/lincoln_speeches_010.txt
+lincoln_speeches_011,lincoln,Third Annual Message,./Total_Corpus of Presidential Speeches/lincoln_speeches_011.txt
+lincoln_speeches_012,lincoln,Fourth Annual Message,./Total_Corpus of Presidential Speeches/lincoln_speeches_012.txt
+lincoln_speeches_013,lincoln,Gettysburg Address,./Total_Corpus of Presidential Speeches/lincoln_speeches_013.txt
+lincoln_speeches_014,lincoln,Second Inaugural Address,./Total_Corpus of Presidential Speeches/lincoln_speeches_014.txt
+madison_speeches_000,madison,First Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_000.txt
+madison_speeches_001,madison,Message on the Special Congressional Session/State of Foreign Affairs,./Total_Corpus of Presidential Speeches/madison_speeches_001.txt
+madison_speeches_002,madison,First Inaugural Address,./Total_Corpus of Presidential Speeches/madison_speeches_002.txt
+madison_speeches_003,madison,Proclamation&#8212;Occupation of West Florida,./Total_Corpus of Presidential Speeches/madison_speeches_003.txt
+madison_speeches_004,madison,Second Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_004.txt
+madison_speeches_005,madison,Third Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_005.txt
+madison_speeches_006,madison,Veto Act on Incorporating the Alexandria Protestant Episcopal Church,./Total_Corpus of Presidential Speeches/madison_speeches_006.txt
+madison_speeches_007,madison,Special Message to Congress on the Foreign Policy Crisis&#8212;War Message,./Total_Corpus of Presidential Speeches/madison_speeches_007.txt
+madison_speeches_008,madison,Proclamation of a State of War with Great Britain,./Total_Corpus of Presidential Speeches/madison_speeches_008.txt
+madison_speeches_009,madison,Second Inaugural Address,./Total_Corpus of Presidential Speeches/madison_speeches_009.txt
+madison_speeches_010,madison,Fourth Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_010.txt
+madison_speeches_011,madison,Proclamation of Day of Fasting and Prayer,./Total_Corpus of Presidential Speeches/madison_speeches_011.txt
+madison_speeches_012,madison,Message on the Special Congressional Session&#8212;State of War and Diplomacy,./Total_Corpus of Presidential Speeches/madison_speeches_012.txt
+madison_speeches_013,madison,Proclamation on Day of Public Humiliation and Prayer,./Total_Corpus of Presidential Speeches/madison_speeches_013.txt
+madison_speeches_014,madison,Fifth Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_014.txt
+madison_speeches_015,madison,"Proclamation upon British Depredations, Burning of the Capitol",./Total_Corpus of Presidential Speeches/madison_speeches_015.txt
+madison_speeches_016,madison,Sixth Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_016.txt
+madison_speeches_017,madison,Special Message to Congress on the Treaty of Ghent,./Total_Corpus of Presidential Speeches/madison_speeches_017.txt
+madison_speeches_018,madison,Seventh Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_018.txt
+madison_speeches_019,madison,Veto Message on the National Bank,./Total_Corpus of Presidential Speeches/madison_speeches_019.txt
+madison_speeches_020,madison,Veto Message on the Internal Improvements Bill,./Total_Corpus of Presidential Speeches/madison_speeches_020.txt
+madison_speeches_021,madison,Eighth Annual Message,./Total_Corpus of Presidential Speeches/madison_speeches_021.txt
+mckinley_speeches_000,mckinley,First Inaugural Address,./Total_Corpus of Presidential Speeches/mckinley_speeches_000.txt
+mckinley_speeches_001,mckinley,Message Regarding Banking and Currency Laws,./Total_Corpus of Presidential Speeches/mckinley_speeches_001.txt
+mckinley_speeches_002,mckinley,Message Regarding Special Session of Congress,./Total_Corpus of Presidential Speeches/mckinley_speeches_002.txt
+mckinley_speeches_003,mckinley,Message Regarding Relief of Americans in Cuba,./Total_Corpus of Presidential Speeches/mckinley_speeches_003.txt
+mckinley_speeches_004,mckinley,First Annual Message,./Total_Corpus of Presidential Speeches/mckinley_speeches_004.txt
+mckinley_speeches_005,mckinley,Proclamation Calling for Military Volunteers,./Total_Corpus of Presidential Speeches/mckinley_speeches_005.txt
+mckinley_speeches_006,mckinley,Proclamation Regarding Blockade of Cuba,./Total_Corpus of Presidential Speeches/mckinley_speeches_006.txt
+mckinley_speeches_007,mckinley,Second Annual Message,./Total_Corpus of Presidential Speeches/mckinley_speeches_007.txt
+mckinley_speeches_008,mckinley,Message Regarding Cuban Civil War,./Total_Corpus of Presidential Speeches/mckinley_speeches_008.txt
+mckinley_speeches_009,mckinley,Second Inaugural Address,./Total_Corpus of Presidential Speeches/mckinley_speeches_009.txt
+mckinley_speeches_010,mckinley,Speech Accepting the Republican Nomination,./Total_Corpus of Presidential Speeches/mckinley_speeches_010.txt
+mckinley_speeches_011,mckinley,Fourth Annual Message,./Total_Corpus of Presidential Speeches/mckinley_speeches_011.txt
+mckinley_speeches_012,mckinley,Third Annual Message,./Total_Corpus of Presidential Speeches/mckinley_speeches_012.txt
+mckinley_speeches_013,mckinley,"Speech in Buffalo, New York",./Total_Corpus of Presidential Speeches/mckinley_speeches_013.txt
+monroe_speeches_000,monroe,First Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_000.txt
+monroe_speeches_001,monroe,First Inaugural Address,./Total_Corpus of Presidential Speeches/monroe_speeches_001.txt
+monroe_speeches_002,monroe,Third Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_002.txt
+monroe_speeches_003,monroe,Second Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_003.txt
+monroe_speeches_004,monroe,Fourth Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_004.txt
+monroe_speeches_005,monroe,Second Inaugural Address,./Total_Corpus of Presidential Speeches/monroe_speeches_005.txt
+monroe_speeches_006,monroe,Sixth Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_006.txt
+monroe_speeches_007,monroe,Fifth Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_007.txt
+monroe_speeches_008,monroe,"Seventh Annual Message, Monroe Doctrine",./Total_Corpus of Presidential Speeches/monroe_speeches_008.txt
+monroe_speeches_009,monroe,Eighth Annual Message,./Total_Corpus of Presidential Speeches/monroe_speeches_009.txt
+nixon_speeches_000,nixon,Radio Address About Second Annual Foreign Policy Report to the Congress,./Total_Corpus of Presidential Speeches/nixon_speeches_000.txt
+nixon_speeches_001,nixon,Checkers Speech,./Total_Corpus of Presidential Speeches/nixon_speeches_001.txt
+nixon_speeches_002,nixon,First Inaugural Address,./Total_Corpus of Presidential Speeches/nixon_speeches_002.txt
+nixon_speeches_003,nixon,Address to the Nation on the War in Vietnam,./Total_Corpus of Presidential Speeches/nixon_speeches_003.txt
+nixon_speeches_004,nixon,State of the Union Address,./Total_Corpus of Presidential Speeches/nixon_speeches_004.txt
+nixon_speeches_005,nixon,Address to the Nation on the Situation in Southeast Asia,./Total_Corpus of Presidential Speeches/nixon_speeches_005.txt
+nixon_speeches_006,nixon,State of the Union Address,./Total_Corpus of Presidential Speeches/nixon_speeches_006.txt
+nixon_speeches_007,nixon,Address to the Nation on the Situation in Southeast Asia,./Total_Corpus of Presidential Speeches/nixon_speeches_007.txt
+nixon_speeches_008,nixon,Remarks Announcing an Agreement on Strategic Arms Limitation Talks,./Total_Corpus of Presidential Speeches/nixon_speeches_008.txt
+nixon_speeches_009,nixon,State of the Union Address,./Total_Corpus of Presidential Speeches/nixon_speeches_009.txt
+nixon_speeches_010,nixon,Address to the Nation on Plan for Peace in Vietnam,./Total_Corpus of Presidential Speeches/nixon_speeches_010.txt
+nixon_speeches_011,nixon,Address to the Nation on the Situation in Southeast Asia,./Total_Corpus of Presidential Speeches/nixon_speeches_011.txt
+nixon_speeches_012,nixon,Remarks on Being Reelected to the Presidency,./Total_Corpus of Presidential Speeches/nixon_speeches_012.txt
+nixon_speeches_013,nixon,Remarks on Election Eve,./Total_Corpus of Presidential Speeches/nixon_speeches_013.txt
+nixon_speeches_014,nixon,Second Inaugural Address,./Total_Corpus of Presidential Speeches/nixon_speeches_014.txt
+nixon_speeches_015,nixon,Address to the Nation Announcing an Agreement on Ending the War in Vietnam,./Total_Corpus of Presidential Speeches/nixon_speeches_015.txt
+nixon_speeches_016,nixon,Address to the Nation About the Watergate Investigations,./Total_Corpus of Presidential Speeches/nixon_speeches_016.txt
+nixon_speeches_017,nixon,Address to the Nation About the Watergate Investigations,./Total_Corpus of Presidential Speeches/nixon_speeches_017.txt
+nixon_speeches_018,nixon,The President's News Conference,./Total_Corpus of Presidential Speeches/nixon_speeches_018.txt
+nixon_speeches_019,nixon,State of the Union Address,./Total_Corpus of Presidential Speeches/nixon_speeches_019.txt
+nixon_speeches_020,nixon,Address to the Nation on Presidential Tape Recordings,./Total_Corpus of Presidential Speeches/nixon_speeches_020.txt
+nixon_speeches_021,nixon,Address to the Nation Announcing Decision To Resign the Office of President,./Total_Corpus of Presidential Speeches/nixon_speeches_021.txt
+nixon_speeches_022,nixon,Remarks on Departure From the White House,./Total_Corpus of Presidential Speeches/nixon_speeches_022.txt
+obama_speeches_000,obama,Remarks on Election Night,./Total_Corpus of Presidential Speeches/obama_speeches_000.txt
+obama_speeches_001,obama,Inaugural Address,./Total_Corpus of Presidential Speeches/obama_speeches_001.txt
+obama_speeches_002,obama,Acceptance Speech at the Democratic National Convention,./Total_Corpus of Presidential Speeches/obama_speeches_002.txt
+obama_speeches_003,obama,Remarks on the Lilly Ledbetter Fair Pay Restoration Act Bill Signing,./Total_Corpus of Presidential Speeches/obama_speeches_003.txt
+obama_speeches_004,obama,Remarks on Nominating Judge Sonia Sotomayor to the U. S. Supreme Court,./Total_Corpus of Presidential Speeches/obama_speeches_004.txt
+obama_speeches_005,obama,Remarks on the American Recovery and Reinvestment Act,./Total_Corpus of Presidential Speeches/obama_speeches_005.txt
+obama_speeches_006,obama,Address Before a Joint Session of Congress,./Total_Corpus of Presidential Speeches/obama_speeches_006.txt
+obama_speeches_007,obama,Address at Cairo University,./Total_Corpus of Presidential Speeches/obama_speeches_007.txt
+obama_speeches_008,obama,Speech on Strategy in Afghanistan and Pakistan,./Total_Corpus of Presidential Speeches/obama_speeches_008.txt
+obama_speeches_009,obama,2010 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_009.txt
+obama_speeches_010,obama,Acceptance of Nobel Peace Prize,./Total_Corpus of Presidential Speeches/obama_speeches_010.txt
+obama_speeches_011,obama,Address to Congress on Health Care,./Total_Corpus of Presidential Speeches/obama_speeches_011.txt
+obama_speeches_012,obama,Remarks on Wall Street Reform,./Total_Corpus of Presidential Speeches/obama_speeches_012.txt
+obama_speeches_013,obama,News Conference on Congressional Gridlock,./Total_Corpus of Presidential Speeches/obama_speeches_013.txt
+obama_speeches_014,obama,Remarks on Space Exploration in the 21st Century,./Total_Corpus of Presidential Speeches/obama_speeches_014.txt
+obama_speeches_015,obama,Speech on Health Care Reform,./Total_Corpus of Presidential Speeches/obama_speeches_015.txt
+obama_speeches_016,obama,Address on the End of the Combat Mission in Iraq,./Total_Corpus of Presidential Speeches/obama_speeches_016.txt
+obama_speeches_017,obama,Speech on the BP Oil Spill,./Total_Corpus of Presidential Speeches/obama_speeches_017.txt
+obama_speeches_018,obama,Address to the United Nations,./Total_Corpus of Presidential Speeches/obama_speeches_018.txt
+obama_speeches_019,obama,Press Conference After 2010 Midterm Elections,./Total_Corpus of Presidential Speeches/obama_speeches_019.txt
+obama_speeches_020,obama,"Remarks at Memorial for Victims of the Tucson, AZ Shooting",./Total_Corpus of Presidential Speeches/obama_speeches_020.txt
+obama_speeches_021,obama,Remarks on the Death of Osama Bin Laden,./Total_Corpus of Presidential Speeches/obama_speeches_021.txt
+obama_speeches_022,obama,Speech on American Diplomacy in the Middle East and North Africa,./Total_Corpus of Presidential Speeches/obama_speeches_022.txt
+obama_speeches_023,obama,2011 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_023.txt
+obama_speeches_026,obama,Remarks on the End of the War in Iraq,./Total_Corpus of Presidential Speeches/obama_speeches_026.txt
+obama_speeches_027,obama,Address to the British Parliament,./Total_Corpus of Presidential Speeches/obama_speeches_027.txt
+obama_speeches_028,obama,Nominee Acceptance Speech at 2012 Democratic National Convention,./Total_Corpus of Presidential Speeches/obama_speeches_028.txt
+obama_speeches_029,obama,2012 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_029.txt
+obama_speeches_030,obama,Remarks on Sandy Hook Elementary Shootings,./Total_Corpus of Presidential Speeches/obama_speeches_030.txt
+obama_speeches_031,obama,2012 Election Night Victory Speech,./Total_Corpus of Presidential Speeches/obama_speeches_031.txt
+obama_speeches_032,obama,Second Inaugural Address,./Total_Corpus of Presidential Speeches/obama_speeches_032.txt
+obama_speeches_033,obama,Remarks on Immigration Reform,./Total_Corpus of Presidential Speeches/obama_speeches_033.txt
+obama_speeches_034,obama,2013 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_034.txt
+obama_speeches_035,obama,Statement on the Government Sequester,./Total_Corpus of Presidential Speeches/obama_speeches_035.txt
+obama_speeches_036,obama,Address to the People of Israel,./Total_Corpus of Presidential Speeches/obama_speeches_036.txt
+obama_speeches_037,obama,Speech on Gun Violence,./Total_Corpus of Presidential Speeches/obama_speeches_037.txt
+obama_speeches_038,obama,Remarks on Trayvon Martin,./Total_Corpus of Presidential Speeches/obama_speeches_038.txt
+obama_speeches_039,obama,Remarks on Education and the Economy,./Total_Corpus of Presidential Speeches/obama_speeches_039.txt
+obama_speeches_040,obama,Address to the Nation on Syria,./Total_Corpus of Presidential Speeches/obama_speeches_040.txt
+obama_speeches_041,obama,Speech on Economic Mobility,./Total_Corpus of Presidential Speeches/obama_speeches_041.txt
+obama_speeches_042,obama,2014 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_042.txt
+obama_speeches_043,obama,Address to the Nation on Immigration,./Total_Corpus of Presidential Speeches/obama_speeches_043.txt
+obama_speeches_044,obama,2015 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_044.txt
+obama_speeches_045,obama,Remarks in Eulogy for the Honorable Reverend Clementa Pickney,./Total_Corpus of Presidential Speeches/obama_speeches_045.txt
+obama_speeches_046,obama,Remarks at the 50th Anniversary of the Selma Marches,./Total_Corpus of Presidential Speeches/obama_speeches_046.txt
+obama_speeches_047,obama,Remarks to the People of Cuba,./Total_Corpus of Presidential Speeches/obama_speeches_047.txt
+obama_speeches_048,obama,2016 State of the Union Address,./Total_Corpus of Presidential Speeches/obama_speeches_048.txt
+obama_speeches_049,obama,Commencement Address at Rutgers University,./Total_Corpus of Presidential Speeches/obama_speeches_049.txt
+pierce_speeches_000,pierce,First Annual Message,./Total_Corpus of Presidential Speeches/pierce_speeches_000.txt
+pierce_speeches_001,pierce,Inaugural Address,./Total_Corpus of Presidential Speeches/pierce_speeches_001.txt
+pierce_speeches_002,pierce,Proclamation,./Total_Corpus of Presidential Speeches/pierce_speeches_002.txt
+pierce_speeches_003,pierce,Message to Senate on Treaty with Mexico,./Total_Corpus of Presidential Speeches/pierce_speeches_003.txt
+pierce_speeches_004,pierce,Message Regarding Proposed US - Mexican Convention,./Total_Corpus of Presidential Speeches/pierce_speeches_004.txt
+pierce_speeches_005,pierce,Message Regarding Transit Across Central America,./Total_Corpus of Presidential Speeches/pierce_speeches_005.txt
+pierce_speeches_006,pierce,Second Annual Message,./Total_Corpus of Presidential Speeches/pierce_speeches_006.txt
+pierce_speeches_007,pierce,Message Regarding US - Spanish Relations,./Total_Corpus of Presidential Speeches/pierce_speeches_007.txt
+pierce_speeches_008,pierce,Expansion of August 4 Veto Message,./Total_Corpus of Presidential Speeches/pierce_speeches_008.txt
+pierce_speeches_009,pierce,Veto Message on Legislation Funding Public Works,./Total_Corpus of Presidential Speeches/pierce_speeches_009.txt
+pierce_speeches_010,pierce,Third Annual Message,./Total_Corpus of Presidential Speeches/pierce_speeches_010.txt
+pierce_speeches_011,pierce,Proclamation Addressing Disturbances in Kansas,./Total_Corpus of Presidential Speeches/pierce_speeches_011.txt
+pierce_speeches_012,pierce,Message Regarding Disturbances in Kansas,./Total_Corpus of Presidential Speeches/pierce_speeches_012.txt
+pierce_speeches_013,pierce,Special Session Message Regarding Military Support,./Total_Corpus of Presidential Speeches/pierce_speeches_013.txt
+pierce_speeches_014,pierce,Fourth Annual Message,./Total_Corpus of Presidential Speeches/pierce_speeches_014.txt
+polk_speeches_000,polk,First Annual Message,./Total_Corpus of Presidential Speeches/polk_speeches_000.txt
+polk_speeches_001,polk,Inaugural Address,./Total_Corpus of Presidential Speeches/polk_speeches_001.txt
+polk_speeches_002,polk,Message Regarding Cherokee Indians,./Total_Corpus of Presidential Speeches/polk_speeches_002.txt
+polk_speeches_003,polk,Message Regarding Increase in Military Force,./Total_Corpus of Presidential Speeches/polk_speeches_003.txt
+polk_speeches_004,polk,Announcement of War with Mexico,./Total_Corpus of Presidential Speeches/polk_speeches_004.txt
+polk_speeches_005,polk,Message to Senate Regarding Oregon,./Total_Corpus of Presidential Speeches/polk_speeches_005.txt
+polk_speeches_006,polk,Veto Message Regarding Funding Internal Improvements,./Total_Corpus of Presidential Speeches/polk_speeches_006.txt
+polk_speeches_007,polk,War Message to Congress,./Total_Corpus of Presidential Speeches/polk_speeches_007.txt
+polk_speeches_008,polk,Message Regarding Settlement with Mexico,./Total_Corpus of Presidential Speeches/polk_speeches_008.txt
+polk_speeches_009,polk,Second Annual Message to Congress,./Total_Corpus of Presidential Speeches/polk_speeches_009.txt
+polk_speeches_010,polk,Message Regarding Treaty with Cherokees,./Total_Corpus of Presidential Speeches/polk_speeches_010.txt
+polk_speeches_011,polk,Message Requesting the Creation of an Oregon Territory,./Total_Corpus of Presidential Speeches/polk_speeches_011.txt
+polk_speeches_012,polk,Request to Increase the Size of the Army,./Total_Corpus of Presidential Speeches/polk_speeches_012.txt
+polk_speeches_013,polk,Message Regarding the War with Mexico,./Total_Corpus of Presidential Speeches/polk_speeches_013.txt
+polk_speeches_014,polk,Message Regarding Treaty Of Guadelupe Hidalgo,./Total_Corpus of Presidential Speeches/polk_speeches_014.txt
+polk_speeches_015,polk,Third Annual Message,./Total_Corpus of Presidential Speeches/polk_speeches_015.txt
+polk_speeches_016,polk,Announcement of Peace Treaty with Mexico,./Total_Corpus of Presidential Speeches/polk_speeches_016.txt
+polk_speeches_017,polk,Message Regarding the Treaty of Guadalupe Hidalgo,./Total_Corpus of Presidential Speeches/polk_speeches_017.txt
+polk_speeches_018,polk,Message Regarding the Oregon Territory,./Total_Corpus of Presidential Speeches/polk_speeches_018.txt
+polk_speeches_019,polk,Message Regarding Establishment Of The French Republic,./Total_Corpus of Presidential Speeches/polk_speeches_019.txt
+polk_speeches_020,polk,Message Regarding Size of the Army,./Total_Corpus of Presidential Speeches/polk_speeches_020.txt
+polk_speeches_021,polk,Message Regarding Slavery in the Territories,./Total_Corpus of Presidential Speeches/polk_speeches_021.txt
+polk_speeches_022,polk,Message Regarding War - time Measures,./Total_Corpus of Presidential Speeches/polk_speeches_022.txt
+polk_speeches_023,polk,Fourth Annual Message to Congress,./Total_Corpus of Presidential Speeches/polk_speeches_023.txt
+polk_speeches_024,polk,Message Regarding the Treaty of Guadalupe Hidalgo,./Total_Corpus of Presidential Speeches/polk_speeches_024.txt
+reagan_speeches_000,reagan,First Press Conference,./Total_Corpus of Presidential Speeches/reagan_speeches_000.txt
+reagan_speeches_001,reagan,A Time for Choosing,./Total_Corpus of Presidential Speeches/reagan_speeches_001.txt
+reagan_speeches_002,reagan,Remarks at the Republican National Convention,./Total_Corpus of Presidential Speeches/reagan_speeches_002.txt
+reagan_speeches_003,reagan,Announcement for Presidential Candidacy,./Total_Corpus of Presidential Speeches/reagan_speeches_003.txt
+reagan_speeches_004,reagan,Republican National Convention,./Total_Corpus of Presidential Speeches/reagan_speeches_004.txt
+reagan_speeches_005,reagan,First Inaugural Address,./Total_Corpus of Presidential Speeches/reagan_speeches_005.txt
+reagan_speeches_006,reagan,Address on the Program for Economic Recovery,./Total_Corpus of Presidential Speeches/reagan_speeches_006.txt
+reagan_speeches_007,reagan,Address at University of Notre Dame,./Total_Corpus of Presidential Speeches/reagan_speeches_007.txt
+reagan_speeches_008,reagan,Speech to the NAACP Annual Convention,./Total_Corpus of Presidential Speeches/reagan_speeches_008.txt
+reagan_speeches_009,reagan,Address on Federal Tax Reduction Legislation,./Total_Corpus of Presidential Speeches/reagan_speeches_009.txt
+reagan_speeches_010,reagan,Remarks on the Air Traffic Controllers Strike,./Total_Corpus of Presidential Speeches/reagan_speeches_010.txt
+reagan_speeches_011,reagan,Speech on the Strategic Arms Reduction Talks,./Total_Corpus of Presidential Speeches/reagan_speeches_011.txt
+reagan_speeches_012,reagan,Address to the Nation on Christmas and the Situation in Poland,./Total_Corpus of Presidential Speeches/reagan_speeches_012.txt
+reagan_speeches_013,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_013.txt
+reagan_speeches_014,reagan,Address to the British Parliament,./Total_Corpus of Presidential Speeches/reagan_speeches_014.txt
+reagan_speeches_015,reagan,Address to the Bundestag in West Germany,./Total_Corpus of Presidential Speeches/reagan_speeches_015.txt
+reagan_speeches_016,reagan,Speech to the United Nations General Assembly,./Total_Corpus of Presidential Speeches/reagan_speeches_016.txt
+reagan_speeches_017,reagan,Address on Tax and Budget Legislation,./Total_Corpus of Presidential Speeches/reagan_speeches_017.txt
+reagan_speeches_018,reagan,Speech to the Nation on U. S. Policy in the Middle East,./Total_Corpus of Presidential Speeches/reagan_speeches_018.txt
+reagan_speeches_019,reagan,Address to the Nation on Lebanon,./Total_Corpus of Presidential Speeches/reagan_speeches_019.txt
+reagan_speeches_020,reagan,Speech at the Conservative Political Action Conference,./Total_Corpus of Presidential Speeches/reagan_speeches_020.txt
+reagan_speeches_021,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_021.txt
+reagan_speeches_022,reagan,Evil Empire Speech,./Total_Corpus of Presidential Speeches/reagan_speeches_022.txt
+reagan_speeches_023,reagan,Address to the Nation on National Security,./Total_Corpus of Presidential Speeches/reagan_speeches_023.txt
+reagan_speeches_024,reagan,Speech on the Soviet Attack on a Korean Airliner,./Total_Corpus of Presidential Speeches/reagan_speeches_024.txt
+reagan_speeches_025,reagan,Speech to the Nation on Lebanon and Grenada,./Total_Corpus of Presidential Speeches/reagan_speeches_025.txt
+reagan_speeches_026,reagan,Address on Central America,./Total_Corpus of Presidential Speeches/reagan_speeches_026.txt
+reagan_speeches_027,reagan,"Speech on the Creation of the Martin Luther King, Jr., National Holiday",./Total_Corpus of Presidential Speeches/reagan_speeches_027.txt
+reagan_speeches_028,reagan,Remarks on U. S. Casualties in Lebanon and Grenada,./Total_Corpus of Presidential Speeches/reagan_speeches_028.txt
+reagan_speeches_029,reagan,Address Announcing His Candidacy for Reelection,./Total_Corpus of Presidential Speeches/reagan_speeches_029.txt
+reagan_speeches_030,reagan,Remarks Honoring the Vietnam War’s Unknown Soldier,./Total_Corpus of Presidential Speeches/reagan_speeches_030.txt
+reagan_speeches_031,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_031.txt
+reagan_speeches_032,reagan,"Remarks to the Citizens of Ballyporeen, Ireland",./Total_Corpus of Presidential Speeches/reagan_speeches_032.txt
+reagan_speeches_033,reagan,40th Anniversary of D - Day,./Total_Corpus of Presidential Speeches/reagan_speeches_033.txt
+reagan_speeches_034,reagan,Republican National Convention,./Total_Corpus of Presidential Speeches/reagan_speeches_034.txt
+reagan_speeches_035,reagan,Debate with Walter Mondale,./Total_Corpus of Presidential Speeches/reagan_speeches_035.txt
+reagan_speeches_036,reagan,Debate with Walter Mondale,./Total_Corpus of Presidential Speeches/reagan_speeches_036.txt
+reagan_speeches_037,reagan,Second Inaugural Address,./Total_Corpus of Presidential Speeches/reagan_speeches_037.txt
+reagan_speeches_038,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_038.txt
+reagan_speeches_039,reagan,Bergen - Belsen Concentration Camp,./Total_Corpus of Presidential Speeches/reagan_speeches_039.txt
+reagan_speeches_040,reagan,Speech on the Geneva Summit,./Total_Corpus of Presidential Speeches/reagan_speeches_040.txt
+reagan_speeches_041,reagan,Address on the Space Shuttle Challenger,./Total_Corpus of Presidential Speeches/reagan_speeches_041.txt
+reagan_speeches_042,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_042.txt
+reagan_speeches_043,reagan,Speech to the Nation on Air Strikes Against Libya,./Total_Corpus of Presidential Speeches/reagan_speeches_043.txt
+reagan_speeches_044,reagan,Speech to the Nation on the Campaign Against Drug Abuse,./Total_Corpus of Presidential Speeches/reagan_speeches_044.txt
+reagan_speeches_045,reagan,Address on the Meetings with Soviet Premier Gorbachev,./Total_Corpus of Presidential Speeches/reagan_speeches_045.txt
+reagan_speeches_046,reagan,Remarks on Signing the Tax Reform Act,./Total_Corpus of Presidential Speeches/reagan_speeches_046.txt
+reagan_speeches_047,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_047.txt
+reagan_speeches_048,reagan,Address from the Brandenburg Gate,./Total_Corpus of Presidential Speeches/reagan_speeches_048.txt
+reagan_speeches_049,reagan,Address to the Nation on Iran - Contra,./Total_Corpus of Presidential Speeches/reagan_speeches_049.txt
+reagan_speeches_050,reagan,Remarks at the Signing of the INF Treaty with Soviet Premier Gorbachev,./Total_Corpus of Presidential Speeches/reagan_speeches_050.txt
+reagan_speeches_051,reagan,Address to the Nation on the Soviet - U. S. Summit Meeting,./Total_Corpus of Presidential Speeches/reagan_speeches_051.txt
+reagan_speeches_052,reagan,State of the Union Address,./Total_Corpus of Presidential Speeches/reagan_speeches_052.txt
+reagan_speeches_053,reagan,Address at Moscow State University,./Total_Corpus of Presidential Speeches/reagan_speeches_053.txt
+reagan_speeches_054,reagan,Farewell Address at the Republican National Convention,./Total_Corpus of Presidential Speeches/reagan_speeches_054.txt
+reagan_speeches_055,reagan,Address to the United Nations,./Total_Corpus of Presidential Speeches/reagan_speeches_055.txt
+reagan_speeches_056,reagan,Remarks at the Veteran&#8217;s Day Ceremony,./Total_Corpus of Presidential Speeches/reagan_speeches_056.txt
+reagan_speeches_057,reagan,Speech on Foreign Policy,./Total_Corpus of Presidential Speeches/reagan_speeches_057.txt
+reagan_speeches_058,reagan,Farewell Address,./Total_Corpus of Presidential Speeches/reagan_speeches_058.txt
+roosevelt_speeches_000,roosevelt,Second Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_000.txt
+roosevelt_speeches_001,roosevelt,Announcement of the Death of President McKinley,./Total_Corpus of Presidential Speeches/roosevelt_speeches_001.txt
+roosevelt_speeches_002,roosevelt,Message Regarding US - Cuban Relations,./Total_Corpus of Presidential Speeches/roosevelt_speeches_002.txt
+roosevelt_speeches_003,roosevelt,First Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_003.txt
+roosevelt_speeches_004,roosevelt,Message Regarding US - Cuban Commercial Convention,./Total_Corpus of Presidential Speeches/roosevelt_speeches_004.txt
+roosevelt_speeches_005,roosevelt,Message Convening a Special Session of Congress,./Total_Corpus of Presidential Speeches/roosevelt_speeches_005.txt
+roosevelt_speeches_006,roosevelt,Message Regarding Treaty with Panama,./Total_Corpus of Presidential Speeches/roosevelt_speeches_006.txt
+roosevelt_speeches_007,roosevelt,Message Regarding the Panamanian Revolution,./Total_Corpus of Presidential Speeches/roosevelt_speeches_007.txt
+roosevelt_speeches_008,roosevelt,Proclamation Declaring US Neutrality,./Total_Corpus of Presidential Speeches/roosevelt_speeches_008.txt
+roosevelt_speeches_009,roosevelt,Inaugural Address,./Total_Corpus of Presidential Speeches/roosevelt_speeches_009.txt
+roosevelt_speeches_010,roosevelt,Third Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_010.txt
+roosevelt_speeches_011,roosevelt,Fourth Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_011.txt
+roosevelt_speeches_012,roosevelt,Message Regarding Panama Canal,./Total_Corpus of Presidential Speeches/roosevelt_speeches_012.txt
+roosevelt_speeches_013,roosevelt,Message Regarding Meatpacking Plants,./Total_Corpus of Presidential Speeches/roosevelt_speeches_013.txt
+roosevelt_speeches_014,roosevelt,Fifth Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_014.txt
+roosevelt_speeches_015,roosevelt,Sixth Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_015.txt
+roosevelt_speeches_016,roosevelt,Message Regarding Conditions in Panama,./Total_Corpus of Presidential Speeches/roosevelt_speeches_016.txt
+roosevelt_speeches_017,roosevelt,Message Regarding the State of Puerto Rico,./Total_Corpus of Presidential Speeches/roosevelt_speeches_017.txt
+roosevelt_speeches_018,roosevelt,Message Regarding Disturbances in Texas,./Total_Corpus of Presidential Speeches/roosevelt_speeches_018.txt
+roosevelt_speeches_019,roosevelt,Seventh Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_019.txt
+roosevelt_speeches_020,roosevelt,Message Regarding Labor Legislation,./Total_Corpus of Presidential Speeches/roosevelt_speeches_020.txt
+roosevelt_speeches_021,roosevelt,Eighth Annual Message,./Total_Corpus of Presidential Speeches/roosevelt_speeches_021.txt
+taft_speeches_000,taft,Inaugural Address,./Total_Corpus of Presidential Speeches/taft_speeches_000.txt
+taft_speeches_001,taft,Message Regarding Income Tax,./Total_Corpus of Presidential Speeches/taft_speeches_001.txt
+taft_speeches_002,taft,Message Regarding Environmental Preservation,./Total_Corpus of Presidential Speeches/taft_speeches_002.txt
+taft_speeches_003,taft,Address on the Tariff Law of 1909,./Total_Corpus of Presidential Speeches/taft_speeches_003.txt
+taft_speeches_004,taft,First Annual Message,./Total_Corpus of Presidential Speeches/taft_speeches_004.txt
+taft_speeches_005,taft,Message Regarding Economic Legislation,./Total_Corpus of Presidential Speeches/taft_speeches_005.txt
+taft_speeches_006,taft,Special Message on Canadian Reciprocity,./Total_Corpus of Presidential Speeches/taft_speeches_006.txt
+taft_speeches_007,taft,Second Annual Message,./Total_Corpus of Presidential Speeches/taft_speeches_007.txt
+taft_speeches_008,taft,Third Annual Message,./Total_Corpus of Presidential Speeches/taft_speeches_008.txt
+taft_speeches_009,taft,Fourth Annual Message,./Total_Corpus of Presidential Speeches/taft_speeches_009.txt
+taft_speeches_010,taft,Message Regarding Tariff Legislation,./Total_Corpus of Presidential Speeches/taft_speeches_010.txt
+taylor_speeches_000,taylor,First Annual Message,./Total_Corpus of Presidential Speeches/taylor_speeches_000.txt
+taylor_speeches_001,taylor,Message Regarding Newly Acquired Territories,./Total_Corpus of Presidential Speeches/taylor_speeches_001.txt
+taylor_speeches_002,taylor,Inaugural Address,./Total_Corpus of Presidential Speeches/taylor_speeches_002.txt
+taylor_speeches_003,taylor,Message Regarding Treaty with Great Britain,./Total_Corpus of Presidential Speeches/taylor_speeches_003.txt
+truman_speeches_000,truman,Farewell Address,./Total_Corpus of Presidential Speeches/truman_speeches_000.txt
+truman_speeches_001,truman,First Speech to Congress,./Total_Corpus of Presidential Speeches/truman_speeches_001.txt
+truman_speeches_002,truman,Announcing the Surrender of Germany,./Total_Corpus of Presidential Speeches/truman_speeches_002.txt
+truman_speeches_003,truman,Statement by the President Announcing the Use of the A - Bomb at Hiroshima,./Total_Corpus of Presidential Speeches/truman_speeches_003.txt
+truman_speeches_004,truman,Radio Report to the American People on the Potsdam Conference,./Total_Corpus of Presidential Speeches/truman_speeches_004.txt
+truman_speeches_005,truman,Announcing the Surrender of Japan,./Total_Corpus of Presidential Speeches/truman_speeches_005.txt
+truman_speeches_006,truman,Navy Day Address,./Total_Corpus of Presidential Speeches/truman_speeches_006.txt
+truman_speeches_007,truman,Truman Doctrine,./Total_Corpus of Presidential Speeches/truman_speeches_007.txt
+truman_speeches_008,truman,On the Veto of the Taft - Hartley Bill,./Total_Corpus of Presidential Speeches/truman_speeches_008.txt
+truman_speeches_009,truman,Address before the NAACP,./Total_Corpus of Presidential Speeches/truman_speeches_009.txt
+truman_speeches_010,truman,Democratic National Convention,./Total_Corpus of Presidential Speeches/truman_speeches_010.txt
+truman_speeches_011,truman,"Whistlestop Tour in Trenton, Missouri",./Total_Corpus of Presidential Speeches/truman_speeches_011.txt
+truman_speeches_012,truman,"Whistlestop Tour in Chariton, Iowa",./Total_Corpus of Presidential Speeches/truman_speeches_012.txt
+truman_speeches_013,truman,Victory Celebration,./Total_Corpus of Presidential Speeches/truman_speeches_013.txt
+truman_speeches_014,truman,Inaugural Address,./Total_Corpus of Presidential Speeches/truman_speeches_014.txt
+truman_speeches_015,truman,Report to the American People on Korea,./Total_Corpus of Presidential Speeches/truman_speeches_015.txt
+truman_speeches_016,truman,Columbia Scholastic Press Association,./Total_Corpus of Presidential Speeches/truman_speeches_016.txt
+truman_speeches_017,truman,Jefferson - Jackson Day Dinner,./Total_Corpus of Presidential Speeches/truman_speeches_017.txt
+truman_speeches_018,truman,Rear Platform Remarks,./Total_Corpus of Presidential Speeches/truman_speeches_018.txt
+tyler_speeches_000,tyler,Special Session Message to Congress Regarding General Affairs of the Country,./Total_Corpus of Presidential Speeches/tyler_speeches_000.txt
+tyler_speeches_001,tyler,Address Upon Assuming the Office of President of the United States,./Total_Corpus of Presidential Speeches/tyler_speeches_001.txt
+tyler_speeches_002,tyler,Veto Message Regarding the Bank of the United States,./Total_Corpus of Presidential Speeches/tyler_speeches_002.txt
+tyler_speeches_003,tyler,Veto Message on the Creation of a Fiscal Corporation,./Total_Corpus of Presidential Speeches/tyler_speeches_003.txt
+tyler_speeches_004,tyler,First Annual Message,./Total_Corpus of Presidential Speeches/tyler_speeches_004.txt
+tyler_speeches_005,tyler,Message Regarding Finances and Fiscal Policy,./Total_Corpus of Presidential Speeches/tyler_speeches_005.txt
+tyler_speeches_006,tyler,Message Regarding Indian Affairs in Florida,./Total_Corpus of Presidential Speeches/tyler_speeches_006.txt
+tyler_speeches_007,tyler,Veto Message Regarding Import Duties,./Total_Corpus of Presidential Speeches/tyler_speeches_007.txt
+tyler_speeches_008,tyler,Second Annual Message,./Total_Corpus of Presidential Speeches/tyler_speeches_008.txt
+tyler_speeches_009,tyler,Message Regarding Treaty with Texas,./Total_Corpus of Presidential Speeches/tyler_speeches_009.txt
+tyler_speeches_010,tyler,Message to Senate on Negotiations with Britain,./Total_Corpus of Presidential Speeches/tyler_speeches_010.txt
+tyler_speeches_011,tyler,Third Annual Message to Congress,./Total_Corpus of Presidential Speeches/tyler_speeches_011.txt
+tyler_speeches_012,tyler,Veto Message Regarding Infrastructure Improvements,./Total_Corpus of Presidential Speeches/tyler_speeches_012.txt
+tyler_speeches_013,tyler,Message to Congress Regarding US - Hawaiian Relations,./Total_Corpus of Presidential Speeches/tyler_speeches_013.txt
+tyler_speeches_014,tyler,Message Regarding Disturbances in Rhode Island,./Total_Corpus of Presidential Speeches/tyler_speeches_014.txt
+tyler_speeches_015,tyler,Message Regarding US - Mexican Affairs,./Total_Corpus of Presidential Speeches/tyler_speeches_015.txt
+tyler_speeches_016,tyler,Message Regarding the Slave Trade,./Total_Corpus of Presidential Speeches/tyler_speeches_016.txt
+tyler_speeches_017,tyler,Fourth Annual Message,./Total_Corpus of Presidential Speeches/tyler_speeches_017.txt
+vanburen_speeches_000,vanburen,Special Session Message,./Total_Corpus of Presidential Speeches/vanburen_speeches_000.txt
+vanburen_speeches_001,vanburen,Inaugural Address,./Total_Corpus of Presidential Speeches/vanburen_speeches_001.txt
+vanburen_speeches_002,vanburen,Proclamation,./Total_Corpus of Presidential Speeches/vanburen_speeches_002.txt
+vanburen_speeches_003,vanburen,First Annual Message to Congress,./Total_Corpus of Presidential Speeches/vanburen_speeches_003.txt
+vanburen_speeches_004,vanburen,Message Regarding Disturbances and Hostilities on the Canadian Border,./Total_Corpus of Presidential Speeches/vanburen_speeches_004.txt
+vanburen_speeches_005,vanburen,Second Annual Message to Congress,./Total_Corpus of Presidential Speeches/vanburen_speeches_005.txt
+vanburen_speeches_006,vanburen,Message Regarding Disputes on the Maine - Canadian Border,./Total_Corpus of Presidential Speeches/vanburen_speeches_006.txt
+vanburen_speeches_007,vanburen,Third Annual Message to Congress,./Total_Corpus of Presidential Speeches/vanburen_speeches_007.txt
+vanburen_speeches_008,vanburen,Fourth Annual Message to Congress,./Total_Corpus of Presidential Speeches/vanburen_speeches_008.txt
+vanburen_speeches_009,vanburen,Special Message about the Desctruction of Steamboat “Caroline”,./Total_Corpus of Presidential Speeches/vanburen_speeches_009.txt
+washington_speeches_000,washington,First Inaugural Address,./Total_Corpus of Presidential Speeches/washington_speeches_000.txt
+washington_speeches_001,washington,Second Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_001.txt
+washington_speeches_002,washington,Talk to the Chiefs and Counselors of the Seneca Nation,./Total_Corpus of Presidential Speeches/washington_speeches_002.txt
+washington_speeches_003,washington,First Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_003.txt
+washington_speeches_004,washington,Thanksgiving Proclamation,./Total_Corpus of Presidential Speeches/washington_speeches_004.txt
+washington_speeches_005,washington,Fourth Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_005.txt
+washington_speeches_006,washington,Veto Message on Congressional Redistricting,./Total_Corpus of Presidential Speeches/washington_speeches_006.txt
+washington_speeches_007,washington,Third Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_007.txt
+washington_speeches_008,washington,Proclamation Against Crimes Against the Cherokee Nations,./Total_Corpus of Presidential Speeches/washington_speeches_008.txt
+washington_speeches_009,washington,Second Inaugural Address,./Total_Corpus of Presidential Speeches/washington_speeches_009.txt
+washington_speeches_010,washington,Fifth Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_010.txt
+washington_speeches_011,washington,Proclamation of Neutrality,./Total_Corpus of Presidential Speeches/washington_speeches_011.txt
+washington_speeches_012,washington,Proclamation against Opposition to Execution of Laws and Excise Duties in Western Pennsylvania,./Total_Corpus of Presidential Speeches/washington_speeches_012.txt
+washington_speeches_013,washington,Proclamation of Militia Service,./Total_Corpus of Presidential Speeches/washington_speeches_013.txt
+washington_speeches_014,washington,Sixth Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_014.txt
+washington_speeches_015,washington,Proclamation of Pardons in Western Pennsylvania,./Total_Corpus of Presidential Speeches/washington_speeches_015.txt
+washington_speeches_016,washington,Seventh Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_016.txt
+washington_speeches_017,washington,Farewell Address,./Total_Corpus of Presidential Speeches/washington_speeches_017.txt
+washington_speeches_018,washington,"Message to the House of Representatives, Declining to Submit Diplomatic Instructions and Corresponde",./Total_Corpus of Presidential Speeches/washington_speeches_018.txt
+washington_speeches_019,washington,Talk to the Cherokee Nation,./Total_Corpus of Presidential Speeches/washington_speeches_019.txt
+washington_speeches_020,washington,Eighth Annual Message to Congress,./Total_Corpus of Presidential Speeches/washington_speeches_020.txt
+wilson_speeches_000,wilson,First Inaugural Address,./Total_Corpus of Presidential Speeches/wilson_speeches_000.txt
+wilson_speeches_001,wilson,Message Regarding Tariff Duties,./Total_Corpus of Presidential Speeches/wilson_speeches_001.txt
+wilson_speeches_002,wilson,Message Regarding Banking System,./Total_Corpus of Presidential Speeches/wilson_speeches_002.txt
+wilson_speeches_003,wilson,Address at Gettysburg,./Total_Corpus of Presidential Speeches/wilson_speeches_003.txt
+wilson_speeches_004,wilson,First Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_004.txt
+wilson_speeches_005,wilson,"Address at Congress Hall, Philadelphia",./Total_Corpus of Presidential Speeches/wilson_speeches_005.txt
+wilson_speeches_006,wilson,Message Regarding Tampico Incident,./Total_Corpus of Presidential Speeches/wilson_speeches_006.txt
+wilson_speeches_007,wilson,Memorial Day Address,./Total_Corpus of Presidential Speeches/wilson_speeches_007.txt
+wilson_speeches_008,wilson,Fourth of July Address,./Total_Corpus of Presidential Speeches/wilson_speeches_008.txt
+wilson_speeches_009,wilson,Address to a Joint Session of Congress on Trusts and Monopolies,./Total_Corpus of Presidential Speeches/wilson_speeches_009.txt
+wilson_speeches_010,wilson,Veto of Immigration Legislation,./Total_Corpus of Presidential Speeches/wilson_speeches_010.txt
+wilson_speeches_011,wilson,The Opinion of the World Speech,./Total_Corpus of Presidential Speeches/wilson_speeches_011.txt
+wilson_speeches_012,wilson,Second Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_012.txt
+wilson_speeches_013,wilson,Message on Neutrality,./Total_Corpus of Presidential Speeches/wilson_speeches_013.txt
+wilson_speeches_014,wilson,Message Regarding Women’s Suffrage,./Total_Corpus of Presidential Speeches/wilson_speeches_014.txt
+wilson_speeches_015,wilson,Speech of Acceptance,./Total_Corpus of Presidential Speeches/wilson_speeches_015.txt
+wilson_speeches_016,wilson,Message Regarding German Actions,./Total_Corpus of Presidential Speeches/wilson_speeches_016.txt
+wilson_speeches_017,wilson,Third Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_017.txt
+wilson_speeches_018,wilson,Message Regarding Safety of Merchant Ships,./Total_Corpus of Presidential Speeches/wilson_speeches_018.txt
+wilson_speeches_019,wilson,Message Regarding US - German Relations,./Total_Corpus of Presidential Speeches/wilson_speeches_019.txt
+wilson_speeches_020,wilson,Fourth Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_020.txt
+wilson_speeches_021,wilson,A World League for Peace Speech,./Total_Corpus of Presidential Speeches/wilson_speeches_021.txt
+wilson_speeches_022,wilson,Message Regarding World War I,./Total_Corpus of Presidential Speeches/wilson_speeches_022.txt
+wilson_speeches_023,wilson,Proclamation 1364,./Total_Corpus of Presidential Speeches/wilson_speeches_023.txt
+wilson_speeches_024,wilson,Second Inaugural Address,./Total_Corpus of Presidential Speeches/wilson_speeches_024.txt
+wilson_speeches_025,wilson,Address to Congress Requesting a Declaration of War Against Germany,./Total_Corpus of Presidential Speeches/wilson_speeches_025.txt
+wilson_speeches_026,wilson,Message Regarding Military Draft,./Total_Corpus of Presidential Speeches/wilson_speeches_026.txt
+wilson_speeches_027,wilson,Wilson&#8217;s Fourteen Points,./Total_Corpus of Presidential Speeches/wilson_speeches_027.txt
+wilson_speeches_028,wilson,Sixth Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_028.txt
+wilson_speeches_029,wilson,Fifth Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_029.txt
+wilson_speeches_030,wilson,Seventh Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_030.txt
+wilson_speeches_031,wilson,Eighth Annual Message,./Total_Corpus of Presidential Speeches/wilson_speeches_031.txt
