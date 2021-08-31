@@ -1,0 +1,359 @@
+**SYS 6018 | Fall 2020 | University of Virginia **
+
+*******************************************
+
+<!--- Below are global settings for knitr. You can override any of them by adding the changes to individual chunks --->
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # collapse by default
+                      echo=TRUE,         # echo code by default
+                      comment = "#>",    # change comment character
+                      fig.width = 5,     # set figure width
+                      fig.align = "center",# set figure position
+                      out.width = "49%", # set width of displayed images
+                      warning=TRUE,      # show R warnings
+                      message=TRUE)      # show R messages
+options(dplyr.summarise.inform = FALSE)  # ignore message about group structure
+```
+
+<!--- Solution Region --->
+```{css solution-region, echo=FALSE}
+.solution {
+  background-color: #232D4B10;
+  border-style: solid;
+  border-color: #232D4B;
+  padding: .5em;
+  margin: 20px
+}
+```
+
+
+<!--- Load Required R packages here --->
+```{r packages, include=FALSE}
+#- Better table printing
+library(kableExtra) # https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
+format_table <- function(x, nmax=10) {
+  kable(x) %>% 
+    kable_styling(full_width = FALSE, font_size=11, position = "left") %>% 
+    {if(nrow(x) > nmax) scroll_box(., width = "100%", height = "200px") else .}
+}
+#- useful functions
+digits <- function(x, k=2) format(round(x, k), nsmall=k)
+#- data directory
+data.dir = 'https://mdporter.github.io/SYS6018/data/'
+#- required functions
+library(tidyverse)
+library(glmnet)
+library(readr)
+library(tidyverse)
+library(glmnet)
+library(glmnetUtils)  # to allow formula interface in glmnet()
+library(ISLR)
+library(caret)
+library(FNN)
+library(broom)
+library(yardstick)
+library(tidyverse) 
+library(parallel)
+library(caret) 
+library(MASS)
+attach(mtcars)
+library(ks)
+library(mixtools)
+
+```
+
+
+
+
+### Problem 5.1 Geographic Profiling
+
+```{r, echo=FALSE, eval=FALSE}
+set.seed(2019)
+n = 283
+sd = 2.1
+x = sqrt(rnorm(n, sd=sd)^2 + rnorm(n, sd=sd)^2)
+
+readr::write_csv(tibble(x), "../data/geo_profile.csv", col_names=FALSE)
+#hist(x, 15)
+
+```
+
+Geographic profiling, a method developed in criminology, can be used to estimate the [home location (roost) of animals](https://www.sciencedirect.com/science/article/pii/S0022519305004157) based on a collection of sightings. The approach requires an estimate of the distribution the animal will travel from their roost to forage for food. 
+
+A sample of $283$ distances that pipistrelle bats traveled (in meters) from their roost can be found at: 
+<https://mdporter.github.io/SYS6018/data/geo_profile.csv>
+
+
+One probability model for the distance these bats will travel is:
+\begin{align*}
+f(x; \theta) = \frac{x}{\theta} \exp \left( - \frac{x^2}{2 \theta} \right)
+\end{align*}
+where the parameter $\theta > 0$ controls how far they are willing to travel. 
+
+
+a. Derive the MLE for $\theta$ (i.e., show the math). 
+
+<div class="solution"> 
+```{r}
+data <- read.csv("geo_profile.csv")
+```
+
+$$= \frac{\mathrm{d}}{\mathrm{d} x}\left[\frac{x}{\theta} \mathrm{e}^{-\frac{x^{2}}{2 \theta}}\right]$$
+
+$$= \frac{\mathrm{d}}{\mathrm{d} x}\left[\frac{x \mathrm{e}^{-\frac{x^{2}}{2 \theta}}}{\theta}\right] $$
+
+$$=\frac{1}{\theta} \cdot \frac{\mathrm{d}}{\mathrm{d} x}\left[x \mathrm{e}^{-\frac{x^{2}}{2 \theta}}\right] $$
+
+$$=\frac{\frac{\mathrm{d}}{\mathrm{d} x}[x] \cdot \mathrm{e}^{-\frac{x^{2}}{2 \theta}}+x \cdot \frac{\mathrm{d}}{\mathrm{d} x}\left[\mathrm{e}^{-\frac{x^{2}}{2 \theta}}\right]}{\theta} $$
+
+$$=\frac{\mathrm{e}^{-\frac{x^{2}}{2 \theta}}-\frac{x^{2} \mathrm{e}^{-\frac{x^{2}}{2 \theta}}}{\theta}}{\theta} $$
+
+$$MLE= -\frac{\left(x^{2}-\theta\right) e^{-\frac{x^{2}}{2 \theta}}}{\theta^{2}} $$
+
+</div>
+
+
+
+b. What is the MLE of $\theta$ for the bat data? (Use results from a, or use computational methods.) 
+
+<div class="solution"> 
+
+```{r}
+theta_seq = seq(0, 10, length=200)  # from density.R
+loglike = sapply(theta_seq, function(theta) prod((data[,1]/theta) * exp(-(data[,1]^2 /(2*theta)))))
+theta_max = theta_seq[which.max(loglike)] # from density.R
+theta_max
+```
+the MLE of the theta for bata data is 4.522613
+
+</div>
+
+
+
+c. Using the MLE value of $\theta$ from part b, compute the estimated density of this distribution at a set of evaluation points between 0 and 8 meters. Plot the estimated density.
+
+<div class="solution"> 
+```{r}
+bw = 0.3                  
+bks = seq(0, 8, by=bw)
+x = data[,1]
+model = tibble(x=seq(min(x), max(x), by=0.1), y=(x/theta_max) * exp(-(x^2/(2*theta_max))))
+
+ggplot() +   geom_histogram(aes(x=x, y=after_stat(density)), breaks = bks, color="white")  + 
+  geom_line(aes(x,y), data=model, color="red", alpha=1.5) +
+  labs(y = "pmf")
+
+```
+</div>
+
+
+
+d. Estimate the density using KDE. Report the bandwidth you chose and produce a plot of the estimated density. 
+
+
+<div class="solution"> 
+```{r}
+f = kde(data[,1])  # kde() model will select the best bandwidth, 
+bw = f$h    # use f$h to see what's the best bandwidth = 0.3910206
+bks = seq(0, 8, by=bw)  
+hh = hist(data[,1], freq=FALSE, breaks=bks, las=1, main="Density Histogram")
+
+plot(hh, freq=FALSE, ylim=c(0, max(c(hh$density, f$estimate))), 
+     las=1, main='', border='white', col='black') 
+rug(jitter(data[,1]))
+lines(f$eval.points, f$estimate, col=2, lwd=1.25)
+```
+the bandwidth I chose is 0.3910206, which is the result of kde(), because kde will automatically chose the best bandwidth, after plug in the function, I just need to use $h to see what's the best bandwidth in this case.
+</div>
+
+
+
+e. Which model do you prefer, the parametric or KDE? 
+
+<div class="solution"> 
+
+
+```{r}
+
+g1 = ggplot() +  geom_histogram(aes(x=data[,1], y=after_stat(density)), breaks = bks, color="white")  +labs(y = "pmf")
+g1
+g2 =  geom_line(aes(x,y), data=model, color="red", alpha=2)
+g3 =  geom_line(aes(x=f$eval.points,y=f$estimate), color="black", alpha=2)
+g1 + g2 + g3
+```
+In this case, the red line is parametric and KDE is the black line, I think i will perfer KDE more, because the line fit more smoothly than the red one. In addition to that, it is also depends on what task I'm working on, for example, KDE is better when I want to learn something about the phenomenon behind the data, while parametric is better if I want to know if the data and model agree or not.
+
+reference used for this question: https://stats.stackexchange.com/questions/32970/advantage-of-kernel-density-estimation-over-parametric-estimation
+
+</div>
+
+
+
+
+
+### Problem 5.2: Interstate Crash Density
+
+Interstate 64 (I-64) is a major east-west road that passes just south of Charlottesville. Where and when are the most dangerous places/times to be on I-64? The crash data (link below) gives the mile marker and fractional time-of-week for crashes that occurred on I-64 between mile marker 87 and 136 in 2016. The time-of-week data takes a numeric value of *\<dow\>.\<hour/24\>*, where the dow starts at 0 for Sunday (6 for Sat) and the decimal gives the time of day information. Thus `time=0.0417` corresponds to Sun at 1am and `time=6.5` corresponds to Sat at noon). 
+
+- **Crash Data**: <https://mdporter.github.io/SYS6018/data/crashes16.csv>
+
+
+a. Extract the crashes and make a scatter plot with mile marker on x-axis and time on y-axis. 
+
+
+<div class="solution"> 
+```{r}
+df_2 = read_csv("crashes16.csv") 
+plot(df_2$mile,df_2$time, main="scatter plot",
+     xlab=" mile marker", ylab=" time ", pch=19)
+```
+</div>
+
+
+
+b. Use KDE to estimate the *mile marker* density. Report the bandwidth and plot the density estimate. 
+
+<div class="solution"> 
+```{r}
+# 5.2 b 
+#---------------------------------------------------------------------------#
+#-- KDE for estimate the mile marker density.
+#---------------------------------------------------------------------------#
+
+#-- KDE
+f_1 = kde(df_2$mile)
+f_1$h  # 2.894092
+plot(f_1)
+
+#-- Histogram
+bw_1 = f_1$h                      # binwidth parameter
+bks_1 = seq(85, 140, by=bw_1)   # create a sequence of numbers
+hh_1 = hist(df_2$mile,  breaks=bks_1)# histogram object
+
+#-- KDE
+#f_1 = kde(df_2$mile, h=bw_1/3)
+#plot(f_1)
+
+#-- Plot hist and kde
+plot(hh_1, freq=FALSE, ylim=c(0, max(c(hh_1$density, f_1$estimate))), 
+     las=1, main='', border='white', col='grey75') 
+rug(jitter(df_2$mile))
+lines(f_1$eval.points, f_1$estimate, col=2, lwd=1.25)
+
+```
+the bandwidth is 2.894092, kde() function will select the best bandwidth, so after use the function, then use $h to find it.
+
+</div>
+
+
+c. Use KDE to estimate the temporal *time-of-week* density. Report the bandwidth and plot the density estimate. 
+
+<div class="solution"> 
+```{r}
+# 5.3 c
+
+#---------------------------------------------------------------------------#
+#-- KDE for estimate the temporal time of week density
+#---------------------------------------------------------------------------#
+#-- KDE
+f_2 = kde(df_2$time)
+f_2$H # 0.1715011
+#f_2$h
+plot(f_2)
+
+#-- Histogram
+bw_2 = f_2$H                      # binwidth parameter
+bks_2 = seq(0, 10, by=bw_2)   # create a sequence of numbers
+hh_2 = hist(df_2$time,  breaks=bks_2)# histogram object
+
+#-- Plot hist and kde
+plot(hh_2, freq=FALSE, ylim=c(0, max(c(hh_2$density, f_2$estimate))), 
+     las=1, main='', border='white', col='grey75') 
+rug(jitter(df_2$time))
+lines(f_2$eval.points, f_2$estimate, col=2, lwd=1.25)
+
+```
+the bandwidth is 0.1715011, kde() function will select the best bandwidth, so after use the function, then use $H to find it.
+</div>
+
+
+
+d. Use KDE to estimate the bivariate mile-time density. What are the bandwidth parameters? Plot the bivariate density estimate. 
+
+<div class="solution"> 
+```{r}
+
+# 5.3 d
+#---------------------------------------------------------------------------#
+#-- KDE for estimate the bivariate mile-time density
+#---------------------------------------------------------------------------#
+
+#-- Plot: Base R
+plot(df_2, las=1); grid()
+#-- Plot: ggplot
+ggplot(df_2, aes(mile, time)) + geom_point() + 
+  geom_density_2d() # geom_density2d_filled(), geom_contour_filled(), ...
+
+
+#-- MV KDE: Unconstrained
+H1 = Hscv(df_2)                  # smoothed cross-validation bw estimator
+f1 = kde(df_2, H=H1)             # use H for multivariate data
+
+plot(f1, 
+     cont = c(5, 50, 95),                        # set contour levels
+      display = "filled.contour",                # use filled contour
+     las=1, xlim = c(85, 140), ylim=c(0, 10))  # set asthetics
+points(df_2, pch=19, cex=.5, col='grey60')           # add points
+grid()                                            # add grid lines
+
+
+H1 # this is the bandwidth
+
+
+
+```
+the bandwidth is the output of H1.
+</div>
+
+
+e. Based on the estimated density, approximate the most dangerous mile marker and time-of-week. 
+
+<div class="solution"> 
+```{r}
+
+#---------------------------------------------------------------------------#
+#-- based on the estimated density, approximate the most dangerous mile marker and time of week
+#---------------------------------------------------------------------------#
+
+H1 = Hscv(df_2)
+H2 = Hscv.diag(df_2)
+
+
+#---------------------------------------------------------------------------#
+#-- Visualize kernel shapes
+#---------------------------------------------------------------------------#
+plot(df_2, las=1); grid()
+
+#-- Add 95% confidence ellipse for *unconstrained* at location (103, 5.7)
+
+points(103, 5.7, pch="+", col="red", cex=2.5)
+mixtools::ellipse(mu=c(103, 5.7), 
+                  sigma=H1, 
+                  alpha = .05, col="red") 
+
+#-- Add 95% confidence ellipse for *product kernel* at location (118, 1.7))
+
+points(118, 1.7, pch="+", col="blue", cex=2.5)
+mixtools::ellipse(mu=c(118, 1.7), 
+                  sigma=H2, 
+                  alpha = .05, col="blue") 
+
+
+```
+based on all our graphs before, there are two major most dangerous mile marker and time of week: the first one is Friday night around 10PM with mile marker of 103. The second one is Monday around 6PM with mile marker of 118.
+
+#reference: participated in a group meeting around 20 people on Oct 7th. Orignized in Slack by Clair.
+</div>
+

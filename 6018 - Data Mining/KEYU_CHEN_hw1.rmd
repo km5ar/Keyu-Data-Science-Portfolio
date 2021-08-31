@@ -1,0 +1,370 @@
+**keyu chen |km5ar |SYS 6018 | Fall 2020 | University of Virginia **
+
+
+*******************************************
+
+<!--- Below are global settings for knitr. You can override any of them by adding the changes to individual chunks --->
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # collapse by default
+                      echo=TRUE,         # echo code by default
+                      comment = "#>",    # change comment character
+                      fig.width = 5,     # set figure width
+                      fig.align = "center",# set figure position
+                      out.width = "49%", # set width of displayed images
+                      warning=FALSE,     # do not show R warnings
+                      message=FALSE)     # do not show R messages
+options(dplyr.summarise.inform = FALSE)  # ignore message about group structure
+```
+
+
+<!--- Solution Region --->
+```{css solution-region, echo=FALSE}
+.solution {
+  background-color: #232D4B10;
+  border-style: solid;
+  border-color: #232D4B;
+  padding: .5em;
+  margin: 20px
+}
+```
+
+
+<!--- Load Required R packages here --->
+```{r packages, include=FALSE}
+#- Better table printing
+library(kableExtra) # https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
+format_table <- function(x, nmax=10) {
+  kable(x) %>% 
+    kable_styling(full_width = FALSE, font_size=11, position = "left") %>% 
+    {if(nrow(x) > nmax) scroll_box(., width = "100%", height = "200px") else .}
+}
+#- useful functions
+digits <- function(x, k=2) format(round(x, k), nsmall=k)
+#- data directory
+data.dir = 'https://mdporter.github.io/SYS6018/data/'
+#- required functions
+library(tidyverse)
+library(reshape2)
+```
+
+
+### Problem 1.1: Evaluating a Regression Model 
+
+
+a. Create a set of functions to generate data from the following distributions:
+
+$$
+\begin{align*}
+X &\sim \mathcal{N}(0, 1) \\
+Y &= -1 + .5X + .2X^2 + \epsilon \\
+\epsilon &\sim \mathcal{N}(0,\, \sigma)
+\end{align*}
+$$
+<div class="solution">
+```{r}
+#-- Settings
+sim_x <- function(n) rnorm(n,0,1) 
+f <- function(x) -1 + 0.5*x + 0.2*(x^2)   # true mean function
+sd = 3                                  # stdev for error
+sim_y <- function(x, sd){               # generate Y|X from N{f(x),sd}
+  n = length(x)
+  f(x) + rnorm(n, sd=sd)             
+}
+```
+</div>
+
+
+b. Simulate $n=100$ realizations from these distributions using $\sigma=3$. 
+Produce a scatterplot and draw the true regression line $f(x) = E[Y \mid X=x]$. 
+Use `set.seed(611)` prior to generating the data.
+
+<div class="solution">
+```{r}
+set.seed(611)
+n = 100
+x = sim_x(n)
+y = sim_y(x,sd=sd)
+data_train = tibble(x,y)
+#-- Prediction
+xseq = seq(-2, 2, length=200)        # sequence of 200 equally spaced values from 0 to 1
+xeval = tibble(x = xseq)            # make into a tibble object
+#-- Scatter plot
+gg_example = ggplot(data_train, aes(x,y)) +   # a
+  geom_point() 
+y_true <- f(xseq)
+poly.data = tibble(x = xseq,true_model = y_true) %>%  # long data
+  pivot_longer(-x, names_to="model", values_to="y")
+gg_example + 
+  geom_line(data=poly.data, aes(color=model)) 
+```
+</div>
+
+
+
+c. Fit three polynomial regression models using least squares: linear, quadratic, and cubic. Produce another scatterplot, add the fitted lines and true population line $f(x)$  using different colors, and add a legend that maps the line color to a model.
+    - Note: Notice that while the true model is quadratic, we are also fitting linear (less complex) and cubic (more complex) models. 
+
+<div class="solution">
+```{r}
+# linear
+m1 = lm(y~x, data=data_train) # fit simple OLS
+#-- Prediction
+xseq = seq(-2, 2, length=200)        # sequence of 200 equally spaced values from 0 to 1
+xeval = tibble(x = xseq)            # make into a tibble object
+yhat1 = predict(m1, newdata=xeval)  # vector of yhat's (predictions)
+# quadratic
+m2 = lm(y~poly(x, degree=2), data=data_train) 
+yhat2 = predict(m2, newdata=xeval)  
+# cubic
+m3 = lm(y~poly(x, degree=3), data=data_train) 
+yhat3 = predict(m3, newdata=xeval)
+#- ggplot2 plot
+poly.data = tibble(x = xseq, linear=yhat1, quadratic=yhat2, cubic = yhat3, true_model = y_true) %>%  # long data
+  pivot_longer(-x, names_to="model", values_to="y")
+gg_example + 
+  geom_line(data=poly.data, aes(color=model)) 
+```
+</div>
+
+d. Simulate a test data set of $10000$ observations from the same distributions. Use `set.seed(612)` prior to generating the test data. Calculate the estimated mean squared error (MSE) for each model.
+Are the results as expected? 
+
+<div class="solution">
+```{r}
+#-- Generate Test Data
+ntest = 10000                           # Number of test samples
+set.seed(612)                           # set *different* seed 
+xtest = sim_x(ntest)                    # generate test X's
+ytest = sim_y(xtest, sd=sd)             # generate test Y's
+data_test = tibble(x=xtest, y=ytest)    # test data
+
+# model 1 
+# linear
+m1 = lm(y~x, data=data_train) # fit simple OLS
+yhat1 = predict(m1, newdata=data_test)  # vector of yhat's (predictions)
+
+# model 2
+# quadratic
+m2 = lm(y~poly(x, degree=2), data=data_train) 
+yhat2 = predict(m2, newdata=data_test)  
+
+# model 3
+# cubic
+m3 = lm(y~poly(x, degree=3), data=data_train) 
+yhat3 = predict(m3, newdata=data_test)
+########################################################################
+mean((data_test$y -yhat1)^2)
+mean((data_test$y - yhat2)^2)
+mean((data_test$y - yhat3)^2)
+```
+</div>
+
+e. What is the best achievable MSE? That is, what is the MSE if the true $f(x)$ was used to evaluate the test set? How close does the best method come to achieving the optimum? 
+
+<div class="solution">
+```{r}
+# optimal MSE
+mean((f(xtest) - ytest)^2)
+#  irreducible error
+mean(rnorm(100000000, 0, 3)^2)
+```
+The best achievable MSE is 8.972119, while the irreducible error is 8.999854, to compare our 3 model with Linear( MSE:9.293776), Quadratic(MSE:9.583155) Cubic(MSE:9.648192), and we can see the linear model is the closet to the best achievable MSE.
+
+</div>
+
+
+
+f. The MSE scores obtained in part *d* came from one realization of training data. Here will we explore how much variation there is in the MSE scores by replicating the simulation many times. 
+
+    - Re-run the same simulation in part *d* 100 times. 
+    - Create kernel density plots (you choose bandwidth) of the resulting MSE values for each model. 
+    - Use `set.seed(613)` prior to running the simulation and do not set the seed in any other places.
+
+<div class="solution">
+```{r}
+set.seed(613)
+# put all 3 model into one for loop
+
+MSE1L <- c()
+MSE2L <- c()
+MSE3L <- c()
+for (i in 1:100) {
+  n = 100
+  sd = 3
+  x = sim_x(n)
+  y = sim_y(x,sd=sd)
+  data_train = tibble(x,y)
+  m1 = lm(y~x, data=data_train) # fit simple OLS
+  m2 = lm(y~poly(x, degree=2), data=data_train) 
+  m3 = lm(y~poly(x, degree=3), data=data_train)
+  #-- Generate Test Data
+  ntest = 10000                           # Number of test samples
+  xtest = sim_x(ntest)                    # generate test X's
+  ytest = sim_y(xtest, sd=sd)             # generate test Y's
+  data_test = tibble(x=xtest, y=ytest)    # test data
+  yhat1 = predict(m1, newdata=data_test)  # vector of yhat's (predictions)
+  yhat2 = predict(m2, newdata=data_test)  # vector of yhat's (predictions)
+  yhat3 = predict(m3, newdata=data_test)  # vector of yhat's (predictions)
+  
+  mse1test = mean((data_test$y -yhat1)^2)
+  mse2test = mean((data_test$y -yhat2)^2)
+  mse3test = mean((data_test$y -yhat3)^2)
+
+  MSE1L <-  c(MSE1L, mse1test)
+  MSE2L <-  c(MSE2L, mse2test)
+  MSE3L <-  c(MSE3L, mse3test)
+}
+
+df_1 <-  data.frame(tibble(MSE1L),tibble(MSE2L),tibble(MSE3L))
+df_1_1 <-  melt(df_1)
+ggplot(df_1_1, aes(x = value, fill = variable)) + geom_density(alpha = 0.15) + xlab('MSE') +ylab('density') + scale_fill_discrete(name = "model", label = c('Linear', 'Quadratic', 'Cubic'))
+
+```
+
+</div>
+
+g. Show a count of how many times each model was the best. That is, out of the 100 simulations, count how many times each model had the lowest MSE.
+
+<div class="solution">
+```{r}
+best <-  apply(df_1, 1, function(x){which.min(x)})
+count_1 <- tibble(table(best))
+count_1$model <- c('Linear','Quadratic','Cubic') 
+count_1
+
+```
+</div>
+
+
+h. Repeat the simulation in part *g*, but use $\sigma=2$. Report the number of times each model was best (you do not need to produce any plots). Use the same `set.seed(613)` prior to running the simulation and do not set the seed in any other places.
+```{r}
+
+set.seed(613)
+#-- Settings
+sim_x <- function(n) rnorm(n,0,1) 
+f <- function(x) -1 + 0.5*x + 0.2*(x^2)   # true mean function
+#sd = 2                                  # stdev for error
+sim_y <- function(x, sd){               # generate Y|X from N{f(x),sd}
+  n = length(x)
+  f(x) + rnorm(n, sd=sd)             
+}
+
+MSE1L <- c()
+MSE2L <- c()
+MSE3L <- c()
+
+for (i in 1:100) {
+  n = 100
+  sd = 2
+  x = sim_x(n)
+  y = sim_y(x,sd=sd)
+  data_train = tibble(x,y)
+  m1 = lm(y~x, data=data_train) # fit simple OLS
+  m2 = lm(y~poly(x, degree=2), data=data_train) 
+  m3 = lm(y~poly(x, degree=3), data=data_train)
+  #-- Generate Test Data
+  ntest = 10000                           # Number of test samples
+  xtest = sim_x(ntest)                    # generate test X's
+  ytest = sim_y(xtest, sd=sd)             # generate test Y's
+  data_test = tibble(x=xtest, y=ytest)    # test data
+  yhat1 = predict(m1, newdata=data_test)
+  yhat2 = predict(m2, newdata=data_test)
+  yhat3 = predict(m3, newdata=data_test)
+  
+  mse1test = mean((data_test$y -yhat1)^2)
+  mse2test = mean((data_test$y -yhat2)^2)
+  mse3test = mean((data_test$y -yhat3)^2)
+  
+  MSE1L <-  c(MSE1L, mse1test)
+  MSE2L <-  c(MSE2L, mse2test)
+  MSE3L <-  c(MSE3L, mse3test)
+  
+}
+
+df_2 <-  data.frame(tibble(MSE1L),tibble(MSE2L),tibble(MSE3L))
+
+best <-  apply(df_2, 1, function(x){which.min(x)})
+count_2 <- tibble(table(best))
+count_2$model <- c('Linear','Quadratic','Cubic') 
+count_2
+
+#df_2_2 <-  melt(df_2)
+#ggplot(df_2_2, aes(x = value, fill = variable)) + geom_density(alpha = 0.15) + xlab('MSE') +ylab('density') + scale_fill_discrete(name = "model", label = c('Linear', 'Quadratic', 'Cubic'))
+
+```
+
+
+i. Repeat *g*, but now use $\sigma=4$ and $n=200$. 
+
+```{r}
+set.seed(613)
+#-- Settings
+sim_x <- function(n) rnorm(n,0,1) 
+f <- function(x) -1 + 0.5*x + 0.2*(x^2)   # true mean function
+
+sim_y <- function(x, sd){               # generate Y|X from N{f(x),sd}
+  n = length(x)
+  f(x) + rnorm(n, sd=sd)             
+}
+
+MSE1L <- c()
+MSE2L <- c()
+MSE3L <- c()
+
+for (i in 1:100) {
+  n = 200
+  sd = 4 
+  x = sim_x(n)
+  y = sim_y(x,sd=sd)
+  data_train = tibble(x,y)
+  m1 = lm(y~x, data=data_train) # fit simple OLS
+  m2 = lm(y~poly(x, degree=2), data=data_train) 
+  m3 = lm(y~poly(x, degree=3), data=data_train)
+  #-- Generate Test Data
+  ntest = 10000                           # Number of test samples
+  xtest = sim_x(ntest)                    # generate test X's
+  ytest = sim_y(xtest, sd=sd)             # generate test Y's
+  data_test = tibble(x=xtest, y=ytest)    # test data
+  yhat1 = predict(m1, newdata=data_test)  # vector of yhat's (predictions)
+  yhat2 = predict(m2, newdata=data_test)  # vector of yhat's (predictions)
+  yhat3 = predict(m3, newdata=data_test)  # vector of yhat's (predictions)
+  
+  mse1test = mean((data_test$y -yhat1)^2)
+  mse2test = mean((data_test$y -yhat2)^2)
+  mse3test = mean((data_test$y -yhat3)^2)
+  
+  MSE1L <-  c(MSE1L, mse1test)
+  MSE2L <-  c(MSE2L, mse2test)
+  MSE3L <-  c(MSE3L, mse3test)
+}
+
+df_3 <-  data.frame(tibble(MSE1L),tibble(MSE2L),tibble(MSE3L))
+best <-  apply(df_3, 1, function(x){which.min(x)})
+count_3 <- tibble(table(best))
+count_3$model <- c('Linear','Quadratic','Cubic') 
+count_3
+
+#df_3 <-  melt(df_3)
+#ggplot(df_3, aes(x = value, fill = variable)) + geom_density(alpha = 0.15) + xlab('MSE') +ylab('density') + scale_fill_discrete(name = "model", label = c('Linear', 'Quadratic', 'Cubic'))
+
+```
+
+j. Describe the effects $\sigma$ and $n$ has on selection of the best model? Why is the *true* model form (i.e., quadratic) not always the *best* model to use when prediction is the goal? 
+
+<div class="solution">
+```{r}
+count_1  # out of the 100 simulations
+count_2  # sigma = 2
+count_3  # # sigma = 4, and n = 200
+```
+In order to find out the effect of sigma and n, I first gradually increase n from 100 to 500 and hold everything else constant, I saw it the quadratic model from 50 increased to 79 while linear model decreased dramatically from 44 to 6. it will already increase the chosen rate of quadratic model the most and at the same time slowly increase in cubic model, while Linear model decrease. Next, when try to gradually increase the sigma from 2 to 5 and hold everything constant, it always increase the chosen rate of linear model, while decrease both Quadratic and Cubic model. When sigma is large, it also means the data is noisy and since we are trying to predict, a simpler model is better than complex one, which it also met the result, while the more data we have to train our model, the better a complex model works than a simple model.
+
+</div>
+
+
+
+
+
+

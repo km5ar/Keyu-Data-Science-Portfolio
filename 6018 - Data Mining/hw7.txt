@@ -1,0 +1,287 @@
+**SYS 6018 | Fall 2020 | University of Virginia **
+# keyu chen
+# km5ar
+*******************************************
+
+
+<!--- Below are global settings for knitr. You can override any of them by adding the changes to individual chunks --->
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # collapse by default
+                      echo=TRUE,         # echo code by default
+                      comment = "#>",    # change comment character
+                      fig.width = 5,     # set figure width
+                      fig.align = "center",# set figure position
+                      out.width = "49%", # set width of displayed images
+                      warning=TRUE,      # show R warnings
+                      message=TRUE)      # show R messages
+options(dplyr.summarise.inform = FALSE)  # ignore message about group structure
+```
+
+<!--- Solution Region --->
+```{css solution-region, echo=FALSE}
+.solution {
+  background-color: #232D4B10;
+  border-style: solid;
+  border-color: #232D4B;
+  padding: .5em;
+  margin: 20px
+}
+```
+
+
+<!--- Load Required R packages here --->
+```{r packages, include=FALSE}
+#- Better table printing
+library(kableExtra) # https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
+format_table <- function(x, nmax=10) {
+  kable(x) %>% 
+    kable_styling(full_width = FALSE, font_size=11, position = "left") %>% 
+    {if(nrow(x) > nmax) scroll_box(., width = "100%", height = "200px") else .}
+}
+#- useful functions
+digits <- function(x, k=2) format(round(x, k), nsmall=k)
+#- data directory
+data.dir = 'https://mdporter.github.io/SYS6018/data/'
+#- required functions here
+
+library(tidyverse)#- required functions
+library(tidyverse)
+library(glmnet)
+library(readr)
+library(tidyverse)
+library(glmnet)
+library(glmnetUtils)  # to allow formula interface in glmnet()
+library(ISLR)
+library(caret)
+library(FNN)
+library(broom)
+library(yardstick)
+library(tidyverse) 
+library(parallel)
+library(caret) 
+library(MASS)
+attach(mtcars)
+library(ks)
+library(mixtools)
+library(mclust)       # for model-based clustering
+library(tree)
+attach(Carseats)
+library(rpart)        # for classification and regression trees (CART)
+library(rpart.plot)   # for prp() which allows more plotting control
+library(randomForest) # for randomForest() function
+library(caret)
+library(ranger)
+library(tidyverse)
+library(e1071)
+library (MASS)
+library(rpart)        # for classification and regression trees (CART)
+library(rpart.plot)   # for prp() which allows more plotting control
+library(randomForest) # for randomForest() function
+library (tree)
+```
+
+
+
+
+### Problem 7.1: Tree Splitting for classification
+
+Consider the Gini index, classification error, and entropy impurity measures in a simple classification setting with two classes. 
+
+Create a single plot that displays each of these quantities as a function of $p_m$, the estimated probability of an observation in node $m$ being from class 1. The x-axis should display $p_m$, ranging from 0 to 1, and the y-axis should display the value of the Gini index, classification error, and entropy.
+
+<div class="solution"> 
+
+```{r}
+p = seq(0, 1, 0.01)
+gini_index = 2*(1 - p) *p
+entropy = -(p * log(p) + (1 - p) * log(1 - p))
+classification_error = 1 - pmax(p, 1 - p)
+data = cbind(gini_index, classification_error, entropy)
+matplot(p,data) # number 1: gini index, number 2: classcification error, 3: entropy
+```
+
+</div>
+
+
+
+### Problem 7.2: Combining bootstrap estimates
+
+```{r, echo=FALSE}
+p_red = c(0.2, 0.25, 0.3, 0.4, 0.4, 0.45, 0.7, 0.85, 0.9, 0.9)
+```
+
+Suppose we produce ten bootstrapped samples from a data set containing red and green classes. We then apply a classification tree to each bootstrapped sample and, for a specific value of $X$, produce the following 10 estimates of $\Pr(\text{Class is Red} \mid X)$: `r stringr::str_c(p_red, sep=", ")`
+
+a. ISLR 8.2 describes the *majority vote* approach for making a hard classification from a set of bagged classifiers. What is the final classification for this example using majority voting?
+
+<div class="solution"> 
+
+the final classification for this exmaple using majority voting is : green, because there is total of 6 estimates are < than 0.5, while only 4 estimates are larger than 0.5.
+
+</div>
+
+
+b. An alternative is to base the final classification on the average probability. What is the final classification for this example using average probability?
+
+
+<div class="solution"> 
+the final classification for this example is Red.
+the average probability approch in this class will take all estimates' average, in this case $$(0.2 + 0.25 + 0.3 + 0.4 + 0.4 + 0.45 + 0.7 + 0.85 + 0.9 + 0.9)/10 = 0.535$$ 
+
+</div>
+
+
+c. Suppose the cost of mis-classifying a Red class is twice as costly as mis-classifying a Green class. How would you modify both approaches to make better final classifications under these unequal costs? Report the final classifications. 
+
+
+<div class="solution"> 
+
+due to the misclassifying a Red class is twice as costly as mis-classifying a green class. then we will justify by times 1/3 for red and times 2/3 for green 
+so adjusted the red by the cost of 1/3 and adjust green by the cost of 2/3.
+
+```{r}
+p_red = c(0.2, 0.25, 0.3, 0.4, 0.4, 0.45, 0.7, 0.85, 0.9, 0.9)
+p_green = 1 - p_red
+
+cost_green = 2/3
+cost_red = 1/3
+
+red_after_cost = p_green*cost_green
+green_after_cost = p_red*cost_red
+
+red_df = c()
+for (i in 1:length(p_red)) {
+  red_df[i] = ifelse(red_after_cost[i]<green_after_cost[i], 1, 0)}
+red = sum(red_df)
+green = 10 - red
+
+ifelse(red > green, 'red', 'green')
+```
+so for majority vote approach, after the adjustment, the final classification for this example is: green
+
+```{r}
+avg_p_red = 0.535
+avg_p_green = 1- avg_p_red
+
+red_after_cost = avg_p_red*1/3 
+green_after_cost = avg_p_green*3/2
+ifelse(red_after_cost > green_after_cost, 'red', 'green')
+```
+after the cost adjustment, for average proability apporach, the final classification for this example is: green
+
+</div>
+
+
+
+### Problem 7.3: Random Forest Tuning
+
+Random forest has several tuning parameters that you will explore in this problem. We will use the `Boston` housing data from the `MASS` R package (See the ISLR Lab in section 8.3.3 for example code).
+
+- Note: remember that `MASS` can mask the `dplyr::select()` function.
+
+a. List all of the random forest tuning parameters in the `randomForest::randomForest()` function. Note any tuning parameters that are specific to classification or regression problems. Which tuning parameters do you think will be most important to search? 
+
+<div class="solution"> 
+
+```{r}
+data(Boston, package="MASS")  
+```
+
+```{r}
+# https://www.rdocumentation.org/packages/randomForest/versions/4.6-14/topics/randomForest
+```
+
+# all of the random forest tuning parameters in the `randomForest::randomForest()` function.
+
+1) mtry 
+2) min.obs
+3) ntree
+4) sampsize
+5) cutoff
+6) strata
+7) nodesize
+8) maxnodes
+9) importance
+10) nPerm
+11) oob.prox
+12) do.trace
+13) corr.bias
+
+# There are two primary tuning parameters for Random Forest( reference: Professor Porter):
+1) m controls the number of predictors that are evaluated for each split (mtry argument in randomForest package) 
+2) The depth/size of the trees are controlled by setting the minimum number of observations in the leaf nodes (min.obs) or the depth of the tree
+
+</div>
+
+b. Use a random forest model to predict `medv`. Use the default parameters and report the 10-fold cross-validation MSE. 
+
+<div class="solution"> 
+
+```{r}
+
+set.seed(1234567890)
+model =  train(medv~.,data = Boston, method = "ranger", 
+                trControl = trainControl("cv", number = 10),
+                tuneLength = 10)
+model
+model$bestTune
+```
+mtry = 9, splitrule = extratrees and min.node.size = 5, RMSE = 3.037561
+so the 10 fold MSE is 3.037561^2 = 9.226776829
+
+
+```{r}
+set.seed(111)
+train = sample(1:nrow(Boston), nrow(Boston)/2)
+
+rf.boston =randomForest(medv~.,data=Boston, subset = train, mtry=9, importance =TRUE)
+yhat.rf = predict(rf.boston ,newdata =Boston[-train,])
+yhat.rf
+
+```
+
+</div>
+
+
+c. Now we will vary the tuning parameters of `mtry` and `ntree` to see what effect they have on performance. 
+    - Use a range of reasonable `mtry` and `ntree` values.
+    - Use 5 times repeated out-of-bag (OOB) to assess performance. That is, run random forest 5 times for each tuning set, calculate the OOB MSE each time and use the average for the MSE associated with the tuning parameters.
+    - Use a plot to show the average MSE as a function of `mtry` and `ntree`.
+    - Report the best tuning parameter combination. 
+    - Note: random forest is a stochastic model; it will be different every time it runs. Set the random seed to control the uncertainty associated with the stochasticity. 
+    - Hint: If you use the `randomForest` package, the `mse` element in the output is a vector of OOB MSE values for 1:`ntree` trees in the forest. This means that you can set `ntree` to some maximum value and get the MSE for any number of trees less than `ntree`. 
+
+
+<div class="solution"> 
+
+
+```{r}
+set.seed(123)
+
+mtry_list = c(5, 6,7,8,9,10,11,12)  # create a range of mtry
+ntree_list = c(20, 30, 40,50,60,70,80,90) # create a range of ntree
+
+OOB_mse_matrix = matrix(NA, 8, 8) # OBB matrix
+for (i in 1:8) {  # for loop
+  for(w in 1:8) {
+    MSE_pip = numeric(5)
+    for (s in 1:5){  # for loop 5 times 
+      model = randomForest(medv~., data=Boston, mtry=mtry_list[i], ntree=90)  # model with ntree =90
+      mse_ntree = ntree_list[w]
+      MSE_pip[s] = model$mse[mse_ntree]}
+    OOB_mse_matrix[w, i] = mean(MSE_pip)}} 
+
+library(RColorBrewer)
+coul <- colorRampPalette(brewer.pal(8, "PiYG"))(25)  
+final <-  cbind(ntree_list, OOB_mse_matrix)
+final
+heatmap(final, Colv = NA, Rowv = NA, scale="column", col = coul, xlab="variable", main="heatmap") # reference https://www.r-graph-gallery.com/heatmap
+
+```
+
+reference: joined a group of people in slack for discussion (hosted by kip, on OCT 21, 7PM)
+
+</div>
+

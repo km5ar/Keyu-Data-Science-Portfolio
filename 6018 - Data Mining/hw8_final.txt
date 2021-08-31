@@ -1,0 +1,197 @@
+---
+title: "Homework 8_kaggle_competition"
+author: "Keyu Chen (km5ar)"
+geometry: margin=1in
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+fontsize: 12pt
+---
+# final kaggle score is 0.17645, ranked 3432.
+# kaggle user name: keyu_random_walk
+# keyu chen
+# km5ar
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, highlight=FALSE)
+```
+
+
+```{r}
+library(tidyverse)#- required functions
+library(xgboost)
+library(ggplot2) 
+library(magrittr)
+library(caret)
+library(glmnet)
+
+```
+
+
+
+# read in data
+```{r}
+
+# Combine data 
+sample_submission <- read.csv("sample_submission.csv")
+test <- read.csv("test.csv")
+train <- read.csv("train.csv")
+# we can not combine it because the test date don't have SalePrice columns
+test$SalePrice <- NA  # so i made one
+all <- rbind(train, test) # combine it
+```
+# data clearning 
+```{r}
+
+NAcol <- which(colSums(is.na(all)) > 0)#/2919
+sort(colSums(sapply(all[NAcol], is.na)), decreasing = TRUE)
+sort(colSums(sapply(all[NAcol], is.na))/2919, decreasing = TRUE)  # missing value by percentage
+# originally i want to delete the column with high percentage of missing value but later i started to realized, 
+# for example, 99.65% of the data don't have Pool quality, the 0.5% of the data maybe represent a very expensive one, so we sould keep it.
+all2 = select(all, -MiscFeature) # I decided to drop MiscFeature
+
+all2$PoolQC[is.na(all2$PoolQC)] <- 'None'  # https://stackoverflow.com/questions/14737773/replacing-occurrences-of-a-number-in-multiple-columns-of-data-frame-with-another
+# MiscFeature: Miscellaneous feature not covered in other categories
+# NA	None
+# drop it already
+# Alley: Type of alley access to property
+# NA 	No alley access
+# change to NONE
+all2$Alley[is.na(all2$Alley)]  <- 'None'
+# Fence: Fence quality
+# NA	No Fence
+# change to NONE
+all2$Fence[is.na(all2$Fence)] <- 'None'
+# FireplaceQu: Fireplace quality
+# NA	No Fireplace
+# change to NONE
+all2$FireplaceQu[is.na(all2$FireplaceQu)] <- 'None'
+# LotFrontage: Linear feet of street connected to property
+# NA change to 0
+all2$LotFrontage[is.na(all2$LotFrontage)] <- 0
+# GarageYrBlt: Year garage was built
+# NONE change to 
+
+all2$GarageYrBlt[is.na(all2$GarageYrBlt)] <- all2$YearBuilt # replace missing value in GarageYrBlt with the original construction date
+# GarageFinish: Interior finish of the garage
+# NA	No Garage
+# change to NONE
+all2$GarageFinish[is.na(all2$GarageFinish)] <- 'None'
+# GarageQual: Garage quality
+# NA to NONE
+all2$GarageQual[is.na(all2$GarageQual)] <- 'None'
+# GarageCond: Garage condition
+# NA to NONE
+all2$GarageCond[is.na(all2$GarageCond)] <- 'None'
+# GarageType: Garage location
+# NA to NONE
+all2$GarageType[is.na(all2$GarageType)] <- 'None'
+# BsmtCond: Evaluates the general condition of the basement
+# NA to NONE
+all2$BsmtCond[is.na(all2$BsmtCond)] <- 'None'
+# BsmtExposure: Refers to walkout or garden level walls
+# NA to NONE
+all2$BsmtExposure[is.na(all2$BsmtExposure)] <- 'None'
+# BsmtQual: Evaluates the height of the basement
+# NA to NONE
+all2$BsmtQual[is.na(all2$BsmtQual)] <- 'None'
+# BsmtFinType2: Rating of basement finished area (if multiple types)
+# NA to NONE
+all2$BsmtFinType2[is.na(all2$BsmtFinType2)] <- 'None'
+# BsmtFinType1: Rating of basement finished area
+# NA to NONE
+all2$BsmtFinType1[is.na(all2$BsmtFinType1)] <- 'None'
+# MasVnrType: Masonry veneer type
+# NA to NONE
+all2$MasVnrType[is.na(all2$MasVnrType)] <- 'None'   # there is None realdy but we 
+# MasVnrArea: Masonry veneer area in square feet
+# NA to 0
+all2$MasVnrArea[is.na(all2$MasVnrArea)] <- 0
+# MSZoning: Identifies the general zoning classification of the sale.
+all2$MSZoning[is.na(all2$MSZoning)] <- 'None'
+# Utilities: Type of utilities available
+all2$Utilities[is.na(all2$Utilities)] <- 'None'
+# BsmtFullBath: Basement full bathrooms
+all2$BsmtFullBath[is.na(all2$BsmtFullBath)] <- 0
+# BsmtHalfBath: Basement half bathrooms
+all2$BsmtHalfBath[is.na(all2$BsmtHalfBath)] <- 0
+# Functional: Home functionality (Assume typical unless deductions are warranted)
+all2$Functional[is.na(all2$Functional)] <- 0
+# Exterior1st: Exterior covering on house
+all2$Exterior1st[is.na(all2$Exterior1st)] <- 'None'
+# Exterior2nd: Exterior covering on house (if more than one material) 
+all2$Exterior2nd[is.na(all2$Exterior2nd)] <- 'None'
+# BsmtFinSF1: Type 1 finished square feet
+all2$BsmtFinSF1[is.na(all2$BsmtFinSF1)] <- 0
+# BsmtFinSF2: Type 2 finished square feet
+all2$BsmtFinSF2[is.na(all2$BsmtFinSF2)] <- 0
+# BsmtUnfSF: Unfinished square feet of basement area
+all2$BsmtUnfSF[is.na(all2$BsmtUnfSF)] <- 0
+# TotalBsmtSF: Total square feet of basement area
+all2$TotalBsmtSF[is.na(all2$TotalBsmtSF)] <- 0
+# Electrical: Electrical system
+all2$Electrical[is.na(all2$Electrical)] <- 'None'
+# KitchenQual: Kitchen quality
+all2$KitchenQual[is.na(all2$KitchenQual)] <- 'None'
+# GarageCars: Size of garage in car capacity
+all2$GarageCars[is.na(all2$GarageCars)] <- 0
+# GarageArea: Size of garage in square feet
+all2$GarageArea[is.na(all2$GarageArea)] <- 0
+# SaleType: Type of sale
+all2$SaleType[is.na(all2$SaleType)] <- 'None'
+
+all2$MSZoning  = as.factor(all2$MSZoning) 
+all2$Street = as.factor(all2$Street)
+all2$Alley = as.factor(all2$Alley)
+all2$LotShape = as.factor(all2$LotShape)
+all2$LandContour = as.factor(all2$LandContour)
+```
+
+
+```{r}
+dim(train)
+dim(test)
+```
+
+
+```{r}
+numeric_columns <- which(sapply(all2, is.numeric)) #index vector numeric variables
+numeric_columns_name <- names(numeric_columns) #saving names vector for use later on
+
+all3 = all2[numeric_columns_name] 
+new_train <- all3[1:1460, ]
+new_test <- all3[1461:2919, ]
+
+Y.new_train = select(new_train, SalePrice) %>% pull
+X.new_train = select(new_train, -SalePrice)  %>% as.matrix() 
+X.new_test =  select(new_test, -SalePrice)  %>% as.matrix()
+#new_test %>% as.matrix()  # make X matrix
+```
+# Final model
+
+```{r}
+
+model1 = train(SalePrice~.,data =new_train,  # train function from caret, used it in HW3, use it to find the alpha and lambda
+               method = "glmnet",   
+                trControl = trainControl("cv", number = 10),   
+                tuneLength = 10)
+model1$bestTune
+############
+# final kaggle score is 0.17645
+#########
+
+K = 10              # number of CV folds
+alpha = 0.1           # glmnet tuning alpha (1 = lasso, 0 = ridge)
+fit.opt = cv.glmnet(X.new_train , Y.new_train, nfolds=K, alpha=alpha)
+fit.opt$lambda.min
+result = predict(fit.opt, s=10478.35, newx=X.new_test, type="link")
+colnames(result) <- "SalePrice"
+#tibble(result)
+result1 = cbind(new_test$Id, result)
+
+colnames(result1)[1] <- "Id"
+write.csv(result1, "submission13.csv", row.names = FALSE)
+```
+# final kaggle score is 0.17645, ranked 3432.
+# kaggle user name: keyu_random_walk

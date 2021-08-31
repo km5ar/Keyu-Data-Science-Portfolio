@@ -1,0 +1,299 @@
+**SYS 6018 \| Fall 2020 \| University of Virginia**
+
+# keyu chen
+# km5ar
+
+------------------------------------------------------------------------
+
+<!--- Below are global settings for knitr. You can override any of them by adding the changes to individual chunks --->
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # collapse by default
+                      echo=TRUE,         # echo code by default
+                      comment = "#>",    # change comment character
+                      fig.width = 5,     # set figure width
+                      fig.align = "center",# set figure position
+                      out.width = "49%", # set width of displayed images
+                      warning=TRUE,      # show R warnings
+                      message=TRUE)      # show R messages
+options(dplyr.summarise.inform = FALSE)  # ignore message about group structure
+```
+
+<!--- Solution Region --->
+
+```{css solution-region, echo=FALSE}
+.solution {
+  background-color: #232D4B10;
+  border-style: solid;
+  border-color: #232D4B;
+  padding: .5em;
+  margin: 20px
+}
+```
+
+<!--- Load Required R packages here --->
+
+```{r packages, include=FALSE}
+#- Better table printing
+library(kableExtra) # https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
+format_table <- function(x, nmax=10, ...) {
+  kable(x, ...) %>% 
+    kable_styling(full_width = FALSE, font_size=11, position = "left") %>% 
+    {if(nrow(x) > nmax) scroll_box(., width = "100%", height = "300px") else .}
+}
+#- useful functions
+digits <- function(x, k=2) format(round(x, k), nsmall=k)
+#- data directory
+data.dir = 'https://mdporter.github.io/SYS6018/data/'
+#- required functions here
+library(arules)
+library(tidyverse)
+
+#-- Load Required Packages
+library(arulesViz)
+library(readxl)
+```
+
+### Problem 9.1: Interestingness
+
+Suppose we have market basket data consisting of 100 transactions and 20 items. Assume the support for item {$a$} is 20%, support for item {$b$} is 85%, and support for itemset {$a,b$} is 15%.
+
+a.  What is the confidence of the rule {a} $\rightarrow$ {b}?
+
+::: {.solution}
+
+$$ C(A \rightarrow B)=\frac{S(A, B)}{S(A)} = \frac{\operatorname{Pr}(A \subseteq T, B \subseteq T)}{\operatorname{Pr}(A \subseteq T)}=P(B \subseteq T \mid A \subseteq T) = \frac{0.15}{0.2} = 0.75$$
+:::
+
+b.  Will the apriori algorithm find this rule (interesting) if the confidence threshold (minconf) is $c=.60$ and the support threshold (minsup) is $s=.10$?
+
+::: {.solution}
+
+The apriori algorithm find this rule interesting due to $c(a \rightarrow b) = 0.75 > 0.6$ and $s(a,b) = 0.15$.
+
+
+
+:::
+
+c.  Find the *lift* of this rule.
+
+::: {.solution}
+
+
+$$\begin{aligned}
+L(A, B) =\frac{C(A \rightarrow B)}{S(B)}  = \frac{0.15}{0.2*0.85} = 0.882352941\end{aligned}$$
+
+:::
+
+d.  Find the *addedValue* of this rule.
+
+::: {.solution}
+
+$$\begin{aligned}
+\mathrm{AV}(A \rightarrow B) &=C(A \rightarrow B)-S(B) \\
+&=\mathrm{PS}(A, B) / S(A) \\
+& \triangleq \operatorname{Pr}(B \mid A)-\operatorname{Pr}(B) \\
+& = 0.75 - 0.85 = - 0.1
+\end{aligned}$$
+
+
+:::
+
+e.  Find the *leverage/PS* of this rule.
+
+::: {.solution}
+
+
+$$\operatorname{PS}(A, B)=S(A, B)-S(A) S(B) = 0.15 - 0.2*0.85 = -0.02$$
+:::
+
+f.  Describe the nature of the relationship between items {a} and {b} according to *lift*, *addedValue* and *leverage/PS*. What observation can you draw from parts (b) and (c-e)?
+
+::: {.solution}
+
+because the Left is smaller than 1 which indicates negative association between a and b, people who buy a will tend to not buy b, or people who buy b will not tend to buy a. Then the addedValue supports this idea because it is slityly negative. however the leverage(range:[-1:1]) is slighty negitive with the value of -0.02, which also suggests there is a negative association.
+
+:::
+
+g.  Let $p(a)$, $p(b)$, and $p(a,b)$ be the actual probabilities of observing items {a}, {b}, and {a,b} respectively in a transaction. What is the expected confidence rule {a} $\rightarrow$ {b} if a and b are independent?
+
+::: {.solution}
+since we are assuming a and b are independent, $$\frac{P(a \rightarrow b)}{(a)} =P(b|a) $$
+
+
+:::
+
+### Problem 9.2: Online Retail
+
+The website <http://archive.ics.uci.edu/ml/datasets/online+retail> describes some transactional data from an online retailer.
+
+a.  Download the [excel file](http://archive.ics.uci.edu/ml/machine-learning-databases/00352/Online%20Retail.xlsx) to your machine and read it into R.
+
+```{r, echo=FALSE, eval=FALSE}
+## HINT: use readxl::read_excel() for reading excel files
+
+```
+
+::: {.solution}
+```{r}
+data.dir = "/Users/cory/Desktop/6018_hw9"
+X = read_excel(file.path(data.dir, "Online Retail.xlsx"))
+X
+```
+:::
+
+b.  There are many quality problems with this dataset, but we will only address two of them. Remove all of the rows with missing Description values (NAs) and remove any duplicate items in a single transaction. Print the first 10 rows of the resulting data.
+
+::: {.solution}
+```{r}
+# remove NAs and remove duplicate items
+#X_b = X[!is.na(X$Description),] %>% distinct()
+
+X_b = X %>% filter(!is.na(Description)) %>% 
+  distinct(InvoiceNo, StockCode, .keep_all = TRUE)
+head(X_b, n=10)
+
+```
+:::
+
+c.  Find the number of transactions and number of items using *InvoiceNo* for transactions and *Description* as items (i.e., ignore the *StockCode* column).
+
+::: {.solution}
+```{r}
+# the number of transactions using *InvoiceNo*
+Nunber_of_Transactions = n_distinct(X_b$InvoiceNo) 
+Nunber_of_Transactions
+# number of items using *Description*
+Nunmber_of_Items =n_distinct(X_b$Description) 
+Nunmber_of_Items
+```
+
+There are 24446 of transactions and 4211 of items
+:::
+
+d.  Convert the data frame into a *transaction list* and convert it into a *transactions object* (don't forget to load the `arules` package). Print a summary (using `summary()`) of the new object.
+
+::: {.solution}
+```{r}
+#-- get transaction list
+tList = split(X_b$Description, X_b$InvoiceNo)    # get transaction list
+#-- get transaction class
+trans = as(tList, "transactions")
+summary(trans)   # print summary info
+```
+:::
+
+e.  Find the items with the highest support. Print and plot the support of the top 10.
+
+::: {.solution}
+```{r}
+#-----------------------------------------------------------------------#
+#-- Find Frequent Itemsets
+#-----------------------------------------------------------------------#
+
+#-- get item counts and support for single itemsets
+itemFreq = count(X_b, Description, sort=TRUE) %>% mutate(support=n/Nunber_of_Transactions)
+
+# plot top 20
+itemFreq %>% slice(1:10) %>% 
+  ggplot(aes(fct_reorder(Description, n), n)) + # order bars by n
+  geom_col() +         # barplot
+  coord_flip() +       # rotate plot 90 deg
+  theme(axis.title.y = element_blank()) # remove y axis title
+```
+:::
+
+f.  Find the *frequent itemsets* that contain at least 3 items and have $s\geq 0.02$. Add the *lift* metric. Show the top 10 results, ordered by *lift*.
+
+::: {.solution}
+
+```{r}
+#library(arulesViz)
+
+#-- Convert apriori object to data frame / tibble
+# use this instead of inspect(), which only prints to screen
+apriori2df <- function(x){
+  if(class(x) == "itemsets"){
+    out = data.frame(items=arules::labels(x), x@quality, stringsAsFactors = FALSE)
+  }
+  else if(class(x) == "rules"){
+    out = data.frame(
+      lhs = arules::labels(lhs(x)),
+      rhs = arules::labels(rhs(x)),
+      x@quality, 
+      stringsAsFactors = FALSE)
+  }
+  else stop("Only works with class of itemsets or rules")
+  if(require(tibble)) as_tibble(out) else out
+}
+
+
+```
+
+
+```{r}
+fis2 = apriori(trans, 
+               parameter = list(support = .02, minlen=3, target="frequent"))
+
+#apriori2df(fis2) %>% arrange(-support)  # order by support (largest to smallest)
+
+#-- Add lift using the interestMeasure() function
+apriori2df(fis2) %>% 
+  mutate(lift = interestMeasure(fis2, measure="lift", trans)) %>% 
+  arrange(-lift) 
+
+```
+:::
+
+g.  Find all of the *association rules* with $s \geq 0.02$, $c \geq 0.70$. Add the *PS/leverage* and *addedValue* metrics. Show all results, ordered by *addedValue*
+
+::: {.solution}
+```{r}
+
+#-- Find association rules with support>=.001 and confidence>=.50
+rules = apriori(trans, 
+             parameter = list(support=.02, confidence=.7, 
+                              target="rules")) # minlen=3,
+ 
+#apriori2df(rules) %>% arrange(-confidence)  # order by confidence metric
+#apriori2df(rules) %>% arrange(-lift)        # order by lift metric
+#-- Add other interest measures
+apriori2df(rules) %>% 
+  mutate(addedValue = interestMeasure(rules, measure="addedValue", trans), 
+         PS = interestMeasure(rules, measure="leverage", trans)) %>% 
+  arrange(-addedValue)
+
+```
+:::
+
+h.  Find one rule that you think is interesting. Write the rule and explain why you find it interesting.
+
+::: {.solution}
+
+
+```{r}
+# my rule
+# find all 
+
+#-- Find association rules with support>=.01 and confidence>=.50
+rules = apriori(trans, 
+             parameter = list(support=.01, confidence=.90, 
+                              target="rules")) # minlen=3,
+ 
+#apriori2df(rules) %>% arrange(-confidence)  # order by confidence metric
+#apriori2df(rules) %>% arrange(-lift)        # order by lift metric
+#-- Add other interest measures
+apriori2df(rules) %>% 
+  mutate(addedValue = interestMeasure(rules, measure="addedValue", trans), 
+         PS = interestMeasure(rules, measure="leverage", trans)) %>% 
+  arrange(-addedValue)
+# 
+# The conﬁdence of a rule is an estimate of the conditional probability of J being in a basket given the basket already contains I
+```
+in this rule, I'm trying to find supper larger than 0.01 and a confidence of larger than 0.9. I found it interesting because we can see there are small customers when they buy TEA PLATE, they tend to buy PINK with ROSES color together, and GREEN with PINK together and some customer buy CHARLOTTE BAG tend to buy a 3 with PINK PLOKADOT, SUKI DESING and STRAWBERRY
+
+
+
+reference: participated in a group meeting hosted in slacks.
+:::

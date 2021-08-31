@@ -1,0 +1,423 @@
+**SYS 6018 \| Fall 2020 \| University of Virginia**
+
+------------------------------------------------------------------------
+
+<!--- Below are global settings for knitr. You can override any of them by adding the changes to individual chunks --->
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # collapse by default
+                      echo=TRUE,         # echo code by default
+                      comment = "#>",    # change comment character
+                      fig.width = 5,     # set figure width
+                      fig.align = "center",# set figure position
+                      out.width = "49%", # set width of displayed images
+                      warning=TRUE,      # show R warnings
+                      message=TRUE)      # show R messages
+options(dplyr.summarise.inform = FALSE)  # ignore message about group structure
+```
+
+<!--- Solution Region --->
+
+```{css solution-region, echo=FALSE}
+.solution {
+  background-color: #232D4B10;
+  border-style: solid;
+  border-color: #232D4B;
+  padding: .5em;
+  margin: 20px
+}
+```
+
+<!--- Load Required R packages here --->
+
+```{r packages, include=FALSE}
+#- Better table printing
+library(kableExtra) # https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
+format_table <- function(x, nmax=10) {
+  kable(x) %>% 
+    kable_styling(full_width = FALSE, font_size=11, position = "left") %>% 
+    {if(nrow(x) > nmax) scroll_box(., width = "100%", height = "200px") else .}
+}
+#- useful functions
+digits <- function(x, k=2) format(round(x, k), nsmall=k)
+#- data directory
+data.dir = 'https://mdporter.github.io/SYS6018/data/'
+library(tidyverse)#- required functions
+library(tidyverse)
+library(glmnet)
+library(readr)
+library(tidyverse)
+library(glmnet)
+library(glmnetUtils)  # to allow formula interface in glmnet()
+library(ISLR)
+library(caret)
+library(FNN)
+library(broom)
+library(yardstick)
+library(tidyverse) 
+library(parallel)
+library(caret) 
+library(MASS)
+attach(mtcars)
+library(ks)
+library(mixtools)
+library(mclust)       # for model-based clustering
+
+
+```
+
+### Problem 6.1: Customer Segmentation with RFM (Recency, Frequency, and Monetary Value)
+
+RFM analysis is an approach that some businesses use to understand their customers' activities. At any point in time, a company can measure how recently a customer purchased a product (Recency), how many times they purchased a product (Frequency), and how much they have spent (Monetary Value). There are many ad-hoc attempts to segment/cluster customers based on the RFM scores (e.g., here is one based on using the customers' rank of each dimension independently: <https://joaocorreia.io/blog/rfm-analysis-increase-sales-by-segmenting-your-customers.html>). In this problem you will use the clustering methods we covered in class to segment the customers.
+
+The data for this problem can be found here: <https://mdporter.github.io/SYS6018/data/RFM.csv>. Cluster based on the Recency, Frequency, and Monetary value columns.
+
+a.  Implement hierarchical clustering.
+
+    -   Describe any pre-processing steps you took (e.g., scaling, distance metric)
+    -   State the linkage method you used with justification.
+    -   Show the resulting dendrogram
+    -   State the number of segments/clusters you used with justification.
+    -   Using your segmentation, are customers 1 and 100 in the same cluster?
+
+::: {.solution}
+```{r}
+data <- read.csv("RFM.csv")
+dataX = dplyr::select(data, Recency, Frequency, Monetary) # extract features
+
+ggplot(dataX) + geom_point(aes(Recency,Monetary)) + theme_light()
+ggplot(dataX) + geom_point(aes(Frequency,Monetary)) + theme_light()
+```
+
+```{r}
+#---------------------------------------------------------------------------#
+#-- average linkage
+#---------------------------------------------------------------------------#
+#-- Calculate Distance (dissimilarity matrix)
+dX = dist(dataX, method="euclidean")  # calculate distance
+
+#-- Run hierarchical clustering
+hc_average = hclust(dX, method="average")      # average linkage
+
+#-- Plot
+# plot(hc)     # basic plot
+plot(as.dendrogram(hc_average), las=1, leaflab="none")
+
+#---------------------------------------------------------------------------#
+#-- complete linkage
+#---------------------------------------------------------------------------#
+#-- Run hierarchical clustering
+hc_complete = hclust(dX, method="complete")      # complete linkage
+
+#-- Plot
+# plot(hc)     # basic plot
+plot(as.dendrogram(hc_complete), las=1, leaflab="none")
+
+#---------------------------------------------------------------------------#
+#--  single linkage
+#---------------------------------------------------------------------------#
+#-- Run hierarchical clustering
+hc_single = hclust(dX, method="single")      # single linkage
+
+#-- Plot
+# plot(hc)     # basic plot
+plot(as.dendrogram(hc_single), las=1, leaflab="none")
+
+#---------------------------------------------------------------------------#
+#-- centroid linkage
+#---------------------------------------------------------------------------#
+#-- Run hierarchical clustering
+hc_centroid = hclust(dX, method="centroid")      # centroid linkage
+
+#-- Plot
+# plot(hc)     # basic plot
+plot(as.dendrogram(hc_centroid), las=1, leaflab="none")
+
+
+```
+
+
+```{r}
+
+#---------------------------------------------------------------------------#
+#--  ward.D linkage
+#---------------------------------------------------------------------------#
+#-- Run hierarchical clustering
+hc_ward = hclust(dX, method="ward.D")      #  ward.D linkage
+
+#-- Plot
+# plot(hc)     # basic plot
+plot(as.dendrogram(hc_ward), las=1, leaflab="none") #+ geom_line(aes(color = ifelse(id ==1,"red", "black")))
+
+
+#-- Guess number of clusters by height plot
+# tidyverse
+tibble(height = hc_ward$height, K = row_number(-height)) %>% 
+  ggplot(aes(K, height)) + 
+  geom_line() + 
+  geom_point(aes(color = ifelse(K == 5, "red", "black"))) + 
+  scale_color_identity() + 
+  coord_cartesian(xlim=c(1, 50))
+```
+```{r}
+yhat = cutree(hc_ward, k=5) 
+yhat[1] == yhat[100]
+```
+
+I calculate the distance by euclidean distance. I tried out all different linkage, and i think in this class the best to use is ward.D linkage
+the number of segmentas i think is good in this case: 5. 
+ward.D is always better than centroid. Both ward.D and centroid are similar to average linkage.
+With this segmentation, customers 1 and 100 are not in the same cluster.
+
+# question did not answer: Using your segmentation, are customers 1 and 100 in the same cluster?
+:::
+
+b.  Implement k-means.
+
+    -   Describe any pre-processing steps you took (e.g., scaling)
+    -   State the number of segments/clusters you used with justification.
+    -   Using your segmentation, are customers 1 and 100 in the same cluster?
+
+::: {.solution}
+```{r}
+#---------------------------------------------------------------------------#
+#-- K-means clustering
+#---------------------------------------------------------------------------#
+X = scale(dataX)                         # Scale so all features have mean of zero and standard deviation of one.
+
+#-- Run kmeans for multiple K
+Kmax = 20                                 # maximum K
+SSE = numeric(Kmax)                       # initiate SSE vector
+for(k in 1:Kmax){
+  km = kmeans(X, centers=k, nstart=25)    # use 25 starts
+  SSE[k] = km$tot.withinss                # get SSE
+}
+results = tibble(K = 1:Kmax, SSE = SSE)
+
+#-- Plot results
+#plot(1:Kmax, SSE, type='b', las=1, xlab="K")
+
+#qplot(1:Kmax, SSE, geom="point", xlab="K")
+
+results %>% ggplot(aes(K, SSE)) + 
+  geom_point() + geom_line() +
+  scale_x_continuous(breaks=seq(0, 100, by=2)) + 
+  geom_point(aes(color = ifelse(K == 8, "red", "black"))) #+ coord_cartesian(ylim=c(NA, 300))
+
+
+#-- Plot 1-order differences (measures decrease in SSE if add one more to K)
+dif_1 = SSE - lead(SSE)  # SSE(K) - SSE(K+1)
+#plot(dif_1, ylab="difference", xlab="K", las=1, 
+ #    ylim=c(0, 50))
+
+results %>% mutate(dif_1 = SSE - lead(SSE)) %>% 
+  ggplot(aes(K, dif_1)) + geom_point() + geom_line()# + 
+ # scale_x_continuous(breaks=seq(0, 100, by=2))# + 
+  #coord_cartesian(ylim=c(NA, 500))
+
+#-- Plot linear (2nd) differences (measures deviance from a line)
+dif_2 = SSE - 2*lead(SSE) + lead(SSE, 2)  # SSE(K) -2SSE(K+1) +SSE(K+2)
+#plot(dif_2, ylab="2nd difference", xlab="K", las=1) # , ylim=c(0, 50)
+
+results %>% mutate(dif_1 = SSE - lead(SSE),
+                   dif_2 = dif_1 - lead(dif_1)
+                   #dif_2 = SSE - 2*lead(SSE) + lead(SSE, n=2)
+                   ) %>% 
+  ggplot(aes(K, dif_2)) + geom_point() + geom_line()# +  
+ # scale_x_continuous(breaks=seq(0, 100, by=2))# + 
+ # coord_cartesian(ylim=c(NA, 150))
+
+
+```
+
+```{r}
+km = kmeans(dataX, centers=4, nstart=25)  # choose K=5
+km$cluster[1] == km$cluster[100]
+```
+I scale the date set by use scale() function, i 
+the number of segments/clusters i used: 4
+With this segmentation, customers 1 and 100 are not in the same cluster.
+
+
+:::
+
+c.  Implement model-based clustering
+
+    -   Describe any pre-processing steps you took (e.g., scaling)
+
+    -   State the number of segments/clusters you used with justification.
+
+    -   Describe the best model. What restrictions are on the shape of the components?
+
+    -   Using your segmentation, are customers 1 and 100 in the same cluster?\
+
+        <div class="solution">
+
+```{r}
+#---------------------------------------------------------------------------#
+#-- MBC clustering
+#---------------------------------------------------------------------------#
+# Use the mclust package to help search across all K's
+
+mix = Mclust(dataX)
+summary(mix)   # finds 3 clusters
+
+plot(mix, what="BIC")  
+plot(mix, what="classification")
+plot(mix, what="uncertainty")  
+plot(mix, what="density")  
+
+#-- get parameters
+summary(mix, parameters=TRUE)
+
+#-- More detailed analysis: see https://www.stat.washington.edu/sites/default/files/files/reports/2012/tr597.pdf
+dataXBIC = mclustBIC(dataX)
+dataXSummary  = summary(dataXBIC, data=dataX)
+dataXSummary
+
+plot(dataXBIC, G=1:7, legendArgs=list(x="bottomright",ncol=5)) # ,ylim=c(-2500,-2300)
+
+#-- tidy eval (using broom package)
+library(broom) # for augment(), tidy(), glance()
+
+# augment() adds MAP class label and associated probability
+augment(mix, dataX)
+
+# tidy() summarizes each component (but no var-cov matrix yet)
+tidy(mix)
+
+# glance() summarizes the best model
+glance(mix)
+
+mix$classification[1] == mix$classification[100]
+# mclustBootstrapLRT(dataX, modelName = "VVV")
+# mclustBootstrapLRT(dataX, modelName = "EVE")
+```
+
+the number of segments/clusters: 7. 
+the best model is VVV, which the distribution is Ellipsoidal, Value is Variable, shape is variable and orientation is variable.
+With this segmentation, customers 1 and 100 are not in the same cluster.
+
+
+
+
+</div>
+
+d.  Discuss how you would cluster the customers if you had to do this for your job. Do you think one model would do better than the others?
+
+::: {.solution}
+Hierarchical clustering are slower than K Means clustering. Because the time complexity of Hierachical mclustering is: O(n^2), while K means is O(n). According to Professor Porter, Guassian mixture model is alaways better than the k-means. k- mean is more of a pototype methods. In addition to that k-means does not account for variance.In contrast, Gaussian mixture models can handle even very oblong clusters.k-means tells us what data point belong to which cluster but won't provide us with the probabilities that a given data point belongs to each of the possible clusters. In this class I will divide it into 7 cluster of customers if I had to do this for my job with the Guassian Mixture model.
+
+  
+:::
+
+### Problem 6.2: Poisson Mixture Model
+
+The pmf of a Poisson random variable is: \\begin{align\*} f\_k(x; \\lambda\_k) = \\frac{\\lambda\_k\^x e\^{-\\lambda\_k}}{x!} \\end{align\*}
+
+A two-component Poisson mixture model can be written: \\begin{align\*} f(x; \\theta) = \\pi \\frac{\\lambda\_1\^x e\^{-\\lambda\_1}}{x!} + (1-\\pi) \\frac{\\lambda\_2\^x e\^{-\\lambda\_2}}{x!} \\end{align\*}
+
+a.  What are the parameters of the model?
+
+::: {.solution}
+$\pi$
+
+$\lambda_1$
+
+$\lambda_2$
+:::
+
+b.  Write down the log-likelihood for $n$ independent observations ($x_1, x_2, \ldots, x_n$).
+
+::: {.solution}
+
+the likelihood notation is: $L(x ; \theta)$
+
+the log-likelihood notation is: $lnL(x ; \theta)$
+
+<div>
+
+$lnL(x;\theta) = \sum_{i=1}^{n} \ln \left(\pi \frac{\lambda_{1}^{x_{i}} e^{-\lambda_{1}}}{x_{i} !}+(1-\pi) \frac{\lambda_{2}^{x_{i}} e^{-\lambda_{2}}}{x_{i} !}\right)$
+
+</div>
+:::
+
+c.  Suppose we have initial values of the parameters. Write down the equation for updating the *responsibilities*.
+
+::: {.solution}
+
+reference: based on the ESL page 275. Algorithm 8.1, assue we have initial valeus of the parameters: r1 and r2, following the 2rd step
+
+$$\hat{\gamma}_{i}=\frac{\hat{\pi} \phi_{\hat{\theta}_{2}}\left(y_{i}\right)}{(1-\hat{\pi}) \phi_{\hat{\theta}_{1}}\left(y_{i}\right)+\hat{\pi} \phi_{\hat{\theta}_{2}}\left(y_{i}\right)}$$
+
+$${r}_{1}=\frac{\hat{\pi} \phi_{\hat{\theta}_{2}}\left(y_{i}\right)}{(1-\hat{\pi}) \phi_{\hat{\theta}_{1}}\left(y_{i}\right)+\hat{\pi} \phi_{\hat{\theta}_{2}}\left(y_{i}\right)}$$
+
+  
+$${r}_{2}=\frac{\hat{\pi} \phi_{\hat{\theta}_{3}}\left(y_{i}\right)}{(1-\hat{\pi}) \phi_{\hat{\theta}_{2}}\left(y_{i}\right)+\hat{\pi} \phi_{\hat{\theta}_{3}}\left(y_{i}\right)}$$
+
+:::
+
+d.  Suppose we have responsibilities, $r_{ik}$ for all $i=1, 2, \ldots, n$ and $k=1,2$. Write down the equations for updating the parameters.
+
+::: {.solution}
+
+$${\lambda_1}=\frac{\sum_{i=1}^{N}\left(1-\hat{\gamma}_{i}\right) y_{i}}{\sum_{i=1}^{N}\left(1-\hat{\gamma}_{i}\right)}$$
+
+
+$${\lambda_2}=\frac{\sum_{i=1}^{n} r_{i} y_{i}}{\sum_{i=1}^{n}}$$
+$$ \hat{\pi}=\sum_{i=1}^{N} \hat{\gamma}_{i} / N$$
+
+:::
+
+e.  Fit a two-component Poisson mixture model, report the estimated parameter values, and show a plot of the estimated mixture pmf for the following data:
+
+```{r, echo=TRUE}
+#-- Run this code to generate the data
+set.seed(123)             # set seed for reproducibility
+n = 200                   # sample size
+z = sample(1:2, size=n, replace=TRUE, prob=c(.25, .75)) # sample the latent class
+theta = c(8, 16)          # true parameters
+y = ifelse(z==1, rpois(n, lambda=theta[1]), rpois(n, lambda=theta[2]))
+```
+
+::: {style="background-color:lightgrey; display: block; border-color: black; padding:1em"}
+Note: The function `poisregmixEM()` in the R package `mixtools` is designed to estimate a mixture of *Poisson regression* models. We can still use this function for our problem of density estimation if it is recast as an intercept-only regression. To do so, set the $x$ argument (predictors) to `x = rep(1, length(y))` and `addintercept = FALSE`.
+
+Look carefully at the output from this model. The `beta` values (regression coefficients) are on the log scale.
+:::
+
+::: {.solution}
+```{r}
+
+x = rep(1,length(y))
+
+model_e =  poisregmixEM(x=x,y=y, addintercept = FALSE)
+summary(model_e)
+
+model_e$lambda
+# since the beta of this model is in log scale, in order to reverse it, we need to take e^beta
+new_betas = exp(model_e$beta)  # 16.14473, 7.882481
+```
+
+```{r}
+
+beta_total = c(7.88,16.14)
+plot(model_e)
+```
+
+
+
+
+:::
+
+f.  **2 pts Extra Credit**: Write a function that estimates this two-component mixture model using the EM approach. Show that it gives the same result as part *e*.
+
+    -   Note: you are not permitted to copy code. Write everything from scratch and use comments to indicate how the code works (e.g., the E-step, M-step, initialization strategy, and convergence should be clear).
+    -   Cite any resources you consulted to help with the coding.
+
+::: {.solution}
+```{r}
+
+```
+:::
